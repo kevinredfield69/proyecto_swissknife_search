@@ -1,4 +1,4 @@
-%include('header.tpl',title='Buscador De Gif')
+%include('header.tpl',title='Buscador De Video')
 
 <!-- Main -->
 		<div id="main">
