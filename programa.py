@@ -85,7 +85,7 @@ def pictureresults():
     with open ("keypicture.txt","r") as picturekey:
         keypicture = picturekey.read()
     payload3 = {}
-    r3 = requests.get('',params=payload3)
+    r3 = requests.get('https://api.flickr.com/services/rest/?',params=payload3)
     imagenes = r3.text
     busquedaimagen = json.loads(imagenes)
     if r.status_code == 200:
