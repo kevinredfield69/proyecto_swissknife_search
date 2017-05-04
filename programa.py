@@ -83,9 +83,15 @@ def picture():
 def pictureresults():
     return template ("pictureresults.tpl")
 
+############################################################################################################################################
+
 @route("/song",method="get")
 def song():
     return template ("song.tpl")
+
+@route("/songresults",method="post")
+def songresults():
+    return template ("songresults.tpl")
 
 ############################################################################################################################################
 
