@@ -16,7 +16,11 @@
 
 							<br/>
 
-							<p><strong><a href="panel">Acceder A La Aplicación SwissKnife (Search) >>></a></strong></p>
+							<p><strong><a href="gif">Volver Al Buscador De GIFs SwissKnife (Search)</a></strong></p>
+
+							<br/>
+							
+							<p><strong><a href="swissknife">Volver A La Página Principal SwissKnife (Search)</a></strong></p>	
 
 						</section>
 					</div>
