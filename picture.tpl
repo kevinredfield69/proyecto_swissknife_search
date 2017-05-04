@@ -30,15 +30,7 @@
 								<br/><br/>
 								<hr/>
 								<br/>
-								<strong><label for='sort'>Orden De Resultados</label></strong>
-									<select id='sort' name='sort'>
-										<option value="" selected="selected">-	Selecciona   -</option>										<option value='date-posted-asc'>Fecha De Publicación (Ascendente)</option>
-										<option value='date-posted-desc'>Fecha De Publicación (Descendente)</option>
-										<option value='interestingness-asc'>Interés De Publicación (Ascendente)</option>										<option value='interestingness-desc'>Interés De Publicación (Descendente)</option>										<option value='relevance'>Relevancia</option>
-									</select>
-								<br/><br/>
-								<hr/>
-								<br/>
+
 								<input type = "submit" value = "Buscar">
 								<input type="reset" value = "Limpiar">
 
