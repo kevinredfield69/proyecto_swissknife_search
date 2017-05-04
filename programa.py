@@ -81,7 +81,19 @@ def picture():
 
 @route("/pictureresults",method="post")
 def pictureresults():
-    return template ("pictureresults.tpl")
+    lista_imagenes = []
+    with open ("keypicture.txt","r") as picturekey:
+        keypicture = picturekey.read()
+    payload3 = {}
+    r3 = requests.get('',params=payload3)
+    imagenes = r3.text
+    busquedaimagen = json.loads(imagenes)
+    if r.status_code == 200:
+        for imagen in busquedaimagen[""]:
+            lista_imagenes.append(video[""])
+        return template ("pictureresults.tpl")
+    else:
+        return template ("error.tpl")
 
 ############################################################################################################################################
 
