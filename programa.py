@@ -81,14 +81,18 @@ def picture():
 
 @route("/pictureresults",method="post")
 def pictureresults():
+    text = request.forms.get("text")
+    sort = request.forms.get("sort")
+    per_page = request.forms.get("per_page")
     lista_imagenes = []
     with open ("keypicture.txt","r") as picturekey:
         keypicture = picturekey.read()
-    payload3 = {}
+    payload3 = {"method":"flickr.photos.search","api_key":keypicture,"text":text,"sort":sort,"per_page":per_page,"format":"json"}
     r3 = requests.get('https://api.flickr.com/services/rest/?',params=payload3)
+    print r3.text
     imagenes = r3.text
     busquedaimagen = json.loads(imagenes)
-    if r.status_code == 200:
+    if r3.status_code == 200:
         for imagen in busquedaimagen[""]:
             lista_imagenes.append(video[""])
         return template ("pictureresults.tpl")
@@ -116,4 +120,3 @@ def error404(error):
     return template ("error.tpl")
 
 run(host='0.0.0.0', port=8001, debug=True)
-
