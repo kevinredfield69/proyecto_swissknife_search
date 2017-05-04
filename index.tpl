@@ -1,0 +1,60 @@
+%include('header.tpl',title='SwissKnife (Search)')
+
+<!-- Main -->
+		<div id="main">
+			<div class="container">
+				<div class="row"> 
+					
+					<!-- Content -->
+					<div id="content" class="8u skel-cell-important">
+						<section>
+							<header>
+								<h2>¡Bienvenidos A SwissKnife (Search)!</h2>
+							</header>
+							<br/>
+							<p><img src="/css/images/SK1.jpg" alt="" /></p>
+							<p><strong>SwissKnife (Search)</strong> es una Aplicación Web, que actúa como un <strong>"Buscador de Internet"</strong>, donde su función principal, es realizar <strong>Búsquedas de Información,</strong> que hacen referencias a Imágenes, Vídeos, Canciones y Gifs existentes en <strong>Internet,</strong> pero de una forma más <strong>Rápida.</strong></p>
+
+                            <p>El proyecto, está pensado a utilizar varias <strong>API's Web de Buscadores Web,</strong> con la funcionalidad principal de poder realizar <strong>"Diferentes acciones",</strong> donde su resultado, se mostrará en la Aplicación Web<strong>SwissKnife (Search).</strong> Algunos ejemplos podría ser: Buscar Gifs <strong>"Más virales"</strong> en Internet por el momento, Buscar un vídeo que contenga <strong>"Subtítulos",</strong> Buscar canciones mediante un <strong>"Artista o Disco"</strong> determinado y Buscar imágenes con un <strong>"Tamaño determinado".</strong></p>
+
+                            <p>El proyecto de <strong>SwissKnife (Search),</strong> se ha realizado, con el fin de poder <strong>Facilitar la búsqueda</strong> de contenido por <strong>Internet,</strong> accediendo de una forma <strong>Rápida,</strong> a través de una Aplicación Web, que se encarga de mostrarte <strong>"Varios resultados"</strong> al instante, sobre un <strong>"Criterio de búsqueda"</strong> a realizar, para poder encontrarlo <strong>"En tiempo real.</strong></p>
+
+							<br/>
+
+							<p><strong><a href="panel">Acceder A La Aplicación SwissKnife (Search) >>></a></strong></p>
+
+						</section>
+					</div>
+					
+					<!-- Sidebar -->
+					<div id="sidebar" class="4u">
+						<section>
+							<h1>¿Que Es SwissKnife (Search)?</h1>
+															
+							<br/>							
+
+							<ul class="style">
+								<li>
+                                    					<img src="/css/images/SKD1.png" alt="" />
+									<p class="text">SwissKnife (Search) es una Aplicación Web, donde podemos realizar diferentes búsquedas de información, que podemos encontrar día a día en Internet. Para éste caso, se realizarán busquedas de Imágenes, Canciones, Vídeos y Gifs.</p>
+								</li>
+								<li>
+                                    					<h1>¿Que Funciones Realiza SwissKnife (Search)?</h1>
+									<br/>	
+									<img src="/css/images/SKD1.png" alt="" />	
+									<p class="text">Realizar criterios de búsqueda, sobre una imagen que queremos encontrar, una cacnción que queremos escuchar, un vídeo que queremos ver y un gif que queremos encontrar, en tiempo real, y de forma rápida.</p>
+								</li>
+								<li>
+									<h1>¿Donde Surgió La Idea y Nombre de SwissKnife Search?</h1>
+									<br/>
+									<img src="/css/images/SKD1.png" alt="" />
+									<p class="text">La idea del nombre de SwissKnife (Search) surgió, a través de la funcionalidades que realiza la Aplicación Web, dando a entender que es una Navaja Suiza (Swiss Knife), que es un utensilio, donde tiene varias herramientas útiles, en nuestro día a día y vida cotidiana.</p>
+								</li>
+							</ul>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+
+%include('footer.tpl')
