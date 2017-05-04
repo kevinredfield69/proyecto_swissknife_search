@@ -9,7 +9,7 @@
 					<div id="content" class="8u skel-cell-important">
 						<section>
 							<form action='/videoresults' method='post'>
-								<strong><label>Escribir Vídeo a Buscar:</label></strong>
+								<strong><label>Escribir Vídeo A Buscar:</label></strong>
 								<input type = "text" name = 'q' required/>
 								<br/><br/>
 								<hr/>
