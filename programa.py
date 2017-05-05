@@ -87,10 +87,11 @@ def pictureresults():
     sort = request.forms.get("sort")
     per_page = request.forms.get("per_page")
     lista_imagenes = []
+    lista_urls = []
     #with open ("keypicture.txt","r") as picturekey:
     #    keypicture = picturekey.read()
     keypicture = os.environ["keypicture"]
-    payload3 = {"method":"flickr.photos.search","api_key":keypicture,"text":text,"sort":sort,"per_page":per_page,"format":"json"}
+    payload3 = {"method":"flickr.photos.search","api_key":keypicture,"text":text,"sort":sort,"per_page":per_page,"format":"json","extra":"url_o,url_s"}
     r3 = requests.get('https://api.flickr.com/services/rest/?',params=payload3)
     print r3.text
     imagenes = r3.text
@@ -98,7 +99,10 @@ def pictureresults():
     if r3.status_code == 200:
         for imagen in busquedaimagen["photos"]["photo"]:
             lista_imagenes.append(imagen["title"])
-        return template ("pictureresults.tpl",text=text,per_page=per_page,sort=sort,lista_imagenes=lista_imagenes)
+        for imagen2 in busquedaimagen["photos"]["photo"]:
+            if imagen2.has_key("url_o"):
+                lista_urls.append([imagen2["url_s"],imagen2["url_o"]])
+        return template ("pictureresults.tpl",text=text,per_page=per_page,sort=sort,lista_imagenes=lista_imagenes,lista_urls=lista_urls)
     else:
         return template ("error.tpl")
 
