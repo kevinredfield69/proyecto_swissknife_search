@@ -34,8 +34,9 @@ def gifresults():
     q = request.forms.get('q')
     limit = request.forms.get('limit')
     lista_gifs = []
-    with open ("keygif.txt","r") as gifkey:
-        keygif = gifkey.read()
+    keygif = os.environ["keygif"]
+    #with open ("keygif.txt","r") as gifkey:
+    #    keygif = gifkey.read()
     payload = {"q":q,"fmt":"json","limit":limit,"api_key":keygif}
     r = requests.get('http://api.giphy.com/v1/gifs/search?',params=payload)
     print r.url
@@ -88,16 +89,15 @@ def pictureresults():
     lista_imagenes = []
     #with open ("keypicture.txt","r") as picturekey:
     #    keypicture = picturekey.read()
-    keypicture =  os.environ["keypicture"]
+    keypicture = os.environ["keypicture"]
     payload3 = {"method":"flickr.photos.search","api_key":keypicture,"text":text,"sort":sort,"per_page":per_page,"format":"json"}
     r3 = requests.get('https://api.flickr.com/services/rest/?',params=payload3)
     print r3.text
-    print r3.url
-#    imagenes = r3.text
-#    busquedaimagen = json.loads(imagenes)
+    imagenes = r3.text
+    busquedaimagen = json.loads(imagenes[14:-1])
     if r3.status_code == 200:
-#        for imagen in busquedaimagen[""]:
-#            lista_imagenes.append(video[""])
+        for imagen in busquedaimagen["photos"]["photo"]:
+            lista_imagenes.append(imagen["title"])
         return template ("pictureresults.tpl",text=text,per_page=per_page,sort=sort,lista_imagenes=lista_imagenes)
     else:
         return template ("error.tpl")
