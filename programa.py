@@ -110,6 +110,7 @@ def song():
 
 @route("/songresults",method="post")
 def songresults():
+    lista_canciones = []
     return template ("songresults.tpl")
 
 ############################################################################################################################################
