@@ -3,6 +3,7 @@
 from bottle import route,template,run,static_file,error,request
 import json
 import requests
+import os
 
 ############################################################################################################################################
 
@@ -85,11 +86,13 @@ def pictureresults():
     sort = request.forms.get("sort")
     per_page = request.forms.get("per_page")
     lista_imagenes = []
-    with open ("keypicture.txt","r") as picturekey:
-        keypicture = picturekey.read()
+    #with open ("keypicture.txt","r") as picturekey:
+    #    keypicture = picturekey.read()
+    keypicture =  os.environ["keypicture"]
     payload3 = {"method":"flickr.photos.search","api_key":keypicture,"text":text,"sort":sort,"per_page":per_page,"format":"json"}
     r3 = requests.get('https://api.flickr.com/services/rest/?',params=payload3)
     print r3.text
+    print r3.url
 #    imagenes = r3.text
 #    busquedaimagen = json.loads(imagenes)
     if r3.status_code == 200:
