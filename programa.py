@@ -45,7 +45,7 @@ def gifresults():
     busquedagif = json.loads(gifs)
     if r.status_code == 200:
         for gif in busquedagif["data"]:
-            lista_gifs.append(gif["images"]["url"])
+            lista_gifs.append(gif["images"]["fixed_height"]["url"])
         return template ("gifresults.tpl",q=q,limit=limit,lista_gifs=lista_gifs)
     else:
         return template ("error.tpl")

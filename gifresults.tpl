@@ -3,16 +3,16 @@
 <!-- Main -->
 		<div id="main">
 			<div class="container">
-				<div class="row"> 
+				<div class="row">
 					
 					<!-- Content -->
 					<div id="content" class="8u skel-cell-important">
 						<section>
 							%for gif in lista_gifs:
 								<ul>
-            								<li>{{gif}}</li> 
+            								<li><img src="{{gif}}"/></li>
 								</ul>
-							%end 
+							%end
 
 							<br/>
 
