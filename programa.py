@@ -62,12 +62,15 @@ def videoresults():
     order = request.forms.get('order')
     q = request.forms.get('q')
     lista_videos = []
+    lista_id = []
     with open ("keyvideo.txt","r") as videokey:
         keyvideo = videokey.read()
     payload2 = {"part":"snippet","ForMine":"true","maxResults":maxResults,"order":order,"q":q,"type":"video","key":keyvideo}
     r2 = requests.get('https://www.googleapis.com/youtube/v3/search?',params=payload2)
     videos = r2.text
     busquedavideo = json.loads(videos)
+    print r2.text
+    print r2.url
     if r2.status_code == 200:
         for video in busquedavideo["items"]:
             lista_videos.append(video["snippet"]["title"])
