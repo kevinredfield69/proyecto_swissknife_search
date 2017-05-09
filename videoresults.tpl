@@ -13,9 +13,9 @@
 						<hr/>
 
 						<br/>
-							%for video in lista_videos:
+							%for id in lista_ids:
 								<ul>
-            								<li>{{video}}</li> 
+            								<li><iframe width="560" height="315" src="https://www.youtube.com/embed/{{id}}" frameborder="0" allowfullscreen></iframe></li> 
 								</ul>
 							%end
 

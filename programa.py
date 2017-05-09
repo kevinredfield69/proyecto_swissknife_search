@@ -57,7 +57,6 @@ def videoresults():
     maxResults = request.forms.get('maxResults')
     order = request.forms.get('order')
     q = request.forms.get('q')
-    lista_videos = []
     lista_ids = []
     with open ("keyvideo.txt","r") as videokey:
         keyvideo = videokey.read()
@@ -65,14 +64,10 @@ def videoresults():
     r2 = requests.get('https://www.googleapis.com/youtube/v3/search?',params=payload2)
     videos = r2.text
     busquedavideo = json.loads(videos)
-    print r2.text
-    print r2.url
     if r2.status_code == 200:
         for video in busquedavideo["items"]:
-            lista_videos.append(video["snippet"]["title"])
-        for video2 in busquedavideo["items"]:
-            lista_ids.append(video2["videoId"])
-        return template ("videoresults.tpl",maxResults=maxResults,q=q,order=order,lista_videos=lista_videos,lista_ids=lista_ids)
+            lista_ids.append(video["id"]["videoId"])
+        return template ("videoresults.tpl",maxResults=maxResults,q=q,order=order,lista_ids=lista_ids)
     else:
         return template ("error.tpl")
 
@@ -88,12 +83,11 @@ def pictureresults():
     sort = request.forms.get("sort")
     per_page = request.forms.get("per_page")
     lista_imagenes = []
-    #with open ("keypicture.txt","r") as picturekey:
-    #    keypicture = picturekey.read()
     keypicture = os.environ["keypicture"]
     payload3 = {"method":"flickr.photos.search","api_key":keypicture,"text":text,"sort":sort,"per_page":per_page,"format":"json","extra":"url_o,url_s"}
     r3 = requests.get('https://api.flickr.com/services/rest/?',params=payload3)
     print r3.text
+    print r3.url
     imagenes = r3.text
     busquedaimagen = json.loads(imagenes[14:-1])
     if r3.status_code == 200:
