@@ -35,13 +35,9 @@ def gifresults():
     limit = request.forms.get('limit')
     lista_gifs = []
     keygif = os.environ["keygif"]
-    #with open ("keygif.txt","r") as gifkey:
-    #    keygif = gifkey.read()
     payload = {"q":q,"fmt":"json","limit":limit,"api_key":keygif}
     r = requests.get('http://api.giphy.com/v1/gifs/search?',params=payload)
-    print r.url
     gifs = r.text
-    print r.text
     busquedagif = json.loads(gifs)
     if r.status_code == 200:
         for gif in busquedagif["data"]:
@@ -62,7 +58,7 @@ def videoresults():
     order = request.forms.get('order')
     q = request.forms.get('q')
     lista_videos = []
-    lista_id = []
+    lista_ids = []
     with open ("keyvideo.txt","r") as videokey:
         keyvideo = videokey.read()
     payload2 = {"part":"snippet","ForMine":"true","maxResults":maxResults,"order":order,"q":q,"type":"video","key":keyvideo}
@@ -74,7 +70,9 @@ def videoresults():
     if r2.status_code == 200:
         for video in busquedavideo["items"]:
             lista_videos.append(video["snippet"]["title"])
-        return template ("videoresults.tpl",maxResults=maxResults,q=q,order=order,lista_videos=lista_videos)
+        for video2 in busquedavideo["items"]:
+            lista_ids.append(video2["videoId"])
+        return template ("videoresults.tpl",maxResults=maxResults,q=q,order=order,lista_videos=lista_videos,lista_ids=lista_ids)
     else:
         return template ("error.tpl")
 
