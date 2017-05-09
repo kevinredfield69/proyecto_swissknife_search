@@ -5,8 +5,6 @@ import json
 import requests
 import os
 
-############################################################################################################################################
-
 @route("/swissknife",method="get")
 def inicio():
     return template ("index.tpl")
@@ -23,8 +21,6 @@ def contact():
 def panel():
     return template ("panel.tpl")
 
-############################################################################################################################################
-
 @route("/gif",method="get")
 def gif():
     return template ("gif.tpl")
@@ -40,7 +36,6 @@ def gifresults():
     r = requests.get('http://api.giphy.com/v1/gifs/search?',params=payload)
     gifs = r.text
     busquedagif = json.loads(gifs)
-    print r.url
     if r.status_code == 200:
         for gif in busquedagif["data"]:
             lista_gifs.append(gif["images"]["fixed_height"]["url"])
@@ -49,8 +44,6 @@ def gifresults():
         return template ("gifresults.tpl",q=q,limit=limit,lista_gifs=lista_gifs,titulos_gifs=titulos_gifs)
     else:
         return template ("error.tpl")
-
-############################################################################################################################################
 
 @route("/video",method="get")
 def video():
@@ -69,7 +62,6 @@ def videoresults():
     r2 = requests.get('https://www.googleapis.com/youtube/v3/search?',params=payload2)
     videos = r2.text
     busquedavideo = json.loads(videos)
-    print r2.url
     if r2.status_code == 200:
         for video in busquedavideo["items"]:
             lista_ids.append(video["id"]["videoId"])
@@ -78,8 +70,6 @@ def videoresults():
         return template ("videoresults.tpl",maxResults=maxResults,q=q,order=order,lista_ids=lista_ids,titulos_videos=titulos_videos)
     else:
         return template ("error.tpl")
-
-############################################################################################################################################
 
 @route("/picture",method="get")
 def picture():
@@ -94,8 +84,6 @@ def pictureresults():
     r3 = requests.get('https://api.flickr.com/services/rest',params=payload3)
     lista_imagenes = []
     titulos_imagenes = []
-    print r3.text
-    print r3.url
     if r3.status_code == 200:
         imagenes = r3.text
         busquedaimagen = json.loads(imagenes[14:-1])
@@ -108,8 +96,6 @@ def pictureresults():
     else:
         return template ("error.tpl")
 
-############################################################################################################################################
-
 @route("/song",method="get")
 def song():
     return template ("song.tpl")
@@ -118,8 +104,6 @@ def song():
 def songresults():
     lista_canciones = []
     return template ("songresults.tpl")
-
-############################################################################################################################################
 
 @route('/css/<filepath:path>')
 def server_static(filepath):
