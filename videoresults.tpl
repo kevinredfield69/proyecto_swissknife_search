@@ -13,9 +13,10 @@
 						<hr/>
 
 						<br/>
-							%for id in lista_ids:
+							%for id,video in zip(lista_ids,titulos_videos):
 								<ul>
-            								<li><iframe width="560" height="315" src="https://www.youtube.com/embed/{{id}}" frameborder="0" allowfullscreen></iframe></li> 
+									<li><p><strong>{{video}}</strong></p></li>
+            								<li><iframe width="600" height="400" src="https://www.youtube.com/embed/{{id}}" frameborder="0" allowfullscreen></iframe></li> 
 								</ul>
 							%end
 

@@ -8,14 +8,15 @@
 					<!-- Content -->
 					<div id="content" class="8u skel-cell-important">
 						<section>
-						<h2><strong>Se han encontrado {{per_page}} resultados sobre la búsqueda {{text}} ordenados por {{sort}}:</strong></h2>
+						<h2><strong>Se han encontrado {{per_page}} resultados sobre la búsqueda {{text}}:</strong></h2>
 						<br/>
 						<hr/>
 
 						<br/>
-							%for imagen,ids in zip(lista_imagenes,lista_ids2):
+							%for titulo,imagen in zip(titulos_imagenes,lista_imagenes):
 								<ul>
-            								<li><img src="{{id}}>{{imagen}}</li> 
+									<li><p><strong>{{titulo}}</strong></p></li>
+            								<li><img src="{{imagen[0]}}"/></a></li> 
 								</ul>
 							%end
 

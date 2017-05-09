@@ -34,15 +34,19 @@ def gifresults():
     q = request.forms.get('q')
     limit = request.forms.get('limit')
     lista_gifs = []
+    titulos_gifs = []
     keygif = os.environ["keygif"]
     payload = {"q":q,"fmt":"json","limit":limit,"api_key":keygif}
     r = requests.get('http://api.giphy.com/v1/gifs/search?',params=payload)
     gifs = r.text
     busquedagif = json.loads(gifs)
+    print r.url
     if r.status_code == 200:
         for gif in busquedagif["data"]:
             lista_gifs.append(gif["images"]["fixed_height"]["url"])
-        return template ("gifresults.tpl",q=q,limit=limit,lista_gifs=lista_gifs)
+        for gif2 in busquedagif["data"]:
+            titulos_gifs.append(gif2["slug"])
+        return template ("gifresults.tpl",q=q,limit=limit,lista_gifs=lista_gifs,titulos_gifs=titulos_gifs)
     else:
         return template ("error.tpl")
 
@@ -58,16 +62,20 @@ def videoresults():
     order = request.forms.get('order')
     q = request.forms.get('q')
     lista_ids = []
+    titulos_videos = []
     with open ("keyvideo.txt","r") as videokey:
         keyvideo = videokey.read()
     payload2 = {"part":"snippet","ForMine":"true","maxResults":maxResults,"order":order,"q":q,"type":"video","key":keyvideo}
     r2 = requests.get('https://www.googleapis.com/youtube/v3/search?',params=payload2)
     videos = r2.text
     busquedavideo = json.loads(videos)
+    print r2.url
     if r2.status_code == 200:
         for video in busquedavideo["items"]:
             lista_ids.append(video["id"]["videoId"])
-        return template ("videoresults.tpl",maxResults=maxResults,q=q,order=order,lista_ids=lista_ids)
+        for video2 in busquedavideo["items"]:
+            titulos_videos.append(video2["snippet"]["title"])
+        return template ("videoresults.tpl",maxResults=maxResults,q=q,order=order,lista_ids=lista_ids,titulos_videos=titulos_videos)
     else:
         return template ("error.tpl")
 
@@ -80,23 +88,23 @@ def picture():
 @route("/pictureresults",method="post")
 def pictureresults():
     text = request.forms.get("text")
-    sort = request.forms.get("sort")
     per_page = request.forms.get("per_page")
-    lista_imagenes = []
-    lista_ids2 = []
     keypicture = os.environ["keypicture"]
-    payload3 = {"method":"flickr.photos.search","api_key":keypicture,"text":text,"sort":sort,"per_page":per_page,"format":"json","extra":"url_o,url_s"}
-    r3 = requests.get('https://api.flickr.com/services/rest/?',params=payload3)
+    payload3 = {"method":"flickr.photos.search","api_key":keypicture,"text":text,"per_page":per_page,"extras":"url_o,url_s","format":"json"}
+    r3 = requests.get('https://api.flickr.com/services/rest',params=payload3)
+    lista_imagenes = []
+    titulos_imagenes = []
     print r3.text
     print r3.url
-    imagenes = r3.text
-    busquedaimagen = json.loads(imagenes[14:-1])
     if r3.status_code == 200:
+        imagenes = r3.text
+        busquedaimagen = json.loads(imagenes[14:-1])
         for imagen in busquedaimagen["photos"]["photo"]:
-            lista_imagenes.append(imagen["title"])
-        for ids in busquedaimagen["photos"]["photo"]:
-            lista_ids2.append(ids["id"])
-        return template ("pictureresults.tpl",text=text,per_page=per_page,sort=sort,lista_imagenes=lista_imagenes,lista_ids2=lista_ids2)
+            if imagen.has_key("url_o"):
+                lista_imagenes.append([imagen['url_s'],imagen["url_o"]])
+        for titulo in busquedaimagen["photos"]["photo"]:
+            titulos_imagenes.append(titulo["title"])
+        return template ("pictureresults.tpl",text=text,per_page=per_page,lista_imagenes=lista_imagenes,titulos_imagenes=titulos_imagenes)
     else:
         return template ("error.tpl")
 
