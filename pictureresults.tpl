@@ -13,9 +13,9 @@
 						<hr/>
 
 						<br/>
-							%for imagen in lista_imagenes:
+							%for imagen,ids in zip(lista_imagenes,lista_ids2):
 								<ul>
-            								<li>{{imagen}}</li> 
+            								<li><img src="{{id}}>{{imagen}}</li> 
 								</ul>
 							%end
 

@@ -83,6 +83,7 @@ def pictureresults():
     sort = request.forms.get("sort")
     per_page = request.forms.get("per_page")
     lista_imagenes = []
+    lista_ids2 = []
     keypicture = os.environ["keypicture"]
     payload3 = {"method":"flickr.photos.search","api_key":keypicture,"text":text,"sort":sort,"per_page":per_page,"format":"json","extra":"url_o,url_s"}
     r3 = requests.get('https://api.flickr.com/services/rest/?',params=payload3)
@@ -93,7 +94,9 @@ def pictureresults():
     if r3.status_code == 200:
         for imagen in busquedaimagen["photos"]["photo"]:
             lista_imagenes.append(imagen["title"])
-        return template ("pictureresults.tpl",text=text,per_page=per_page,sort=sort,lista_imagenes=lista_imagenes)
+        for ids in busquedaimagen["photos"]["photo"]:
+            lista_ids2.append(ids["id"])
+        return template ("pictureresults.tpl",text=text,per_page=per_page,sort=sort,lista_imagenes=lista_imagenes,lista_ids2=lista_ids2)
     else:
         return template ("error.tpl")
 
