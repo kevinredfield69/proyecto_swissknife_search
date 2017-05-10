@@ -107,6 +107,8 @@ def songresults():
     keysong = os.environ["keysong"]
     payload4 = {"method":"track.search","api_key":keysong,"format":"json","track":track,"limit":limit}
     r4 = requests.get('http://ws.audioscrobbler.com/2.0/',params=payload4)
+    print r4.text
+    print r4.url
     lista_canciones = []
     titulos_canciones = []
     if r4.status_code == 200:
@@ -116,7 +118,7 @@ def songresults():
             lista_canciones.append(cancion[""])
         for cancion2 in busquedacancion[""]:
             titulos_canciones.append(cancion2[""])
-    return template ("songresults.tpl")
+    return template ("songresults.tpl",track=track,limit=limit,lista_canciones=lista_canciones,titulos_canciones=titulos_canciones)
 
 @route('/css/<filepath:path>')
 def server_static(filepath):
