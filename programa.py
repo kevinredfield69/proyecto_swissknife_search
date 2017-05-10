@@ -104,9 +104,8 @@ def song():
 def songresults():
     track = request.forms.get("track")
     limit = request.forms.get("limit")
-    artist = request.forms.get("artist")
     keysong = os.environ["keysong"]
-    payload4 = {"method":"track.search","api_key":keysong,"format":"json","track":track,"limit":limit,"artist":artist}
+    payload4 = {"method":"track.search","api_key":keysong,"format":"json","track":track,"limit":limit}
     r4 = requests.get('http://ws.audioscrobbler.com/2.0/',params=payload4)
     lista_canciones = []
     titulos_canciones = []
