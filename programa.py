@@ -111,17 +111,19 @@ def songresults():
     print r4.url
     lista_canciones = []
     titulos_canciones = []
-#    nombres_artistas = []
+    imagenes_canciones = []
     if r4.status_code == 200:
         canciones = r4.text
         busquedacancion = json.loads(canciones)
         for cancion in busquedacancion["results"]["trackmatches"]["track"]:
-            lista_canciones.append(cancion["url"])
+            lista_canciones.append(cancion["artist"])
         for cancion2 in busquedacancion["results"]["trackmatches"]["track"]:
             titulos_canciones.append(cancion2["name"])
+        for cancion3 in busquedacancion["results"]["trackmatches"]["track"]:
+            imagenes_canciones.append(cancion3["image"][3]["#text"])
 #        for cancion3 in busquedacancion["results"]["trackmatches"]["track"]:
 #            nombres_artistas.append(cancion3["artist"])
-    return template ("songresults.tpl",track=track,limit=limit,lista_canciones=lista_canciones,titulos_canciones=titulos_canciones)
+    return template ("songresults.tpl",track=track,limit=limit,lista_canciones=lista_canciones,titulos_canciones=titulos_canciones,imagenes_canciones=imagenes_canciones)
 
 @route('/css/<filepath:path>')
 def server_static(filepath):

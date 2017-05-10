@@ -8,16 +8,16 @@
 					<!-- Content -->
 					<div id="content" class="8u skel-cell-important">
 						<section>
-							%for cancion,cancion2 in zip(lista_canciones,titulos_canciones):
+							%for cancion,cancion2,cancion3 in zip(lista_canciones,titulos_canciones,imagenes_canciones):
 								<ul>
-									<li><p><strong>{{cancion2}}</strong></p></li>
-            								<li><img width="600" height="400" src="{{cancion}}"/></li>
+									<li><p><strong>{{cancion}} - </strong>{{cancion2}}</p></li>
+									<li><img width="600" height="400" src="{{cancion3}}"/></li>
 								</ul>
 							%end
 
 							<br/>
 
-							<p><strong><a href="gif">Volver Al Buscador De GIFs SwissKnife (Search)</a></strong></p>
+							<p><strong><a href="song">Volver Al Buscador De Canciones SwissKnife (Search)</a></strong></p>
 
 							<br/>
 							
