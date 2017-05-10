@@ -46,7 +46,7 @@
 
 							<br/><br/>
 
-							<p><strong><a href="panel">Volver Al Panel De Buscadores SwissKnife (Search)</a></strong></p>
+							<p><strong><a href="panel" class="button">Volver Al Panel De Buscadores</a></strong></p>
 
 						</section>
 					</div>

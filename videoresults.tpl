@@ -22,11 +22,7 @@
 
 							<br/>
 
-							<p><strong><a href="video">Volver Al Buscador De Vídeos SwissKnife (Search)</a></strong></p>
-
-							<br/>
-							
-							<p><strong><a href="swissknife">Volver A La Página Principal SwissKnife (Search)</a></strong></p>	
+							<p><strong><a href="video" class="button">Volver Al Buscador De Vídeo</a></strong></p>
 						</section>
 					</div>
 					

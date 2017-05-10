@@ -35,7 +35,7 @@
 
 					<div id="content" class="5u">
 							<br/>					
-							<p><strong><a href="swissknife">Volver A La Página Principal SwissKnife (Search)</a></strong></p>
+							<p><strong><a href="swissknife" class="button">Volver A La Página Principal</a></strong></p>
 					</div>
 
 						</section>

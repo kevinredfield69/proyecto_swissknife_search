@@ -21,7 +21,7 @@
 
 							<br/>
 
-							<p><strong><a href="panel">Acceder A La Aplicación SwissKnife (Search) >>></a></strong></p>
+							<p><strong><a href="panel" class="button">Acceder A La Aplicación SwissKnife (Search) >>></a></strong></p>
 
 						</section>
 					</div>

@@ -22,11 +22,8 @@
 
 							<br/>
 
-							<p><strong><a href="picture">Volver Al Buscador De Imágenes SwissKnife (Search)</a></strong></p>
+							<p><strong><a href="picture" class="button">Volver Al Buscador De Imagen</a></strong></p>
 
-							<br/>
-							
-							<p><strong><a href="swissknife">Volver A La Página Principal SwissKnife (Search)</a></strong></p>	
 						</section>
 					</div>
 					

@@ -17,11 +17,8 @@
 
 							<br/>
 
-							<p><strong><a href="song">Volver Al Buscador De Canciones SwissKnife (Search)</a></strong></p>
+							<p><strong><a href="song" class="button">Volver Al Buscador De Canción</a></strong></p>
 
-							<br/>
-							
-							<p><strong><a href="swissknife">Volver A La Página Principal SwissKnife (Search)</a></strong></p>	
 
 						</section>
 					</div>
