@@ -102,7 +102,14 @@ def song():
 
 @route("/songresults",method="post")
 def songresults():
+    keysong = os.environ["keysong"]
+    payload4 = {}
+    r4 = requests.get('')
     lista_canciones = []
+    titulos_canciones = []
+    if r4.status_code == 200:
+        canciones = r4.text
+        busquedacancion = json.loads(canciones)
     return template ("songresults.tpl")
 
 @route('/css/<filepath:path>')
