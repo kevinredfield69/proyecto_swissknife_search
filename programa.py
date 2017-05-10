@@ -112,6 +112,10 @@ def songresults():
     if r4.status_code == 200:
         canciones = r4.text
         busquedacancion = json.loads(canciones)
+        for cancion in busquedacancion[""]:
+            lista_canciones.append(cancion[""])
+        for cancion2 in busquedacancion[""]:
+            titulos_canciones.append(cancion2[""])
     return template ("songresults.tpl")
 
 @route('/css/<filepath:path>')
