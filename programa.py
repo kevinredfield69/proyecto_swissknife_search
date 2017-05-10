@@ -103,8 +103,8 @@ def song():
 @route("/songresults",method="post")
 def songresults():
     keysong = os.environ["keysong"]
-    payload4 = {}
-    r4 = requests.get('')
+    payload4 = {"method":"track.search","api_key":keysong,"format":"json"}
+    r4 = requests.get('http://ws.audioscrobbler.com/2.0/')
     lista_canciones = []
     titulos_canciones = []
     if r4.status_code == 200:
