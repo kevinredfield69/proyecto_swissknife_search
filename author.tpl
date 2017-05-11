@@ -8,10 +8,7 @@
 					<!-- Content -->
 					<div id="content" class="8u skel-cell-important">
 						<section>
-							<header>
-								<h2>Autor De La Página</h2>
-							</header>
-							<br/>
+
 							<p>Hola muy buenas a todos. Mi nombre es Kevin Ariza García, y soy un estudiante de informática, que está cursando el Ciclo Formativo de Grado Superior de Administración de Sistemas Informáticos y Redes, en el Instituto de Educación Secundaria Gonzalo Nazareno. Anteriormente, he adquirido el título de Técnico Medio en el Ciclo Formativo de Grado Medio en Sistemas Microinformáticos y Redes, también en el Instituto de Educación Secundaria Gonzalo Nazareno.</p>
 							<br/>
 
@@ -31,7 +28,7 @@
 
 							<br/>
 
-							<p><strong><a href="swissknife">Volver A La Página Principal SwissKnife (Search)</a></strong></p>
+							<p><strong><a href="swissknife" class="button">Volver A La Página Principal</a></strong></p>
 
 						</section>
 					</div>
