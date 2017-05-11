@@ -15,8 +15,6 @@
 								</ul>
 							%end
 
-							<br/>
-
 							<p><strong><a href="gif" class="button">Volver Al Buscador De GIF</a></strong></p>
 
 						</section>

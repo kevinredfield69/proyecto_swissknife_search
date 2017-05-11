@@ -20,8 +20,6 @@
 								</ul>
 							%end
 
-							<br/>
-
 							<p><strong><a href="picture" class="button">Volver Al Buscador De Imagen</a></strong></p>
 
 						</section>

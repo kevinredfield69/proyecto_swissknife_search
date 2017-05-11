@@ -20,8 +20,6 @@
 								</ul>
 							%end
 
-							<br/>
-
 							<p><strong><a href="video" class="button">Volver Al Buscador De Vídeo</a></strong></p>
 						</section>
 					</div>

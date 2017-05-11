@@ -15,8 +15,6 @@
 								</ul>
 							%end
 
-							<br/>
-
 							<p><strong><a href="song" class="button">Volver Al Buscador De Canción</a></strong></p>
 
 

@@ -33,8 +33,7 @@
 							<a href="song" class="image full"><img src="/css/images/song1.jpg" alt="" /></a>
 					</div>
 
-					<div id="content" class="5u">
-							<br/>					
+					<div id="content" class="5u">					
 							<p><strong><a href="swissknife" class="button">Volver A La Página Principal</a></strong></p>
 					</div>
 

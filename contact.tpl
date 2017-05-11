@@ -114,7 +114,6 @@
 									<span class="completo">
 									<br/>
 										<strong><label for="Calificacion">Calificacion</label></strong>
-										<br/><br/>
 										<select id="Calificacion" name="Calificacion">
 											<option value="" selected="selected">-	selecciona   -</option>
 											<option value="0">0</option>

@@ -45,7 +45,7 @@
 
 							</form>
 
-							<br/><br/>
+							<br/>
 
 							<p><strong><a href="panel" class="button">Volver Al Panel De Buscadores</a></strong></p>
 
