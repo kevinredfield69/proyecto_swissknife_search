@@ -32,8 +32,10 @@
 								<input type="reset" value = "Limpiar">
 
 							</form>
-
-							<br/>
+							
+							<br/><br/>
+							
+							<p><img src="/css/images/metallica.jpg" alt="" /></p>
 
 							<p><strong><a href="panel" class="button">Volver Al Panel De Buscadores</a></strong></p>
 
