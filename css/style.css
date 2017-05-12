@@ -18,7 +18,7 @@
 		font-family: 'Times New Roman';
 		font-size: 12pt;
 		line-height: 1.5em;
-		color: #04B486;
+		color: #000;
 	}
 
 	h1,h2,h3,h4,h5,h6
@@ -38,7 +38,7 @@
 	strong, b
 	{
 		font-weight: bold;
-		color: #3ADF00;
+		color: #FFF;
 	}
 	
 	em, i
@@ -266,7 +266,7 @@
 			display: inline-block;
 			margin-top: 2em;
 			padding: 0.90em 1.5em;
-			background: #e95d3c;
+			background: #B43104;
 			border-radius: 40px;
 			text-decoration: none;
 			text-transform: uppercase;
@@ -293,7 +293,7 @@
 	#header
 	{
 		position: relative;
-		background: #585858 no-repeat;
+		background: #DBA901 no-repeat;
 		background-size: cover;
 	}
 
@@ -333,7 +333,7 @@
 	#main
 	{
 		position: relative;
-		background: #424242;
+		background: #B18904;
 		text-align: justify;
 	}
 

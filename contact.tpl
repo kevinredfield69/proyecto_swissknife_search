@@ -101,11 +101,11 @@
 								<div>
 									<br/>
     									<span class="completo">									
-      										<strong><label>¿Te Ha Gustado La Realizacion De Mi Pagina Web?</label></strong>
+      										<strong><label>¿Te Ha Gustado La Realizacion De Mi Aplicación Web?</label></strong>
 										<br/><br/>		
 
-										<input type="radio" name="Te ha gustado la realizacion de mi pagina Web" value="Si"/>Sí
-										<input type="radio" name="Te ha gustado la realizacion de mi pagina Web" value="No"/>No<br/>
+										<input type="radio" name="Te ha gustado la realizacion de mi Aplicacion Web" value="Si"/>Sí
+										<input type="radio" name="Te ha gustado la realizacion de mi Aplicacion Web" value="No"/>No<br/>
 									</span>
 
 								<br/>
