@@ -1,4 +1,4 @@
-%include('header.tpl',title='Opiniones')
+%include('header.tpl',title='Contacto')
 
 <!-- Main -->
 		<div id="main">
