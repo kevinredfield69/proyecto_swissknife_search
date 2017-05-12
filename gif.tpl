@@ -8,6 +8,7 @@
 					<!-- Content -->
 					<div id="content" class="8u skel-cell-important">
 						<section>
+
 							<form action='/gifresults' method='post'>
 								<strong><label>Escribir GIF A Buscar:</label></strong>
 								<input type = "text" name = 'q' required/>

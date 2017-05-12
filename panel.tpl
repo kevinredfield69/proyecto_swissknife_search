@@ -8,6 +8,7 @@
 					<!-- Content -->
 					<div id="content" class="5u">
 						<section>
+
 							<h2>Buscador De GIFS (SwissKnife GIF)</h2>
 							<br/>
 							<a href="gif" class="image full"><img src="/css/images/gif1.gif" alt="" /></a>
