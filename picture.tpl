@@ -46,7 +46,7 @@
 
 							<br/><br/>
 							
-							<p><img src="/css/images/gif2.gif" alt="" /></p>
+							<p><img src="/css/images/resident.jpg" alt="" /></p>
 
 							<p><strong><a href="panel" class="button">Volver Al Panel De Buscadores</a></strong></p>
 
