@@ -335,11 +335,17 @@
 		position: relative;
 		background: #B18904;
 		text-align: justify;
+		border: 30px solid silver;
 	}
 
 	#main header
 	{
 		font-size: .8em;
+	}
+
+	#main form
+	{
+		border: 1px solid #FFF;
 	}
 
 /*********************************************************************************/
