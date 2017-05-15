@@ -1,1 +1,1 @@
-AIzaSyAXZU_klDyjCtBARY2rAxhnYRGyNgqq97Q 
+export keyvideo="AIzaSyAXZU_klDyjCtBARY2rAxhnYRGyNgqq97Q"
