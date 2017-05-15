@@ -18,7 +18,7 @@
 		font-family: 'Times New Roman';
 		font-size: 12pt;
 		line-height: 1.5em;
-		color: #000;
+		color: #000000;
 	}
 
 	h1
@@ -235,7 +235,11 @@
 				text-decoration: underline;
 			}
 			
-		ul.style {
+		ul.style 
+		{
+			padding: 1em 1em;
+			border: 5px solid;
+			border-color: #FFF;			
 		}
 		
 		ul.style li {
@@ -280,12 +284,12 @@
 			display: inline-block;
 			margin-top: 2em;
 			padding: 0.90em 1.5em;
-			background: #B43104;
+			background: #FFF;
 			border-radius: 40px;
 			text-decoration: none;
 			text-transform: uppercase;
 			font-size: 1.1em;
-			color: #FFF;
+			color: #000;
 			-moz-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
 			-webkit-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
 			-o-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
@@ -296,7 +300,7 @@
 
 			.button:hover
 			{
-				background: #de3d27;
+				background: #000;
 				color: #FFF !important;
 			}
 			
@@ -307,7 +311,7 @@
 	#header
 	{
 		position: relative;
-		background: #DBA901 no-repeat;
+		background: #688A08 no-repeat;
 		background-size: cover;
 	}
 
@@ -347,7 +351,7 @@
 	#main
 	{
 		position: relative;
-		background: #B18904;
+		background: #38610B;
 		text-align: justify;
 		border: 15px solid silver;
 	}

@@ -9,7 +9,7 @@
 					<div id="content" class="8u skel-cell-important">
 						<section>
 							<header>
-								<h2>¡Bienvenidos A SwissKnife (Search)!</h2>
+								<h2><strong>¡Bienvenidos A SwissKnife (Search)!</strong></h2>
 							</header>
 							<br/>
 							<p><img src="/css/images/SK1.jpg" alt="" /></p>
@@ -27,30 +27,31 @@
 					</div>
 					
 					<!-- Sidebar -->
+
 					<div id="sidebar" class="4u">
 						<section>
-							<h1>¿Que Es SwissKnife (Search)?</h1>
-															
-							<br/>							
+							<ul>
 
-							<ul class="style">
 								<li>
-                                    					<img src="/css/images/SKD1.png" alt="" />
+									<p><strong>¿Que Es SwissKnife (Search)?</strong></p>
+									<br/>
 									<p class="text">SwissKnife (Search) es una Aplicación Web, donde podemos realizar diferentes búsquedas de información, que podemos encontrar día a día en Internet. Para éste caso, se realizarán busquedas de Imágenes, Canciones, Vídeos y Gifs.</p>
 								</li>
+
 								<li>
-                                    					<h1>¿Que Funciones Realiza SwissKnife (Search)?</h1>
+                                    					<p><strong>¿Que Funciones Realiza SwissKnife (Search)?</strong></p>
 									<br/>	
-									<img src="/css/images/SKD1.png" alt="" />	
 									<p class="text">Realizar criterios de búsqueda, sobre una imagen que queremos encontrar, una cacnción que queremos escuchar, un vídeo que queremos ver y un gif que queremos encontrar, en tiempo real, y de forma rápida.</p>
 								</li>
+
 								<li>
-									<h1>¿Donde Surgió La Idea y Nombre de SwissKnife Search?</h1>
+									<p><strong>¿Donde Surgió La Idea De SwissKnife Search?</strong></p>
 									<br/>
-									<img src="/css/images/SKD1.png" alt="" />
 									<p class="text">La idea del nombre de SwissKnife (Search) surgió, a través de la funcionalidades que realiza la Aplicación Web, dando a entender que es una Navaja Suiza (Swiss Knife), que es un utensilio, donde tiene varias herramientas útiles, en nuestro día a día y vida cotidiana.</p>
+
 								</li>
 							</ul>
+
 						</section>
 					</div>
 				</div>

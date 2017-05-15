@@ -15,7 +15,6 @@
 							%for titulo,imagen in zip(titulos_imagenes,lista_imagenes):
 								<ul>
 									<li><h2><strong>{{titulo}}</strong></h2></li>
-									<li><br/></li>
             								<li><img width="600" height="400" src="{{imagen[0]}}"/></li> 
 								</ul>
 							%end

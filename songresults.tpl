@@ -16,7 +16,6 @@
 							%for cancion,cancion2,cancion3 in zip(lista_canciones,titulos_canciones,imagenes_canciones):
 								<ul>
 									<li><h2><strong>{{cancion}} - </strong>{{cancion2}}</h2></li>
-									<li><br/></li>
 									<li><img width="600" height="400" src="{{cancion3}}"/></li>
 								</ul>
 							%end
