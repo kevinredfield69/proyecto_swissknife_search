@@ -46,7 +46,7 @@
 						<li><a href="swissknife">Página Principal</a></li>
 						<li><a href="panel">Panel De Buscadores</a></li>
 						<li><a href="author">Sobre Mí</a></li>
-						<li><a href="contact">Contacto</a></li>
+						<li><a href="contact">Formulario De Contacto</a></li>
 					</ul>
 				</nav>
 			</div>

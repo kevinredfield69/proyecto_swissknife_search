@@ -16,9 +16,9 @@
 							%for gif,gif2 in zip(lista_gifs,titulos_gifs):
 								<ul>
 									<li><h2><strong>{{gif2}}</strong></h2></li>
-									<li><br/></li>
-            								<li><img width="600" height="400" src="{{gif}}"/></li>
+            								<li><img width="600" height="600" src="{{gif}}"/></li>
 								</ul>
+								<br/>
 							%end
 
 							<p><strong><a href="gif" class="button">Volver Al Buscador De GIF</a></strong></p>

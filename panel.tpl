@@ -9,27 +9,27 @@
 					<div id="content" class="5u">
 						<section>
 
-							<h2>Buscador De GIFS (SwissKnife GIF)</h2>
+							<h2><strong>Buscador De GIFS (SwissKnife GIF)</strong></h2>
 							<br/>
 							<a href="gif" class="image full"><img src="/css/images/gif1.gif" alt="" /></a>
 					</div>
 
 					<div id="content" class="5u">
-							<h2>Buscador De Imágenes (SwissKnife Picture)</h2>
+							<h2><strong>Buscador De Imágenes (SwissKnife Picture)</strong></h2>
 							<br/>
 							<a href="picture" class="image full"><img src="/css/images/imagen1.jpg" alt="" /></a>
 					</div>
 
 					<div id="content" class="5u">
 							<br/>
-							<h2>Buscador De Vídeos (SwissKnife Video)</h2>
+							<h2><strong>Buscador De Vídeos (SwissKnife Video)</strong></h2>
 							<br/>
 							<a href="video" class="image full"><img src="/css/images/video1.png" alt="" /></a>
 					</div>
 
 					<div id="content" class="5u">
 							<br/>
-							<h2>Buscador De Canciones (SwissKnife Song)</h2>
+							<h2><strong>Buscador De Canciones (SwissKnife Song)</strong></h2>
 							<br/>
 							<a href="song" class="image full"><img src="/css/images/song1.jpg" alt="" /></a>
 					</div>

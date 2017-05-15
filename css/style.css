@@ -99,7 +99,7 @@
 		font-style: italic;
 	}
 	
-	p, ul, ol, dl, table
+	p, ul, ol, dl,table
 	{
 		margin-bottom: 1em;
 	}
@@ -204,18 +204,18 @@
 
 	/* Lists */
 
-		ul.default
+		ul
 		{
-			margin: 0;
-			padding: 0;
+			margin: 1em;
+			padding: 5px;
 			list-style: none;
 		}
 		
-			ul.default li
+			ul li
 			{
-				padding: 0.60em 0em;
-				border-top: 1px solid;
-				border-color: rgba(255,255,255,.1);
+				padding: 1em 1em;
+				border: 5px solid;
+				border-color: #FFF;
 			}
 			
 			ul.default li:first-child
@@ -349,7 +349,7 @@
 		position: relative;
 		background: #B18904;
 		text-align: justify;
-		border: 30px solid silver;
+		border: 15px solid silver;
 	}
 
 	#main header
@@ -359,7 +359,8 @@
 
 	#main form
 	{
-		border: 1px solid #FFF;
+		border: 5px solid #FFF;
+		padding: 1em 1em;
 	}
 
 /*********************************************************************************/
