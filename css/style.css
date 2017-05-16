@@ -18,7 +18,7 @@
 		font-family: 'Times New Roman';
 		font-size: 12pt;
 		line-height: 1.5em;
-		color: #0B0B61;
+		color: #D7DF01;
 
 	}
 
@@ -36,7 +36,14 @@
 		font-size: 1.2em;		
 	}
 
-	h3,h4,h5,h6
+	h3
+	{
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 4em;		
+	}
+
+	h4,h5,h6
 	{
 		text-transform: uppercase;
 		font-weight: bold;
@@ -53,7 +60,7 @@
 	strong, b
 	{
 		font-weight: bold;
-		color: #FFF;
+		color: #74DF00;
 	}
 	
 	em, i

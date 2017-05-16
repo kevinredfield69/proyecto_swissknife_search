@@ -10,6 +10,10 @@
 
 						<section>
 
+							<h3>Buscador De GIF</h3>
+
+							<br/><br/>
+
 							<form action='/gifresults' method='post'>
 								<br/>
 								<strong><label>Escribir GIF A Buscar:</label></strong>
