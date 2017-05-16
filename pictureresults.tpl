@@ -19,7 +19,7 @@
 								</ul>
 							%end
 
-							<p><strong><a href="picture" class="button">Volver Al Buscador De Imagen</a></strong></p>
+							<p><strong><a href="picture" class="button">Volver A SwissKnife Picture</a></strong></p>
 
 						</section>
 					</div>

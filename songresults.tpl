@@ -21,7 +21,7 @@
 								</ul>
 							%end
 
-							<p><strong><a href="song" class="button">Volver Al Buscador De Canción</a></strong></p>
+							<p><strong><a href="song" class="button">Volver A SwissKnife Song</a></strong></p>
 
 
 						</section>

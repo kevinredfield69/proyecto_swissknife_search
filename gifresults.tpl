@@ -20,7 +20,7 @@
 								</ul>
 							%end
 
-							<p><strong><a href="gif" class="button">Volver Al Buscador De GIF</a></strong></p>
+							<p><strong><a href="gif" class="button">Volver A SwissKnife GIF</a></strong></p>
 
 						</section>
 					</div>

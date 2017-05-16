@@ -10,7 +10,7 @@
 
 						<section>
 
-							<h3>Buscador De GIF</h3>
+							<h3>SwissKnife GIF</h3>
 
 							<br/><br/>
 
