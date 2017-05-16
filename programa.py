@@ -41,7 +41,7 @@ def gifresults():
             lista_gifs.append(gif["images"]["fixed_height"]["url"])
         for gif2 in busquedagif["data"]:
             titulos_gifs.append(gif2["slug"])
-        return template ("gifresults.tpl",q=q,limit=limit,lista_gifs=lista_gifs,titulos_gifs=titulos_gifs)
+        return template ("gifresults.tpl",q=q,lista_gifs=lista_gifs,titulos_gifs=titulos_gifs)
     else:
         return template ("error.tpl")
 
@@ -66,7 +66,7 @@ def videoresults():
             lista_ids.append(video["id"]["videoId"])
         for video2 in busquedavideo["items"]:
             titulos_videos.append(video2["snippet"]["title"])
-        return template ("videoresults.tpl",maxResults=maxResults,q=q,order=order,lista_ids=lista_ids,titulos_videos=titulos_videos)
+        return template ("videoresults.tpl",q=q,order=order,lista_ids=lista_ids,titulos_videos=titulos_videos)
     else:
         return template ("error.tpl")
 
@@ -91,7 +91,7 @@ def pictureresults():
                 lista_imagenes.append([imagen['url_s'],imagen["url_o"]])
         for titulo in busquedaimagen["photos"]["photo"]:
             titulos_imagenes.append(titulo["title"])
-        return template ("pictureresults.tpl",text=text,per_page=per_page,lista_imagenes=lista_imagenes,titulos_imagenes=titulos_imagenes)
+        return template ("pictureresults.tpl",text=text,lista_imagenes=lista_imagenes,titulos_imagenes=titulos_imagenes)
     else:
         return template ("error.tpl")
 
@@ -106,12 +106,9 @@ def songresults():
     keysong = os.environ["keysong"]
     payload4 = {"method":"track.search","api_key":keysong,"format":"json","track":track,"limit":limit}
     r4 = requests.get('http://ws.audioscrobbler.com/2.0/',params=payload4)
-    print r4.text
-    print r4.url
     lista_canciones = []
     titulos_canciones = []
     imagenes_canciones = []
-    sonido_canciones = []
     if r4.status_code == 200:
         canciones = r4.text
         busquedacancion = json.loads(canciones)
@@ -121,9 +118,7 @@ def songresults():
             titulos_canciones.append(cancion2["name"])
         for cancion3 in busquedacancion["results"]["trackmatches"]["track"]:
             imagenes_canciones.append(cancion3["image"][3]["#text"])
-        for cancion4 in busquedacancion["results"]["trackmatches"]["track"]:
-            sonido_canciones.append(cancion4["url"])
-    return template ("songresults.tpl",track=track,limit=limit,lista_canciones=lista_canciones,titulos_canciones=titulos_canciones,imagenes_canciones=imagenes_canciones,sonido_canciones=sonido_canciones)
+    return template ("songresults.tpl",track=track,lista_canciones=lista_canciones,titulos_canciones=titulos_canciones,imagenes_canciones=imagenes_canciones)
 
 @route('/css/<filepath:path>')
 def server_static(filepath):

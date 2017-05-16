@@ -11,8 +11,9 @@
 							<header>
 								<h2><strong>¡Bienvenidos A SwissKnife (Search)!</strong></h2>
 							</header>
-							<br/>
+							<br/><br/>
 							<p><img src="/css/images/SK1.jpg" alt="" /></p>
+							<br/>
 							<p><strong>SwissKnife (Search)</strong> es una Aplicación Web, que actúa como un <strong>"Buscador de Internet"</strong>, donde su función principal, es realizar <strong>Búsquedas de Información,</strong> que hacen referencias a Imágenes, Vídeos, Canciones y Gifs existentes en <strong>Internet,</strong> pero de una forma más <strong>Rápida.</strong></p>
 
                             <p>El proyecto, está pensado a utilizar varias <strong>API's Web de Buscadores Web,</strong> con la funcionalidad principal de poder realizar <strong>"Diferentes acciones",</strong> donde su resultado, se mostrará en la Aplicación Web<strong>SwissKnife (Search).</strong> Algunos ejemplos podría ser: Buscar Gifs <strong>"Más virales"</strong> en Internet por el momento, Buscar un vídeo que contenga <strong>"Subtítulos",</strong> Buscar canciones mediante un <strong>"Artista o Disco"</strong> determinado y Buscar imágenes con un <strong>"Tamaño determinado".</strong></p>

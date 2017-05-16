@@ -10,7 +10,7 @@
 						<section>
 							<form action='/songresults' method='post'>
 							<br/>
-								<strong><label>Escribir Canción A Buscar:</label></strong>
+								<strong><label>Escribir Artista, Canción O Álbum A Buscar:</label></strong>
 								<input type = "text" name = 'track' required/>
 								<br/><br/>
 
