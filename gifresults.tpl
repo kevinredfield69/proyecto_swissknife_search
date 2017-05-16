@@ -9,7 +9,7 @@
 					<div id="content" class="8u skel-cell-important">
 						<section>
 
-						<h1><strong>Se han encontrado {{limit}} resultados sobre la búsqueda {{q}}:</strong></h1>
+						<h1><strong>Los resultados encontrados sobre la búsqueda {{q}} son:</strong></h1>
 						<br/>
 						<hr/>
 						<br/>

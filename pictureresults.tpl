@@ -8,7 +8,7 @@
 					<!-- Content -->
 					<div id="content" class="8u skel-cell-important">
 						<section>
-						<h1><strong>Se han encontrado {{per_page}} resultados sobre la búsqueda {{text}}:</strong></h1>
+						<h1><strong>Los resultados encontrados sobre la búsqueda {{text}} son:</strong></h1>
 						<br/>
 						<hr/>
 						<br/>
