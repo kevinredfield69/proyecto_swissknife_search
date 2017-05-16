@@ -6,6 +6,9 @@
 				<div class="row"> 
 					
 					<!-- Content -->
+
+					<h3>Panel De Buscadores</h3>				
+
 					<div id="content" class="5u">
 						<section>
 
