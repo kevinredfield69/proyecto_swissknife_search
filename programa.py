@@ -6,7 +6,7 @@ import json
 import requests
 import os
 
-@route("/swissknife",method="get")
+@route("/",method="get")
 def inicio():
     return template ("index.tpl")
 
