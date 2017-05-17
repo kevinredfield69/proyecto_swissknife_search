@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from bottle import route,template,run,static_file,error,request
+from sys import argv
 import json
 import requests
 import os
@@ -143,4 +144,6 @@ def server_static(filepath):
 def error404(error):
     return template ("error.tpl")
 
-run(host='0.0.0.0', port=9000, debug=True)
+
+run(host='0.0.0.0', port=argv[1])
+#run(host='0.0.0.0', port=9000, debug=True)
