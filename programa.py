@@ -6,19 +6,19 @@ import json
 import requests
 import os
 
-@route("/",method="get")
-def inicio():
+@route('/',method="get")
+def index():
     return template ("index.tpl")
 
-@route("/author",method="get")
+@route('/author',method="get")
 def author():
     return template ("author.tpl")
 
-@route("/contact",method="get")
+@route('/contact',method="get")
 def contact():
     return template ("contact.tpl")
 
-@route("/contactresults",method="post")
+@route('/contactresults',method="post")
 def contactresults():
     Nombre = request.forms.get('Nombre')
     Primer_Apellido = request.forms.get('Primer_Apellido')
@@ -33,15 +33,15 @@ def contactresults():
     Sugerencias = request.forms.get('Sugerencias')
     return template ("contactresults.tpl",Nombre=Nombre,Primer_Apellido=Primer_Apellido,Segundo_Apellido=Segundo_Apellido,Correo_Electronico=Correo_Electronico,Sexo=Sexo,Dia=Dia,Mes=Mes,Anyo=Anyo,Gustar=Gustar,Calificacion=Calificacion,Sugerencias=Sugerencias)
 
-@route("/panel",method="get")
+@route('/panel',method="get")
 def panel():
     return template ("panel.tpl")
 
-@route("/gif",method="get")
+@route('/gif',method="get")
 def gif():
     return template ("gif.tpl")
 
-@route("/gifresults",method="post")
+@route('/gifresults',method="post")
 def gifresults():
     q = request.forms.get('q')
     limit = request.forms.get('limit')
@@ -61,11 +61,11 @@ def gifresults():
     else:
         return template ("error.tpl")
 
-@route("/video",method="get")
+@route('/video',method="get")
 def video():
     return template ("video.tpl")
 
-@route("/videoresults",method="post")
+@route('/videoresults',method="post")
 def videoresults():
     maxResults = request.forms.get('maxResults')
     order = request.forms.get('order')
@@ -86,11 +86,11 @@ def videoresults():
     else:
         return template ("error.tpl")
 
-@route("/picture",method="get")
+@route('/picture',method="get")
 def picture():
     return template ("picture.tpl")
 
-@route("/pictureresults",method="post")
+@route('/pictureresults',method="post")
 def pictureresults():
     text = request.forms.get("text")
     per_page = request.forms.get("per_page")
@@ -111,11 +111,11 @@ def pictureresults():
     else:
         return template ("error.tpl")
 
-@route("/song",method="get")
+@route('/song',method="get")
 def song():
     return template ("song.tpl")
 
-@route("/songresults",method="post")
+@route('/songresults',method="post")
 def songresults():
     track = request.forms.get("track")
     limit = request.forms.get("limit")
