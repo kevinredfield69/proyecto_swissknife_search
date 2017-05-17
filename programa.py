@@ -17,6 +17,21 @@ def author():
 def contact():
     return template ("contact.tpl")
 
+@route("/contactresults",method="post")
+def contactresults():
+    Nombre = request.forms.get('Nombre')
+    Primer_Apellido = request.forms.get('Primer_Apellido')
+    Segundo_Apellido = request.forms.get('Segundo_Apellido')
+    Correo_Electronico = request.forms.get('Correo_Electronico')
+    Sexo = request.forms.get('Sexo')
+    Dia = request.forms.get('Dia')
+    Mes = request.forms.get('Mes')
+    Anyo = request.forms.get('Anyo')
+    Gustar = request.forms.get('Gustar')
+    Calificacion = request.forms.get('Calificacion')
+    Sugerencias = request.forms.get('Sugerencias')
+    return template ("contactresults.tpl",Nombre=Nombre,Primer_Apellido=Primer_Apellido,Segundo_Apellido=Segundo_Apellido,Correo_Electronico=Correo_Electronico,Sexo=Sexo,Dia=Dia,Mes=Mes,Anyo=Anyo,Gustar=Gustar,Calificacion=Calificacion,Sugerencias=Sugerencias)
+
 @route("/panel",method="get")
 def panel():
     return template ("panel.tpl")

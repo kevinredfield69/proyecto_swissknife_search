@@ -10,7 +10,7 @@
 
 						<section>
 
-							<h3>SwissKnife GIF</h3>
+							<h3><strong>SwissKnife GIF</strong></h3>
 
 							<br/><br/>
 

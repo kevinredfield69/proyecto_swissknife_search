@@ -1,4 +1,4 @@
-%include('header.tpl',title='Contacto')
+%include('header.tpl',title='Formulario')
 
 <!-- Main -->
 		<div id="main">
@@ -15,25 +15,25 @@
 								
 							<br/><br/>							
 
-							<form action="http://www.gonzalonazareno.org/josedom/resultado.php" method="post" enctype="multipart/form-data">
+							<form action='/contactresults' method='post'>
 								<br/>
 								<strong><label class="titulo" for="nombre">Datos Personales<span class="requerido">*</span></label></strong>							
 
 								<div>
 									<br/>
  									<span class="completo">
-										<label for="nombre">Nombre</label>
+										<label for="Nombre">Nombre</label>
 										<br/>
-										<input id="nombre" name="Nombre" value="" />
+										<input id="Nombre" name="Nombre" value="" />
     									</span>
 									
 									<br/>
 
 									<span class="completo">
       									<br/>
-										<label for="Primer_Apellido">Primer apellido</label>
+										<label for="Primer_Apellido">Primer Apellido</label>
 										<br/>
-										<input id="Primer_Apellido" name="Primer Apellido" value="" />
+										<input id="Primer_Apellido" name="Primer_Apellido" value="" />
       
 									</span>
 
@@ -43,7 +43,7 @@
 									<br/>
 										<label for="Segundo_Apellido">Segundo Apellido</label>
 										<br/>
-										<input id="Segundo_Apellido" name="Segundo Apellido" value="" />
+										<input id="Segundo_Apellido" name="Segundo_Apellido" value="" />
 									</span>
 									
 									<br/>
@@ -61,7 +61,7 @@
   
 									<span class="completo">
 									<br/>
-										<strong><label class="titulo" for="nombre">Sexo<span class="requerido">*</span></label></strong>
+										<strong><label class="Titulo" for="Nombre">Sexo<span class="requerido">*</span></label></strong>
 										<br/><br/>
 
 										<input type="radio" name="Sexo" value="Hombre" /> Hombre
@@ -77,9 +77,9 @@
 										
 										<br/><br/>
 
-										<input type="text" size="3" maxlength="2" id="Fecha_De_Nacimiento" name="Dia"/>
+										<input type="text" size="3" maxlength="2" id="Dia" name="Dia"/>
 										de
-											<select id="fecha_mes" name="Mes">
+											<select id="Mes" name="Mes">
 												<option value="1">Enero</option>
 												<option value="2">Febrero</option>
 												<option value="3">Marzo</option>
@@ -95,7 +95,7 @@
 											</select>
 
 										de
-											<input type="text" size="5" maxlength="4" id="fecha_ano" name="Ano"/>
+											<input type="text" size="5" maxlength="4" id="Anyo" name="Anyo"/>
 									</span>
 								</div>								
 								
@@ -105,11 +105,11 @@
 								<div>
 									<br/>
     									<span class="completo">									
-      										<strong><label>¿Te Ha Gustado La Realizacion De Mi Aplicación Web?</label></strong>
+      										<strong><label>¿Te Ha Gustado Mi Aplicación Web?</label></strong>
 										<br/><br/>		
 
-										<input type="radio" name="Te ha gustado la realizacion de mi Aplicacion Web" value="Si"/>Sí
-										<input type="radio" name="Te ha gustado la realizacion de mi Aplicacion Web" value="No"/>No<br/>
+										<input type="radio" name="Gustar" value="Si"/>Sí
+										<input type="radio" name="Gustar" value="No"/>No<br/>
 									</span>
 
 								<br/>
@@ -149,7 +149,7 @@
 										
 										<br/><br/>
 										
-										<textarea name="Sugerencias" id="descripcion" cols="35" rows="7"></textarea>
+										<textarea name="Sugerencias" id="Sugerencias" cols="35" rows="7"></textarea>
 									</span>
 								</div>
 								
