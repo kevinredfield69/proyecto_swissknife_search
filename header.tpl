@@ -7,7 +7,7 @@
 <html>
 	<head>
 		<title>{{title}}</title>
-		<link rel="shortcut icon" href="css/images/SDK1.png" />
+		<link rel="shortcut icon" href="/css/images/SDK1.png" />
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -44,7 +44,7 @@
 				<!-- Nav -->
 				<nav id="nav">
 					<ul>
-						<li><a href="swissknife">Página Principal</a></li>
+						<li><a href="/">Página Principal</a></li>
 						<li><a href="panel">Panel De Buscadores</a></li>
 						<li><a href="author">Sobre Mí</a></li>
 						<li><a href="contact">Formulario De Contacto</a></li>

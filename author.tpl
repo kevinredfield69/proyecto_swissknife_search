@@ -32,7 +32,7 @@
 
 							<br/>
 
-							<p><strong><a href="swissknife" class="button">Volver A La Página Principal</a></strong></p>
+							<p><strong><a href="/" class="button">Volver A La Página Principal</a></strong></p>
 
 						</section>
 					</div>
