@@ -8,7 +8,7 @@ import os
 
 @route('/',method="get")
 def index():
-    return template ("index.tpl")
+    return template ("html/index.tpl")
 
 @route('/author',method="get")
 def author():
