@@ -22,9 +22,9 @@
 							<p><strong>Segundo Apellido:</strong> {{Segundo_Apellido}}</p>
 							<p><strong>Correo:</strong> {{Correo_Electronico}}</p>
 							<p><strong>Sexo:</strong> {{Sexo}}</p>
-							<p><strong>Fecha De Naciciento:</strong> {{Dia}} de {{Mes}} de {{Anyo}</p>
+							<p><strong>Fecha De Naciciento:</strong> {{Dia}} de {{Mes}} de {{Anyo}}</p>
 							<p><strong>¿Te Ha Gustado Mi Aplicación Web?:</strong> {{Gustar}}</p>
-							<p><strong>¿Que Calificación Le Darías A Mi Aplicación Web?:</strong>{{Calificacion}}</p>					<p><strong>Sugerencias:</strong> {{Sugerencias}}</p></li>
+							<p><strong>Calificación:</strong> {{Calificacion}}</p>					<p><strong>Sugerencias:</strong> {{Sugerencias}}</p></li>
 							</ul>							
 
 							
@@ -33,7 +33,7 @@
 						</section>
 					</div>					
 					
-							<p><strong><a href="swissknife" class="button">Volver A La Página Principal</a></strong></p>
+							<p><strong><a href="contact" class="button">Volver A La Página De Contacto</a></strong></p>
 
 						</section>
 					</div>
