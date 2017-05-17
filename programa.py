@@ -47,8 +47,8 @@ def gifresults():
     limit = request.forms.get('limit')
     lista_gifs = []
     titulos_gifs = []
-    keygif = os.environ["keygif"]
-    payload = {"q":q,"fmt":"json","limit":limit,"api_key":keygif}
+#    keygif = os.environ["keygif"]
+    payload = {"q":q,"fmt":"json","limit":limit,"api_key":os.environ["keygif"]}
     r = requests.get('http://api.giphy.com/v1/gifs/search?',params=payload)
     gifs = r.text
     busquedagif = json.loads(gifs)
@@ -72,8 +72,8 @@ def videoresults():
     q = request.forms.get('q')
     lista_ids = []
     titulos_videos = []
-    keyvideo = os.environ["keyvideo"]
-    payload2 = {"part":"snippet","ForMine":"true","maxResults":maxResults,"order":order,"q":q,"type":"video","key":keyvideo}
+#    keyvideo = os.environ["keyvideo"]
+    payload2 = {"part":"snippet","ForMine":"true","maxResults":maxResults,"order":order,"q":q,"type":"video","key":os.environ["keyvideo"]}
     r2 = requests.get('https://www.googleapis.com/youtube/v3/search?',params=payload2)
     videos = r2.text
     busquedavideo = json.loads(videos)
@@ -94,8 +94,8 @@ def picture():
 def pictureresults():
     text = request.forms.get("text")
     per_page = request.forms.get("per_page")
-    keypicture = os.environ["keypicture"]
-    payload3 = {"method":"flickr.photos.search","api_key":keypicture,"text":text,"per_page":per_page,"extras":"url_o,url_s","format":"json"}
+#    keypicture = os.environ["keypicture"]
+    payload3 = {"method":"flickr.photos.search","api_key":os.environ["keypicture"],"text":text,"per_page":per_page,"extras":"url_o,url_s","format":"json"}
     r3 = requests.get('https://api.flickr.com/services/rest',params=payload3)
     lista_imagenes = []
     titulos_imagenes = []
@@ -119,8 +119,8 @@ def song():
 def songresults():
     track = request.forms.get("track")
     limit = request.forms.get("limit")
-    keysong = os.environ["keysong"]
-    payload4 = {"method":"track.search","api_key":keysong,"format":"json","track":track,"limit":limit}
+#    keysong = os.environ["keysong"]
+    payload4 = {"method":"track.search","api_key":os.environ["keysong"],"format":"json","track":track,"limit":limit}
     r4 = requests.get('http://ws.audioscrobbler.com/2.0/',params=payload4)
     lista_canciones = []
     titulos_canciones = []
