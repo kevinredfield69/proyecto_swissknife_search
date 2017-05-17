@@ -18,7 +18,7 @@
 		font-family: 'Times New Roman';
 		font-size: 12pt;
 		line-height: 1.5em;
-		color: #04B45F;
+		color: #F78181;
 
 	}
 
@@ -60,7 +60,7 @@
 	strong, b
 	{
 		font-weight: bold;
-		color: #74DF00;
+		color: #FACC2E;
 	}
 	
 	em, i
@@ -319,7 +319,7 @@
 	#header
 	{
 		position: relative;
-		background: #688A08 no-repeat;
+		background: #9F81F7 no-repeat;
 		background-size: cover;
 	}
 
@@ -359,7 +359,7 @@
 	#main
 	{
 		position: relative;
-		background: #38610B;
+		background: #084B8A;
 		text-align: justify;
 		border: 15px solid silver;
 	}
