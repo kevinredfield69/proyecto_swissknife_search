@@ -8,15 +8,15 @@ import os
 
 @route('/',method="get")
 def index():
-    return template ("index.tpl")
+    return template ("html/index.tpl")
 
 @route('/author',method="get")
 def author():
-    return template ("author.tpl")
+    return template ("html/author.tpl")
 
 @route('/contact',method="get")
 def contact():
-    return template ("contact.tpl")
+    return template ("html/contact.tpl")
 
 @route('/contactresults',method="post")
 def contactresults():
@@ -31,7 +31,7 @@ def contactresults():
     Gustar = request.forms.get('Gustar')
     Calificacion = request.forms.get('Calificacion')
     Sugerencias = request.forms.get('Sugerencias')
-    return template ("contactresults.tpl",Nombre=Nombre,Primer_Apellido=Primer_Apellido,Segundo_Apellido=Segundo_Apellido,Correo_Electronico=Correo_Electronico,Sexo=Sexo,Dia=Dia,Mes=Mes,Anyo=Anyo,Gustar=Gustar,Calificacion=Calificacion,Sugerencias=Sugerencias)
+    return template ("html/contactresults.tpl",Nombre=Nombre,Primer_Apellido=Primer_Apellido,Segundo_Apellido=Segundo_Apellido,Correo_Electronico=Correo_Electronico,Sexo=Sexo,Dia=Dia,Mes=Mes,Anyo=Anyo,Gustar=Gustar,Calificacion=Calificacion,Sugerencias=Sugerencias)
 
 @route('/panel',method="get")
 def panel():
