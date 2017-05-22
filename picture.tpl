@@ -18,6 +18,7 @@
 								<br/>
 								<strong><label>Escribir Imagen A Buscar:</label></strong>
 								<input type = "text" name = 'text' required/>
+								<br/>
 								<strong><label for='sort'>Orden De Resultados</label></strong>
 									<select id='sort' name='sort'>
 										<option value="" selected="selected">-	Selecciona   -</option>										<option value='date-posted-asc'>Fecha De Publicación (Ascendente)</option>
