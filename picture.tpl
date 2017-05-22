@@ -18,23 +18,6 @@
 								<br/>
 								<strong><label>Escribir Imagen A Buscar:</label></strong>
 								<input type = "text" name = 'text' required/>
-								<br/><br/>
-
-								<strong><label for='per_page'>Límite De Resultados</label></strong>
-									<select id='per_page' name='per_page'>
-										<option value="" selected="selected">-	Selecciona   -</option>										<option value="100">100 resultados</option>
-										<option value="150">150 resultados</option>
-    										<option value="200">200 resultados</option>
-    										<option value="250">250 resultados</option>
-   		 								<option value="300">300 resultados</option>
-    										<option value="350">350 resultados</option>
-    										<option value="400">400 resultados</option>
-    										<option value="450">450 resultados</option>
-    										<option value="500">500 resultados</option>
-									</select>
-								
-								<br/><br/>
-
 								<strong><label for='sort'>Orden De Resultados</label></strong>
 									<select id='sort' name='sort'>
 										<option value="" selected="selected">-	Selecciona   -</option>										<option value='date-posted-asc'>Fecha De Publicación (Ascendente)</option>
