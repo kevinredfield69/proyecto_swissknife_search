@@ -8,15 +8,15 @@ import os
 
 @route('/',method="get")
 def index():
-    return template ("index.tpl")
+    return template("index.tpl")
 
 @route('/author',method="get")
 def author():
-    return template ("author.tpl")
+    return template("author.tpl")
 
 @route('/contact',method="get")
 def contact():
-    return template ("contact.tpl")
+    return template("contact.tpl")
 
 @route('/contactresults',method="post")
 def contactresults():
@@ -31,15 +31,15 @@ def contactresults():
     Gustar = request.forms.get('Gustar')
     Calificacion = request.forms.get('Calificacion')
     Sugerencias = request.forms.get('Sugerencias')
-    return template ("contactresults.tpl",Nombre=Nombre,Primer_Apellido=Primer_Apellido,Segundo_Apellido=Segundo_Apellido,Correo_Electronico=Correo_Electronico,Sexo=Sexo,Dia=Dia,Mes=Mes,Anyo=Anyo,Gustar=Gustar,Calificacion=Calificacion,Sugerencias=Sugerencias)
+    return template("contactresults.tpl",Nombre=Nombre,Primer_Apellido=Primer_Apellido,Segundo_Apellido=Segundo_Apellido,Correo_Electronico=Correo_Electronico,Sexo=Sexo,Dia=Dia,Mes=Mes,Anyo=Anyo,Gustar=Gustar,Calificacion=Calificacion,Sugerencias=Sugerencias)
 
 @route('/panel',method="get")
 def panel():
-    return template ("panel.tpl")
+    return template("panel.tpl")
 
 @route('/gif',method="get")
 def gif():
-    return template ("gif.tpl")
+    return template("gif.tpl")
 
 @route('/gifresults',method="post")
 def gifresults():
@@ -57,13 +57,13 @@ def gifresults():
             lista_gifs.append(gif["images"]["fixed_height"]["url"])
         for gif2 in busquedagif["data"]:
             titulos_gifs.append(gif2["slug"])
-        return template ("gifresults.tpl",q=q,lista_gifs=lista_gifs,titulos_gifs=titulos_gifs)
+        return template("gifresults.tpl",q=q,lista_gifs=lista_gifs,titulos_gifs=titulos_gifs)
     else:
-        return template ("error.tpl")
+        return template("error.tpl")
 
 @route('/video',method="get")
 def video():
-    return template ("video.tpl")
+    return template("video.tpl")
 
 @route('/videoresults',method="post")
 def videoresults():
@@ -82,13 +82,13 @@ def videoresults():
             lista_ids.append(video["id"]["videoId"])
         for video2 in busquedavideo["items"]:
             titulos_videos.append(video2["snippet"]["title"])
-        return template ("videoresults.tpl",q=q,order=order,lista_ids=lista_ids,titulos_videos=titulos_videos)
+        return template("videoresults.tpl",q=q,order=order,lista_ids=lista_ids,titulos_videos=titulos_videos)
     else:
-        return template ("error.tpl")
+        return template("error.tpl")
 
 @route('/picture',method="get")
 def picture():
-    return template ("picture.tpl")
+    return template("picture.tpl")
 
 @route('/pictureresults',method="post")
 def pictureresults():
@@ -107,13 +107,13 @@ def pictureresults():
                 lista_imagenes.append([imagen['url_s'],imagen["url_o"]])
         for titulo in busquedaimagen["photos"]["photo"]:
             titulos_imagenes.append(titulo["title"])
-        return template ("pictureresults.tpl",text=text,lista_imagenes=lista_imagenes,titulos_imagenes=titulos_imagenes)
+        return template("pictureresults.tpl",text=text,lista_imagenes=lista_imagenes,titulos_imagenes=titulos_imagenes)
     else:
-        return template ("error.tpl")
+        return template("error.tpl")
 
 @route('/song',method="get")
 def song():
-    return template ("song.tpl")
+    return template("song.tpl")
 
 @route('/songresults',method="post")
 def songresults():
@@ -134,7 +134,7 @@ def songresults():
             titulos_canciones.append(cancion2["name"])
         for cancion3 in busquedacancion["results"]["trackmatches"]["track"]:
             imagenes_canciones.append(cancion3["image"][3]["#text"])
-        return template ("songresults.tpl",track=track,lista_canciones=lista_canciones,titulos_canciones=titulos_canciones,imagenes_canciones=imagenes_canciones)
+        return template("songresults.tpl",track=track,lista_canciones=lista_canciones,titulos_canciones=titulos_canciones,imagenes_canciones=imagenes_canciones)
     else:
         return template("error.tpl")
 
@@ -144,7 +144,7 @@ def server_static(filepath):
 
 @error(404)
 def error404(error):
-    return template ("html/error.tpl")
+    return template("html/error.tpl")
 
 run(host='0.0.0.0', port=argv[1])
 #run(host='0.0.0.0', port=9000, debug=True)
