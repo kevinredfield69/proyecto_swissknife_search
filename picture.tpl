@@ -14,6 +14,7 @@
 							<br/><br/>							
 
 							<form action='/pictureresults' method='post'>
+							<br/>
 								<strong><label>Escribir Imagen A Buscar:</label></strong>
 								<input type = "text" name = 'text' required/>
 								<br/><br/>
