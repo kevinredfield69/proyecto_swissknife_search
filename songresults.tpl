@@ -13,11 +13,10 @@
 						<br/>
 						<hr/>
 						<br/>
-							%for cancion,cancion2,cancion3,cancion4 in zip(lista_canciones,titulos_canciones,imagenes_canciones,sonido_canciones):
+							%for cancion,cancion2,cancion3 in zip(lista_canciones,titulos_canciones,imagenes_canciones):
 								<ul>
 									<li><h2><strong>{{cancion}} - </strong>{{cancion2}}</h2></li>
 									<li><img width="600" height="400" src="{{cancion3}}"/></li>
-									<li><audio src="{{cancion4}}" controls></audio></li>
 								</ul>
 							%end
 
