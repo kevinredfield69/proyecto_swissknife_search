@@ -120,7 +120,7 @@ def songresults():
     r4 = requests.get('http://ws.audioscrobbler.com/2.0/',params=payload4)
     lista_canciones = []
     titulos_canciones = []
-    imagenes_canciones = []
+#    imagenes_canciones = []
     if r4.status_code == 200:
         canciones = r4.text
         busquedacancion = json.loads(canciones)
@@ -128,8 +128,8 @@ def songresults():
             lista_canciones.append(cancion["artist"])
         for cancion2 in busquedacancion["results"]["trackmatches"]["track"]:
             titulos_canciones.append(cancion2["name"])
-        for cancion3 in busquedacancion["results"]["trackmatches"]["track"]:
-            imagenes_canciones.append(cancion3["image"][3]["#text"])
+#        for cancion3 in busquedacancion["results"]["trackmatches"]["track"]:
+#            imagenes_canciones.append(cancion3["image"][3]["#text"])
         return template("songresults.tpl",track=track,lista_canciones=lista_canciones,titulos_canciones=titulos_canciones,imagenes_canciones=imagenes_canciones)
     else:
         return template("error.tpl")
