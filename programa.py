@@ -146,15 +146,26 @@ def eventresults():
     tipo = request.forms.get('tipo')
     orden = request.forms.get('orden')
     lista_eventos = []
+    comenzar_eventos = []
+    direcciones_eventos = []
+    ubicaciones_eventos = []
     keyevent = os.environ["keyevent"]
     payload5 = {"location":ciudad,"keywords":termino,"t":rango,"sort_order":tipo,"sort_direction":orden,"app_key":keyevent}
     r5 = requests.get('http://api.eventful.com/json/events/search?',params=payload5)
+    print r5.text
+    print r5.url
     if r5.status_code == 200:
         eventos = r5.text
         busquedaevento = json.loads(eventos)
         for evento in busquedaevento["events"]["event"]:
             lista_eventos.append(evento["title"])
-        return template('eventresults.tpl',lista_eventos=lista_eventos,ciudad=ciudad,termino=termino)
+        for inicio_evento in busquedaevento["events"]["event"]:
+            comenzar_eventos.append(inicio_evento["start_time"])
+        for direccion in busquedaevento["events"]["event"]:
+            direcciones_eventos.append(direccion["venue_address"])
+        for ubicacion in busquedaevento["events"]["event"]:
+            ubicaciones_eventos.append(ubicacion["venue_name"])
+        return template('eventresults.tpl',lista_eventos=lista_eventos,comenzar_eventos=comenzar_eventos,direcciones_eventos=direcciones_eventos,ubicaciones_eventos=ubicaciones_eventos,ciudad=ciudad,termino=termino)
     else:
         return template("error.tpl")
 
@@ -195,5 +206,5 @@ def server_static(filepath):
 def error404(error):
     return template("html/error.tpl")
 
-run(host='0.0.0.0', port=argv[1])
-#run(host='0.0.0.0', port=9000, debug=True)
+#run(host='0.0.0.0', port=argv[1])
+run(host='0.0.0.0', port=9000, debug=True)
