@@ -149,11 +149,14 @@ def eventresults():
     keyevent = os.environ["keyevent"]
     payload5 = {"app_key":keyevent,"location":ciudad,"keywords":termino,"t":rango,"sort_order":tipo,"sort_direction":orden}
     r5 = requests.get('http://api.eventful.com/json/events/search?',params=payload5)
-    eventos = r5.text
-    busquedaevento = json.loads(eventos)
-    for evento in busquedaevento["events"]["event"]:
-        lista_eventos.append(evento["title"])
-    return template('eventresults.tpl',lista_eventos=lista_eventos,ciudad=ciudad,termino=termino)
+    if r5.status_code == 200:
+        eventos = r5.text
+        busquedaevento = json.loads(eventos)
+        for evento in busquedaevento["events"]["event"]:
+            lista_eventos.append(evento["title"])
+        return template('eventresults.tpl',lista_eventos=lista_eventos,ciudad=ciudad,termino=termino)
+    else:
+        return template("error.tpl")
 
 @route('/css/<filepath:path>')
 def server_static(filepath):
