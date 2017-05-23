@@ -158,12 +158,25 @@ def eventresults():
     else:
         return template("error.tpl")
 
-#@route('/film',method="get")
-#def film():
-#    return template("film.tpl")
+@route('/film',method="get")
+def film():
+    return template("film.tpl")
 
-#@route('/filmresults',method="post")
-#def filmresults():
+@route('/filmresults',method="post")
+def filmresults():
+    s = request.forms.get('s')
+    lista_peliculas = []
+    keyfilm = os.environ["keyfilm"]
+    payload6 = {"s":s,"r":"json","apikey":keyfilm}
+    r6 = requests.get('http://www.omdbapi.com',params=payload6)
+    if r6.status_code == 200:
+        peliculas = r6.text
+        busquedapelicula = json.loads(peliculas)
+        for pelicula in busquedapelicula[""][""]:
+            lista_peliculas.append(pelicula[""])
+        return template('filmresults.tpl',lista_peliculas=lista_peliculas,s=s)
+    else:
+        return template('error')
 
 @route('/css/<filepath:path>')
 def server_static(filepath):
