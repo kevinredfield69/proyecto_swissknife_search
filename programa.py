@@ -166,15 +166,24 @@ def film():
 def filmresults():
     query = request.forms.get('query')
     lista_peliculas = []
+    descripciones_peliculas = []
+    fechas_peliculas = []
+    calificaciones_peliculas = []
     keyfilm = os.environ["keyfilm"]
     payload6 = {"api_key":keyfilm,"query":query,"languaje":"es-ES"}
     r6 = requests.get('https://api.themoviedb.org/3/search/movie',params=payload6)
     if r6.status_code == 200:
         peliculas = r6.text
         busquedapelicula = json.loads(peliculas)
-        for pelicula in busquedapelicula[""][""]:
-            lista_peliculas.append(pelicula[""])
-        return template('filmresults.tpl',lista_peliculas=lista_peliculas,query=query)
+        for pelicula in busquedapelicula["results"]:
+            lista_peliculas.append(pelicula["title"])
+        for descripcion in busquedapelicula["results"]:
+            descripciones_peliculas.append(descripcion["overview"])
+        for fecha in busquedapelicula["results"]:
+            fechas_peliculas.append(fecha["release_date"])
+        for calificacion in busquedapelicula["results"]:
+            calificaciones_peliculas.append(calificacion["vote_average"])
+        return template('filmresults.tpl',lista_peliculas=lista_peliculas,descripciones_peliculas=descripciones_peliculas,fechas_peliculas=fechas_peliculas,calificaciones_peliculas=calificaciones_peliculas,query=query)
     else:
         return template('error')
 
