@@ -16,9 +16,9 @@
 							% for evento,inicio_evento,direccion,ubicacion in zip(lista_eventos,comenzar_eventos,direcciones_eventos,ubicaciones_eventos):
 								<ul>
             								<li><p><strong>{{evento}}</strong></p></li>
-									<li><p><strong>Hora De Comienzo Del Evento:</strong>{{inicio_evento}}</p>
-									<p><strong>Ubicación Del Evento:</strong>{{ubicacion}}</p>
-									<p><strong>Dirección Del Evento:</strong>{{direccion}}</p></li>
+									<li><p><strong>Hora De Comienzo Del Evento:</strong> {{inicio_evento}}</p>
+									<p><strong>Ubicación Del Evento:</strong> {{ubicacion}}</p>
+									<p><strong>Dirección Del Evento:</strong> {{direccion}}</p></li>
 									
 								</ul>
 							%end 
