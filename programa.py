@@ -164,17 +164,17 @@ def film():
 
 @route('/filmresults',method="post")
 def filmresults():
-    s = request.forms.get('s')
+    query = request.forms.get('query')
     lista_peliculas = []
     keyfilm = os.environ["keyfilm"]
-    payload6 = {"s":s,"r":"json","apikey":keyfilm}
-    r6 = requests.get('http://www.omdbapi.com',params=payload6)
+    payload6 = {"api_key":keyfilm,"query":query,"languaje":"es-ES"}
+    r6 = requests.get('https://api.themoviedb.org/3/search/movie',params=payload6)
     if r6.status_code == 200:
         peliculas = r6.text
         busquedapelicula = json.loads(peliculas)
         for pelicula in busquedapelicula[""][""]:
             lista_peliculas.append(pelicula[""])
-        return template('filmresults.tpl',lista_peliculas=lista_peliculas,s=s)
+        return template('filmresults.tpl',lista_peliculas=lista_peliculas,query=query)
     else:
         return template('error')
 

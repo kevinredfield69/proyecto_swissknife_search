@@ -16,7 +16,7 @@
 							<form action='/filmresults' method='post'>
 							<br/>
 								<strong><label>Escribir Nombre De Una Película:</label></strong>
-								<input type = "text" name = 's' required/>
+								<input type = "text" name = 'query' required/>
 								<br/><br/>
 								<input type = "submit" value = "Buscar">
 								<input type="reset" value = "Limpiar">
