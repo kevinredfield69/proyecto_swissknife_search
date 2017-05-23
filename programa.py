@@ -134,6 +134,27 @@ def songresults():
     else:
         return template("error.tpl")
 
+@route('/event',method="get")
+def event():
+    return template("event.tpl")
+
+@route('/eventressults',method="post")
+def eventresults():
+    ciudad = request.forms.get('ciudad')
+    termino = request.forms.get ('termino')
+    rango = request.forms.get('rango')
+    tipo = request.forms.get('tipo')
+    orden = request.forms.get('orden')
+    lista_eventos = []
+    keyevent = os.environ["keyevent"]
+    payload5 = {"app_key":keyevent,"location":ciudad,"keywords":termino,"t":rango,"sort_order":tipo,"sort_direction":orden}
+    r5 = requests.get('http://api.eventful.com/json/events/search?',params=payload5)
+    eventos = r5.text
+    busquedaevento = json.loads(eventos)
+    for evento in busquedaevento["events"]["event"]:
+        lista_eventos.append(evento["title"])
+    return template('eventresults.tpl',lista_eventos=lista_eventos,ciudad=ciudad,termino=termino)
+
 @route('/css/<filepath:path>')
 def server_static(filepath):
     return static_file(filepath, root='css')
