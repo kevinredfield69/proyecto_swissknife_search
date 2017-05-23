@@ -27,7 +27,7 @@
 
 								<label>Rango De Búsqueda:</label>
 
-								<select name="rango">
+								<select name='rango'>
 									<option value="Past">Past</option>
 									<option value="Today">Today</option>
 									<option value="Future">Future</option>
@@ -39,7 +39,7 @@
 
 								<label>Tipo De Búsqueda:</label>
 	
-								<select name="tipo">
+								<select name='tipo'>
 									<option value="Relevance">Relevance</option>
 									<option value="Date">Date</option>
 									<option value="Popularity">Popularity</option>
@@ -49,7 +49,7 @@
 
 								<label>Orden De Búsqueda:</label>
 
-								<select name="orden">
+								<select name='orden'>
 									<option value="Ascending">Ascending</option>
 									<option value="Descending">Descending</option>
 								</select>
