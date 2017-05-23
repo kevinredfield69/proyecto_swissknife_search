@@ -15,17 +15,17 @@
 
 							<form action='/eventresults' method='post'>
 							<br/>
-								<label>Ciudad:</label>
+								<strong><label>Ciudad:</label></strong>
 								<input type = "text" name = 'ciudad' required/>
 	
 							<br><br>
 	
-								<label>Busqueda:</label>
+								<strong><label>Busqueda:</label></strong>
 								<input type = "text" name = 'termino' required/>
 
 								<br/><br/>
 
-								<label>Rango De Búsqueda:</label>
+								<strong><label>Rango De Búsqueda:</label></strong>
 
 								<select name='rango'>
 									<option value="Past">Past</option>
@@ -37,7 +37,7 @@
 		
 								<br/><br/>
 
-								<label>Tipo De Búsqueda:</label>
+								<strong><label>Tipo De Búsqueda:</label></strong>
 	
 								<select name='tipo'>
 									<option value="Relevance">Relevance</option>
@@ -47,7 +47,7 @@
 
 								<br/><br/>
 
-								<label>Orden De Búsqueda:</label>
+								<strong><label>Orden De Búsqueda:</label></strong>
 
 								<select name='orden'>
 									<option value="Ascending">Ascending</option>
