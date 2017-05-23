@@ -12,10 +12,14 @@
 						<br/>
 						<hr/>
 						<br/>
-							%for id,video in zip(lista_ids,titulos_videos):
+							%for id,video,descripcion,canal in zip(lista_ids,titulos_videos,descripciones_videos,canales_videos):
 								<ul>
 									<li><h2><strong>{{video}}</strong></h2></li>
-            								<li><iframe width="600" height="400" src="https://www.youtube.com/embed/{{id}}" frameborder="0" allowfullscreen></iframe></li> 
+									<li><p><strong>Nombre Del Canal:</strong> {{canal}}</p>
+									<br/>
+            								<iframe width="600" height="400" src="https://www.youtube.com/embed/{{id}}" frameborder="0" allowfullscreen></iframe>
+									<br/><br/>
+									<p><strong>Descripción Del Vídeo:</strong> {{descripcion}}</p></li>
 								</ul>
 							%end
 

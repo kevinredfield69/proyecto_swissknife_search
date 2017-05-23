@@ -46,6 +46,7 @@ def gifresults():
     q = request.forms.get('q')
     lista_gifs = []
     titulos_gifs = []
+    publicaciones_gifs = []
     keygif = os.environ["keygif"]
     payload = {"q":q,"fmt":"json","api_key":keygif}
     r = requests.get('http://api.giphy.com/v1/gifs/search?',params=payload)
@@ -56,7 +57,9 @@ def gifresults():
             lista_gifs.append(gif["images"]["fixed_height"]["url"])
         for gif2 in busquedagif["data"]:
             titulos_gifs.append(gif2["slug"])
-        return template("gifresults.tpl",q=q,lista_gifs=lista_gifs,titulos_gifs=titulos_gifs)
+        for gif3 in busquedagif["data"]:
+            publicaciones_gifs.append(gif3["import_datetime"])
+        return template("gifresults.tpl",q=q,lista_gifs=lista_gifs,titulos_gifs=titulos_gifs,publicaciones_gifs=publicaciones_gifs)
     else:
         return template("error.tpl")
 
@@ -70,6 +73,8 @@ def videoresults():
     q = request.forms.get('q')
     lista_ids = []
     titulos_videos = []
+    descripciones_videos = []
+    canales_videos = []
     keyvideo = os.environ["keyvideo"]
     payload2 = {"part":"snippet","ForMine":"true","maxResults":maxResults,"q":q,"type":"video","key":keyvideo}
     r2 = requests.get('https://www.googleapis.com/youtube/v3/search?',params=payload2)
@@ -80,7 +85,11 @@ def videoresults():
             lista_ids.append(video["id"]["videoId"])
         for video2 in busquedavideo["items"]:
             titulos_videos.append(video2["snippet"]["title"])
-        return template("videoresults.tpl",q=q,lista_ids=lista_ids,titulos_videos=titulos_videos)
+        for video3 in busquedavideo["items"]:
+            descripciones_videos.append(video3["snippet"]["description"])
+        for video4 in busquedavideo["items"]:
+            canales_videos.append(video4["snippet"]["channelTitle"])
+        return template("videoresults.tpl",q=q,lista_ids=lista_ids,titulos_videos=titulos_videos,descripciones_videos=descripciones_videos,canales_videos=canales_videos)
     else:
         return template("error.tpl")
 
@@ -155,8 +164,6 @@ def eventresults():
     keyevent = os.environ["keyevent"]
     payload5 = {"location":ciudad,"keywords":termino,"t":rango,"sort_order":tipo,"sort_direction":orden,"app_key":keyevent}
     r5 = requests.get('http://api.eventful.com/json/events/search?',params=payload5)
-    print r5.text
-    print r5.url
     if r5.status_code == 200:
         eventos = r5.text
         busquedaevento = json.loads(eventos)

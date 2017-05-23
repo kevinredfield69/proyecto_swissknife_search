@@ -17,8 +17,8 @@
 								<ul>
 									<li><p><strong>{{pelicula}}</strong></p></li>
 									<li><p><strong>Sinopsis De La Película:</strong> {{descripcion}}</p>
-									<p><strong>Fecha De Estreno:</strong> {{fecha}}</p></li>
-									<li><p><strong>Calificación De La Película:</strong> {{calificacion}}</p></li>
+									<p><strong>Fecha De Estreno:</strong> {{fecha}}</p>
+									<p><strong>Calificación De La Película:</strong> {{calificacion}}</p></li>
             								
 								</ul>
 							%end
