@@ -147,7 +147,7 @@ def eventresults():
     orden = request.forms.get('orden')
     lista_eventos = []
     keyevent = os.environ["keyevent"]
-    payload5 = {"app_key":keyevent,"location":ciudad,"keywords":termino,"t":rango,"sort_order":tipo,"sort_direction":orden}
+    payload5 = {"location":ciudad,"keywords":termino,"t":rango,"sort_order":tipo,"sort_direction":orden,"app_key":keyevent}
     r5 = requests.get('http://api.eventful.com/json/events/search?',params=payload5)
     if r5.status_code == 200:
         eventos = r5.text
