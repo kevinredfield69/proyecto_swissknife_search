@@ -149,6 +149,7 @@ def eventresults():
     comenzar_eventos = []
     direcciones_eventos = []
     ubicaciones_eventos = []
+    descripciones_eventos = []
     keyevent = os.environ["keyevent"]
     payload5 = {"location":ciudad,"keywords":termino,"t":rango,"sort_order":tipo,"sort_direction":orden,"app_key":keyevent}
     r5 = requests.get('http://api.eventful.com/json/events/search?',params=payload5)
@@ -165,7 +166,9 @@ def eventresults():
             direcciones_eventos.append(direccion["venue_address"])
         for ubicacion in busquedaevento["events"]["event"]:
             ubicaciones_eventos.append(ubicacion["venue_name"])
-        return template('eventresults.tpl',lista_eventos=lista_eventos,comenzar_eventos=comenzar_eventos,direcciones_eventos=direcciones_eventos,ubicaciones_eventos=ubicaciones_eventos,ciudad=ciudad,termino=termino)
+        for descripcion_evento in busquedaevento["events"]["event"]:
+            descripciones_eventos.append(descripcion_evento["description"])
+        return template('eventresults.tpl',lista_eventos=lista_eventos,comenzar_eventos=comenzar_eventos,direcciones_eventos=direcciones_eventos,ubicaciones_eventos=ubicaciones_eventos,descripciones_eventos=descripciones_eventos,ciudad=ciudad,termino=termino)
     else:
         return template("error.tpl")
 
