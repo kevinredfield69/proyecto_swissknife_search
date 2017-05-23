@@ -28,11 +28,12 @@
 								<strong><label>Rango De Búsqueda:</label></strong>
 
 								<select name='rango'>
-									<option value="Past">Past</option>
-									<option value="Today">Today</option>
-									<option value="Future">Future</option>
-									<option value="This_Week">This Week</option>
-									<option value="Next_Week">Next Week</option>
+									<option value="" selected="selected">-	Selecciona   -</option>	
+									<option value="Past">Pasado</option>
+									<option value="Today">Hoy</option>
+									<option value="Future">Futuro</option>
+									<option value="This_Week">Esta Semana</option>
+									<option value="Next_Week">Próxima Semana</option>
 								</select>
 		
 								<br/><br/>
@@ -40,9 +41,10 @@
 								<strong><label>Tipo De Búsqueda:</label></strong>
 	
 								<select name='tipo'>
-									<option value="Relevance">Relevance</option>
-									<option value="Date">Date</option>
-									<option value="Popularity">Popularity</option>
+									<option value="" selected="selected">-	Selecciona   -</option>	
+									<option value="Relevance">Relevancia</option>
+									<option value="Date">Fecha</option>
+									<option value="Popularity">Popularidad</option>
 								</select>
 
 								<br/><br/>
@@ -50,8 +52,9 @@
 								<strong><label>Orden De Búsqueda:</label></strong>
 
 								<select name='orden'>
-									<option value="Ascending">Ascending</option>
-									<option value="Descending">Descending</option>
+									<option value="" selected="selected">-	Selecciona   -</option>	
+									<option value="Ascending">Ascendente</option>
+									<option value="Descending">Descendente</option>
 								</select>
 
 								
