@@ -30,7 +30,6 @@
 								<select name='rango'>
 									<option value="" selected="selected">-	Selecciona   -</option>	
 									<option value="Past">Pasado</option>
-									<option value="Today">Hoy</option>
 									<option value="Future">Futuro</option>
 									<option value="This_Week">Esta Semana</option>
 									<option value="Next_Week">Próxima Semana</option>

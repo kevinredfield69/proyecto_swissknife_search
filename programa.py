@@ -121,6 +121,7 @@ def songresults():
     lista_canciones = []
     titulos_canciones = []
     imagenes_canciones = []
+    oyentes_canciones = []
     if r4.status_code == 200:
         canciones = r4.text
         busquedacancion = json.loads(canciones)
@@ -130,7 +131,9 @@ def songresults():
             titulos_canciones.append(cancion2["name"])
         for cancion3 in busquedacancion["results"]["trackmatches"]["track"]:
             imagenes_canciones.append(cancion3["image"][3]["#text"])
-        return template("songresults.tpl",track=track,lista_canciones=lista_canciones,titulos_canciones=titulos_canciones,imagenes_canciones=imagenes_canciones)
+        for cancion4 in busquedacancion["results"]["trackmatches"]["track"]:
+            oyentes_canciones.append(cancion4["listeners"])
+        return template("songresults.tpl",track=track,lista_canciones=lista_canciones,titulos_canciones=titulos_canciones,imagenes_canciones=imagenes_canciones,oyentes_canciones=oyentes_canciones)
     else:
         return template("error.tpl")
 
@@ -149,7 +152,6 @@ def eventresults():
     comenzar_eventos = []
     direcciones_eventos = []
     ubicaciones_eventos = []
-    descripciones_eventos = []
     keyevent = os.environ["keyevent"]
     payload5 = {"location":ciudad,"keywords":termino,"t":rango,"sort_order":tipo,"sort_direction":orden,"app_key":keyevent}
     r5 = requests.get('http://api.eventful.com/json/events/search?',params=payload5)
@@ -166,9 +168,7 @@ def eventresults():
             direcciones_eventos.append(direccion["venue_address"])
         for ubicacion in busquedaevento["events"]["event"]:
             ubicaciones_eventos.append(ubicacion["venue_name"])
-        for descripcion_evento in busquedaevento["events"]["event"]:
-            descripciones_eventos.append(descripcion_evento["description"])
-        return template('eventresults.tpl',lista_eventos=lista_eventos,comenzar_eventos=comenzar_eventos,direcciones_eventos=direcciones_eventos,ubicaciones_eventos=ubicaciones_eventos,descripciones_eventos=descripciones_eventos,ciudad=ciudad,termino=termino)
+        return template('eventresults.tpl',lista_eventos=lista_eventos,comenzar_eventos=comenzar_eventos,direcciones_eventos=direcciones_eventos,ubicaciones_eventos=ubicaciones_eventos,ciudad=ciudad,termino=termino)
     else:
         return template("error.tpl")
 

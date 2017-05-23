@@ -13,10 +13,12 @@
 						<br/>
 						<hr/>
 						<br/>
-							%for cancion,cancion2,cancion3 in zip(lista_canciones,titulos_canciones,imagenes_canciones):
+							%for cancion,cancion2,cancion3,cancion4 in zip(lista_canciones,titulos_canciones,imagenes_canciones,oyentes_canciones):
 								<ul>
 									<li><h2><strong>{{cancion}} - </strong>{{cancion2}}</h2></li>
-									<li><img width="600" height="400" src="{{cancion3}}"/></li>
+									<li><img width="600" height="400" src="{{cancion3}}"/>
+									<br/><br/>
+									<p><strong>Oyentes:</strong> {{cancion4}} personas que lo han escuchado</p></li>
 								</ul>
 							%end
 
