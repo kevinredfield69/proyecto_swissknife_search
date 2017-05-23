@@ -138,7 +138,7 @@ def songresults():
 def event():
     return template("event.tpl")
 
-@route('/eventressults',method="post")
+@route('/eventresults',method="post")
 def eventresults():
     ciudad = request.forms.get('ciudad')
     termino = request.forms.get ('termino')
@@ -157,6 +157,13 @@ def eventresults():
         return template('eventresults.tpl',lista_eventos=lista_eventos,ciudad=ciudad,termino=termino)
     else:
         return template("error.tpl")
+
+#@route('/film',method="get")
+#def film():
+#    return template("film.tpl")
+
+#@route('/filmresults',method="post")
+#def filmresults():
 
 @route('/css/<filepath:path>')
 def server_static(filepath):
