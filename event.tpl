@@ -32,8 +32,6 @@
 									<option value="This_Week">Esta Semana</option>
 									<option value="Next_Week">Próxima Semana</option>
 								</select>
-		
-								<br/><br/>
 
 								<strong><label>Tipo De Búsqueda:</label></strong>
 	
@@ -43,8 +41,6 @@
 									<option value="Date">Fecha</option>
 									<option value="Popularity">Popularidad</option>
 								</select>
-
-								<br/><br/>
 
 								<strong><label>Orden De Búsqueda:</label></strong>
 
