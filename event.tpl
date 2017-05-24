@@ -18,8 +18,6 @@
 								<strong><label>Ciudad:</label></strong>
 								<input type = "text" name = 'ciudad' required/>
 	
-							<br><br>
-	
 								<strong><label>Busqueda:</label></strong>
 								<input type = "text" name = 'termino' required/>
 
