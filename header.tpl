@@ -7,7 +7,7 @@
 <html>
 	<head>
 		<title>{{title}}</title>
-		<link rel="shortcut icon" href="/css/images/SDK1.png" />
+		<link rel="shortcut icon" href="css/images/SKD1.png" />
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
