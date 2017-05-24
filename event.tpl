@@ -23,7 +23,7 @@
 
 								<br/><br/>
 
-								<strong><label>Rango De Búsqueda:</label></strong>
+								<strong><label>Rango:</label></strong>
 
 								<select name='rango'>
 									<option value="" selected="selected">-	Selecciona   -</option>	
@@ -33,7 +33,7 @@
 									<option value="Next_Week">Próxima Semana</option>
 								</select>
 
-								<strong><label>Tipo De Búsqueda:</label></strong>
+								<strong><label>Tipo:</label></strong>
 	
 								<select name='tipo'>
 									<option value="" selected="selected">-	Selecciona   -</option>	
@@ -42,9 +42,7 @@
 									<option value="Popularity">Popularidad</option>
 								</select>
 
-								<br/><br/>
-
-								<strong><label>Orden De Búsqueda:</label></strong>
+								<strong><label>Orden:</label></strong>
 
 								<select name='orden'>
 									<option value="" selected="selected">-	Selecciona   -</option>	
