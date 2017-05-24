@@ -19,9 +19,6 @@
 								<strong><label>Escribir GIF A Buscar:</label></strong>
 								<input type = "text" name = 'q' required/>
 								<br/><br/>
-								<input type = "submit" value = "Buscar">
-								<input type="reset" value = "Limpiar">
-								<br/><br/>
 
 								<strong><label for='limit'>Límite De Resultados</label></strong>
 									<select id='limit' name='limit'>
@@ -36,6 +33,8 @@
 									</select>
 
 								<br/><br/>
+								<input type = "submit" value = "Buscar">
+								<input type="reset" value = "Limpiar">
 
 							</form>
 							<p><strong><a href="panel" class="button">Volver Al Panel De Buscadores</a></strong></p>
