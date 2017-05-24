@@ -191,7 +191,7 @@ def filmresults():
     fechas_peliculas = []
     calificaciones_peliculas = []
     keyfilm = os.environ["keyfilm"]
-    payload6 = {"api_key":keyfilm,"query":query,"languaje":"es-ES"}
+    payload6 = {"api_key":keyfilm,"query":query,"language":"es-ES"}
     r6 = requests.get('https://api.themoviedb.org/3/search/movie',params=payload6)
     if r6.status_code == 200:
         peliculas = r6.text
