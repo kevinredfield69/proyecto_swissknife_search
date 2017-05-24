@@ -44,11 +44,12 @@ def gif():
 @route('/gifresults',method="post")
 def gifresults():
     q = request.forms.get('q')
+    limit = request.forms.get('limit')
     lista_gifs = []
     titulos_gifs = []
     publicaciones_gifs = []
     keygif = os.environ["keygif"]
-    payload = {"q":q,"fmt":"json","api_key":keygif}
+    payload = {"q":q,"limit":limit,"fmt":"json","api_key":keygif}
     r = requests.get('http://api.giphy.com/v1/gifs/search?',params=payload)
     gifs = r.text
     busquedagif = json.loads(gifs)
