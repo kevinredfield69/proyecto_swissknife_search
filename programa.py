@@ -10,6 +10,10 @@ import os
 def index():
     return template("index.tpl")
 
+@route('/searchquick',method="post")
+def searchquick():
+    return template("searchquick.tpl")
+
 @route('/author',method="get")
 def author():
     return template("author.tpl")
