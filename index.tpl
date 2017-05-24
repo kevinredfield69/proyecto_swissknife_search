@@ -29,10 +29,9 @@
 								<br/><br/>
 								<input type = "submit" value = "Buscar">
 								<input type="reset" value = "Limpiar">
+								<br/><br/>
 
 							</form>
-
-							<br/>
 
 							<p><strong><a href="panel" class="button">Acceder A La Aplicación SwissKnife (Search) >>></a></strong></p>
 
