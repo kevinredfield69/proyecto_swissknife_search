@@ -33,8 +33,7 @@
     										<option value="45">45 resultados</option>
 										<option value="50">50 resultados</option>
 									</select>
-								
-								<br/><br/>
+
 								<strong><label for='order'>Orden De Resultados</label></strong>
 									<select id='order' name='order'>
 										<option value="" selected="selected">-	Selecciona   -</option>										<option value='date'>Fecha</option>
