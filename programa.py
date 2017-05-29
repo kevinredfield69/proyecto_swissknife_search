@@ -10,9 +10,11 @@ import os
 def index():
     return template("index.tpl")
 
-@route('/searchquick',method="post")
-def searchquick():
-    return template("searchquick.tpl")
+#@route('/searchquick',method="post")
+#def searchquick():
+#    return template("searchquick.tpl",search=search,coleccion_gifs=coleccion_gifs,coleccion_videos=coleccion_videos,coleccion_imagenes=coleccion_imagenes,coleccion_sonidos=coleccion_sonidos,coleccion_eventos=coleccion_eventos,coleccion_peliculas=coleccion_peliculas)
+
+
 
 @route('/author',method="get")
 def author():
