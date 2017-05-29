@@ -10,73 +10,73 @@ import os
 def index():
     return template("index.tpl")
 
-#@route('/searchquick',method="post")
-#def searchquick():
-#    search = request.forms.get('search')
-#    coleccion_gifs = []
-#    coleccion_videos = []
-#    coleccion_imagenes = []
-#    coleccion_sonidos = []
-#    coleccion_eventos = []
-#    coleccion_peliculas = []
-#    keygif2 = os.environ["keygif"]
-#    keyvideo2 = os.environ["keyvideo"]
-#    keypicture2 = os.environ["keypicture"]
-#    keysong2 = os.environ["keysong"]
-#    keyevent2 = os.environ["keyevent"]
-#    keyfilm2 = os.environ["keyfilm"]
-#    payload7 = {"q":search,"limit":"10","fmt":"json","api_key":keygif2}
-#    payload8 = {"part":"snippet","ForMine":"true","maxResults":"10","q":search,"type":"video","key":keyvideo2}
-#    payload9 = {"method":"flickr.photos.search","text":search,"extras":"url_o,url_s","per_page":"10","format":"json","api_key":keypicture2}
-#    payload10 = {"method":"track.search","format":"json","track":search,"limit":"limit","api_key":keysong2}
-#    payload11 = {"keywords":search,"page_size":"10","app_key":keyevent2}
-#    payload12 = {"api_key":keyfilm2,"query":search,"language":"es-ES"}
-#    r7 = requests.get('http://api.giphy.com/v1/gifs/search?',params=payload7)
-#    r8 = requests.get('https://www.googleapis.com/youtube/v3/search?',params=payload8)
-#    r9 = requests.get('https://api.flickr.com/services/rest',params=payload9)
-#    r10 = requests.get('http://ws.audioscrobbler.com/2.0/',params=payload10)
-#    r11 = requests.get('http://api.eventful.com/json/events/search?',params=payload11)
-#    r12 = requests.get('https://api.themoviedb.org/3/search/movie',params=payload12)
-#    gifs2 = r7.text
-#    videos2 = r8.text
-#    imagenes2 = r9.text
-#    sonidos2 = r10.text
-#    eventos2 = r11.text
-#    peliculas2 = r12.text
-#    busquedagif2 = json.loads(gifs2)
-#    busquedavideo2 = json.loads(videos2)
-#    busquedaimagen2 = json.loads(imagenes2)
-#    busquedasonido2 = json.loads(sonidos2)
-#    busquedaevento2 = json.loads(eventos2)
-#    busquedapelicula2 = json.loads(peliculas2)
-#    if r7.status_code == 200 and r8.status_code == 200 and r9.status_code == 200 and r10.status_code == 200 and r11.status_code == 200 and r12.status_code == 200:
-#        for gif4 in busquedagif2["data"]:
-#            coleccion_gifs.append(gif4["images"]["fixed_height"]["url"])
-#            coleccion_gifs.append(gif4["slug"])
-#        for video5 in busquedavideo2["items"]:
-#            coleccion_videos.append(video5["snippet"]["title"])
-#            coleccion_videos.append(video5["id"]["videoId"])
-#        for imagen2 in busquedaimagen2["photos"]["photo"]:
-#            if imagen2.has_key("url_o"):
-#                coleccion_imagenes.append(imagen2["title"])
-#                coleccion_imagenes.append([imagen2['url_s'],imagen2["url_o"]])
-#        for sonido2 in busquedasonido2["results"]["trackmatches"]["track"]:
-#            coleccion_sonidos.append(sonido2["artist"])
-#            coleccion_sonidos.append(sonido2["name"])
-#            coleccion_sonidos.append(sonido2["image"][3]["#text"])
-#        for evento2 in busquedaevento2["events"]["event"]:
-#            coleccion_eventos.append(evento2["title"])
-#            coleccion_eventos.append(evento2["start_time"])
-#            coleccion_eventos.append(evento2["venue_address"])
-#            coleccion_eventos.append(evento2["venue_name"])
-#        for pelicula2 in busquedapelicula2["results"]:
-#            coleccion_peliculas.append(pelicula2["title"])
-#            coleccion_peliculas.append(pelicula2["overview"])
-#            coleccion_peliculas.append(pelicula2["release_date"])
-#            coleccion_peliculas.append(pelicula2["vote_average"])
-#        return template("searchquick.tpl",search=search,coleccion_gifs=coleccion_gifs,coleccion_videos=coleccion_videos,coleccion_imagenes=coleccion_imagenes,coleccion_sonidos=coleccion_sonidos,coleccion_eventos=coleccion_eventos,coleccion_peliculas=coleccion_peliculas)
-#    else:
-#        return template("error.tpl")
+@route('/searchquick',method="post")
+def searchquick():
+    search = request.forms.get('search')
+    coleccion_gifs = []
+    coleccion_videos = []
+    coleccion_imagenes = []
+    coleccion_sonidos = []
+    coleccion_eventos = []
+    coleccion_peliculas = []
+    keygif2 = os.environ["keygif"]
+    keyvideo2 = os.environ["keyvideo"]
+    keypicture2 = os.environ["keypicture"]
+    keysong2 = os.environ["keysong"]
+    keyevent2 = os.environ["keyevent"]
+    keyfilm2 = os.environ["keyfilm"]
+    payload7 = {"q":search,"limit":"10","fmt":"json","api_key":keygif2}
+    payload8 = {"part":"snippet","ForMine":"true","maxResults":"10","q":search,"type":"video","key":keyvideo2}
+    payload9 = {"method":"flickr.photos.search","text":search,"extras":"url_o,url_s","per_page":"10","format":"json","api_key":keypicture2}
+    payload10 = {"method":"track.search","format":"json","track":search,"limit":"limit","api_key":keysong2}
+    payload11 = {"keywords":search,"page_size":"10","app_key":keyevent2}
+    payload12 = {"api_key":keyfilm2,"query":search,"language":"es-ES"}
+    r7 = requests.get('http://api.giphy.com/v1/gifs/search?',params=payload7)
+    r8 = requests.get('https://www.googleapis.com/youtube/v3/search?',params=payload8)
+    r9 = requests.get('https://api.flickr.com/services/rest',params=payload9)
+    r10 = requests.get('http://ws.audioscrobbler.com/2.0/',params=payload10)
+    r11 = requests.get('http://api.eventful.com/json/events/search?',params=payload11)
+    r12 = requests.get('https://api.themoviedb.org/3/search/movie',params=payload12)
+    gifs2 = r7.text
+    videos2 = r8.text
+    imagenes2 = r9.text
+    sonidos2 = r10.text
+    eventos2 = r11.text
+    peliculas2 = r12.text
+    busquedagif2 = json.loads(gifs2)
+    busquedavideo2 = json.loads(videos2)
+    busquedaimagen2 = json.loads(imagenes2)
+    busquedasonido2 = json.loads(sonidos2)
+    busquedaevento2 = json.loads(eventos2)
+    busquedapelicula2 = json.loads(peliculas2)
+    if r7.status_code == 200 and r8.status_code == 200 and r9.status_code == 200 and r10.status_code == 200 and r11.status_code == 200 and r12.status_code == 200:
+        for gif4 in busquedagif2["data"]:
+            coleccion_gifs.append(gif4["images"]["fixed_height"]["url"])
+            coleccion_gifs.append(gif4["slug"])
+        for video5 in busquedavideo2["items"]:
+            coleccion_videos.append(video5["snippet"]["title"])
+            coleccion_videos.append(video5["id"]["videoId"])
+        for imagen2 in busquedaimagen2["photos"]["photo"]:
+            if imagen2.has_key("url_o"):
+                coleccion_imagenes.append(imagen2["title"])
+                coleccion_imagenes.append([imagen2['url_s'],imagen2["url_o"]])
+        for sonido2 in busquedasonido2["results"]["trackmatches"]["track"]:
+            coleccion_sonidos.append(sonido2["artist"])
+            coleccion_sonidos.append(sonido2["name"])
+            coleccion_sonidos.append(sonido2["image"][3]["#text"])
+        for evento2 in busquedaevento2["events"]["event"]:
+            coleccion_eventos.append(evento2["title"])
+            coleccion_eventos.append(evento2["start_time"])
+            coleccion_eventos.append(evento2["venue_address"])
+            coleccion_eventos.append(evento2["venue_name"])
+        for pelicula2 in busquedapelicula2["results"]:
+            coleccion_peliculas.append(pelicula2["title"])
+            coleccion_peliculas.append(pelicula2["overview"])
+            coleccion_peliculas.append(pelicula2["release_date"])
+            coleccion_peliculas.append(pelicula2["vote_average"])
+        return template("searchquick.tpl",search=search,coleccion_gifs=coleccion_gifs,coleccion_videos=coleccion_videos,coleccion_imagenes=coleccion_imagenes,coleccion_sonidos=coleccion_sonidos,coleccion_eventos=coleccion_eventos,coleccion_peliculas=coleccion_peliculas)
+    else:
+        return template("error.tpl")
 
 @route('/author',method="get")
 def author():
