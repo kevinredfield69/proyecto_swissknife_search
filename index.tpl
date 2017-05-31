@@ -40,9 +40,7 @@
 								<a href="/twitter_logout"><h1>Desconectar</h1></a>
 							% else:
 								<a href="{{authorize_url}}"><h1>Conectar con Twitter</h1></a>
-							% end
-							
-							<br/>							
+							% end						
 
 							<p><strong><a href="panel" class="button">Acceder A La Aplicación SwissKnife (Search) >>></a></strong></p>
 
