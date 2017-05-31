@@ -30,6 +30,10 @@
 								<input type = "submit" value = "Buscar">
 								<input type="reset" value = "Limpiar">
 								<br/><br/>
+							</form>
+
+							<br/><br/>
+
 							% if cont == 1:
 								<h3>Conectado con</h3>
 								<img src="css/images/twitter.png" />
@@ -37,8 +41,6 @@
 							% else:
 								<a href="{{authorize_url}}"><h3>Conectar con Twitter</h3></a>
 							% end
-
-							</form>
 
 							<p><strong><a href="panel" class="button">Acceder A La Aplicación SwissKnife (Search) >>></a></strong></p>
 
