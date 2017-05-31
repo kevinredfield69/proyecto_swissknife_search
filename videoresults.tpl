@@ -19,7 +19,10 @@
 									<br/>
             								<iframe width="600" height="400" src="https://www.youtube.com/embed/{{id}}" frameborder="0" allowfullscreen></iframe>
 									<br/><br/>
-									<p><strong>Descripción Del Vídeo:</strong> {{descripcion}}</p></li>
+									<p><strong>Descripción Del Vídeo:</strong> {{descripcion}}</p>
+									% if cont == 1:
+										<a href="/twittear}"><h1 class="centro">Compartir en Twitter</h1></a></li>
+									% end
 								</ul>
 							%end
 

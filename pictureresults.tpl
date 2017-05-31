@@ -15,7 +15,10 @@
 							%for titulo,imagen in zip(titulos_imagenes,lista_imagenes):
 								<ul>
 									<li><h2><strong>{{titulo}}</strong></h2></li>
-            								<li><img width="600" height="400" src="{{imagen[0]}}"/></li> 
+            								<li><img width="600" height="400" src="{{imagen[0]}}"/>
+									% if cont == 1:
+										<a href="/twittear}"><h1 class="centro">Compartir en Twitter</h1></a></li>
+									% end
 								</ul>
 							%end
 
