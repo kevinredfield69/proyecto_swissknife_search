@@ -3,3 +3,5 @@ requests
 argparse
 python-http-client
 wsgiref
+oauthlib
+requests-oauthlib
