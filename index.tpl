@@ -41,6 +41,8 @@
 							% else:
 								<a href="{{authorize_url}}"><h3>Conectar con Twitter</h3></a>
 							% end
+							
+							<br/>							
 
 							<p><strong><a href="panel" class="button">Acceder A La Aplicación SwissKnife (Search) >>></a></strong></p>
 
