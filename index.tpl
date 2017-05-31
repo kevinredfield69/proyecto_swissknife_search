@@ -70,4 +70,12 @@
 			</div>
 		</div>
 
+% if cont == 1:
+	<h3>Conectado con</h3>
+	<img src="css/images/twitter.png" />
+		<a href="/twitter_logout"><h3>Desconectar</h3></a>
+% else:
+	<a href="{{authorize_url}}"><h3>Conectar con Twitter</h3></a>
+% end
+
 %include('footer.tpl')

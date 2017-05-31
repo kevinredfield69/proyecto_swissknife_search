@@ -1,42 +1,42 @@
 # -*- coding: utf-8 -*-
 
-from bottle import route,template,run,static_file,error,request
-#from requests_oauthlib import OAuth1
-#from urlparse import parse_qs
+from bottle import route,template,run,static_file,error,request,redirect,response,get
+from requests_oauthlib import OAuth1
+from urlparse import parse_qs
 from sys import argv
 import json
 import requests
 import os
 
-#REQUEST_TOKEN_URL = "https://api.twitter.com/oauth/request_token"
-#AUTHENTICATE_URL = "https://api.twitter.com/oauth/authenticate?oauth_token="
-#ACCESS_TOKEN_URL = "https://api.twitter.com/oauth/access_token"
+REQUEST_TOKEN_URL = "https://api.twitter.com/oauth/request_token"
+AUTHENTICATE_URL = "https://api.twitter.com/oauth/authenticate?oauth_token="
+ACCESS_TOKEN_URL = "https://api.twitter.com/oauth/access_token"
 
-#CONSUMER_KEY = os.environ.get('consumer_key')
-#CONSUMER_SECRET = os.environ.get('consumer_secret')
+CONSUMER_KEY = os.environ.get('consumer_key')
+CONSUMER_SECRET = os.environ.get('consumer_secret')
 
-#TOKENS = {}
+TOKENS = {}
 
-#def get_request_token():
-#    oauth = OAuth1(CONSUMER_KEY,
-#                   client_secret=CONSUMER_SECRET,
-#    )
-#    r = requests.post(url=REQUEST_TOKEN_URL, auth=oauth)
-#    credentials = parse_qs(r.content)
-#    TOKENS["request_token"] = credentials.get('oauth_token')[0]
-#    TOKENS["request_token_secret"] = credentials.get('oauth_token_secret')[0]
+def get_request_token():
+    oauth = OAuth1(CONSUMER_KEY,
+                   client_secret=CONSUMER_SECRET,
+    )
+    r = requests.post(url=REQUEST_TOKEN_URL, auth=oauth)
+    credentials = parse_qs(r.content)
+    TOKENS["request_token"] = credentials.get('oauth_token')[0]
+    TOKENS["request_token_secret"] = credentials.get('oauth_token_secret')[0]
 
-#def get_access_token(TOKENS):
-#    oauth = OAuth1(CONSUMER_KEY,
-#                   client_secret=CONSUMER_SECRET,
-#                   resource_owner_key=TOKENS["request_token"],
-#                   resource_owner_secret=TOKENS["request_token_secret"],
-#                   verifier=TOKENS["verifier"],)
-#    r = requests.post(url=ACCESS_TOKEN_URL, auth=oauth)
-#    credentials = parse_qs(r.content)
-#    print credentials
-#    TOKENS["access_token"] = credentials.get('oauth_token')[0]
-#    TOKENS["access_token_secret"] = credentials.get('oauth_token_secret')[0]
+def get_access_token(TOKENS):
+    oauth = OAuth1(CONSUMER_KEY,
+                   client_secret=CONSUMER_SECRET,
+                   resource_owner_key=TOKENS["request_token"],
+                   resource_owner_secret=TOKENS["request_token_secret"],
+                   verifier=TOKENS["verifier"],)
+    r = requests.post(url=ACCESS_TOKEN_URL, auth=oauth)
+    credentials = parse_qs(r.content)
+    print credentials
+    TOKENS["access_token"] = credentials.get('oauth_token')[0]
+    TOKENS["access_token_secret"] = credentials.get('oauth_token_secret')[0]
 
 @route('/',method="get")
 def index():
@@ -246,53 +246,53 @@ def filmresults():
     else:
         return template('error')
 
-#@get('/callback')
-#def get_verifier():
-#    print TOKENS
-#    TOKENS["verifier"] = request.query.oauth_verifier
-#    get_access_token(TOKENS)
-#    response.set_cookie("access_token", TOKENS["access_token"],secret='some-secret-key')
-#    response.set_cookie("access_token_secret", TOKENS["access_token_secret"],secret='some-secret-key')
-#    redirect('/inicio')
+@get('/callback')
+def get_verifier():
+    print TOKENS
+    TOKENS["verifier"] = request.query.oauth_verifier
+    get_access_token(TOKENS)
+    response.set_cookie("access_token", TOKENS["access_token"],secret='some-secret-key')
+    response.set_cookie("access_token_secret", TOKENS["access_token_secret"],secret='some-secret-key')
+    redirect('/')
 
-#@get('/twittear/<codigo>')
-#def twittear(codigo):
-#    payload={"id":codigo,"country":"ES"}
-#    req=requests.get('https://itunes.apple.com/lookup',params=payload)
-#    js=json.loads(req.text)
-#    cancion=js["results"][0]["trackName"]
-#    artista=js["results"][0]["artistName"]
-#    if request.get_cookie("access_token", secret='some-secret-key'):
-#      TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
-#      TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
-#      print CONSUMER_KEY
-#      print CONSUMER_SECRET
-#      print TOKENS["access_token"]
-#      print TOKENS["access_token_secret"]
-#      oauth = OAuth1(CONSUMER_KEY,
-#                       client_secret=CONSUMER_SECRET,
-#                       resource_owner_key=TOKENS["access_token"],
-#                       resource_owner_secret=TOKENS["access_token_secret"])
-#      url = 'https://api.twitter.com/1.1/statuses/update.json'
-#      r = requests.post(url=url,
-#                          data={"status":"Me ha gustado la cancion %s de %s desde vargaxtune.herokuapp.com"%(cancion,artista)},
-#                          auth=oauth)
-#      cont=1
-#      frase=" "
-#      if r.status_code == 200:
-#        frase="Tweet Enviado Correctamente"
-#        return template('html/correoenviado.tpl',frase=frase,cont=cont,codigo=codigo)
-#      else:
-#        frase="Tu Tweet No fue Enviado hubo un Error Inesperado"
-#        return template('html/correoenviado.tpl',frase=frase,cont=cont,codigo=codigo)
-#    else:
-#      redirect('/inicio')
+@get('/twittear/<codigo>')
+def twittear(codigo):
+    payload={"id":codigo,"country":"ES"}
+    req=requests.get('https://itunes.apple.com/lookup',params=payload)
+    js=json.loads(req.text)
+    cancion=js["results"][0]["trackName"]
+    artista=js["results"][0]["artistName"]
+    if request.get_cookie("access_token", secret='some-secret-key'):
+      TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
+      TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
+      print CONSUMER_KEY
+      print CONSUMER_SECRET
+      print TOKENS["access_token"]
+      print TOKENS["access_token_secret"]
+      oauth = OAuth1(CONSUMER_KEY,
+                       client_secret=CONSUMER_SECRET,
+                       resource_owner_key=TOKENS["access_token"],
+                       resource_owner_secret=TOKENS["access_token_secret"])
+      url = 'https://api.twitter.com/1.1/statuses/update.json'
+      r = requests.post(url=url,
+                          data={"status":"Me ha gustado la cancion %s de %s desde vargaxtune.herokuapp.com"%(cancion,artista)},
+                          auth=oauth)
+      cont=1
+      frase=" "
+      if r.status_code == 200:
+        frase="Tweet Enviado Correctamente"
+        return template('html/correoenviado.tpl',frase=frase,cont=cont,codigo=codigo)
+      else:
+        frase="Tu Tweet No fue Enviado hubo un Error Inesperado"
+        return template('html/correoenviado.tpl',frase=frase,cont=cont,codigo=codigo)
+    else:
+      redirect('/')
 
-#@get('/twitter_logout')
-#def twitter_logout():
-#  response.set_cookie("access_token", '',max_age=0)
-#  response.set_cookie("access_token_secret", '',max_age=0)
-#  redirect('/inicio')
+@get('/twitter_logout')
+def twitter_logout():
+  response.set_cookie("access_token", '',max_age=0)
+  response.set_cookie("access_token_secret", '',max_age=0)
+  redirect('/')
 
 @route('/css/<filepath:path>')
 def server_static(filepath):
