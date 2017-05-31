@@ -19,7 +19,7 @@
             								<li><img width="600" height="400" src="{{gif}}"/></li>
 
 									% if cont == 1:
-										<li><a href="/twittear/{{gif2}}"><h1 class="centro">Compartir en Twitter</h1></a></li>
+										<li><a href="/twittear}"><h1 class="centro">Compartir en Twitter</h1></a></li>
 									% end
 								</ul>
 							%end

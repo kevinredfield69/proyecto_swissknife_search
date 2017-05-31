@@ -141,7 +141,12 @@ def videoresults():
             descripciones_videos.append(video3["snippet"]["description"])
         for video4 in busquedavideo["items"]:
             canales_videos.append(video4["snippet"]["channelTitle"])
-        return template("videoresults.tpl",q=q,lista_ids=lista_ids,titulos_videos=titulos_videos,descripciones_videos=descripciones_videos,canales_videos=canales_videos)
+        cont=0
+        if request.get_cookie("access_token", secret='some-secret-key'):
+            cont=1
+        else:
+            cont=0
+        return template("videoresults.tpl",q=q,lista_ids=lista_ids,titulos_videos=titulos_videos,descripciones_videos=descripciones_videos,canales_videos=canales_videos,cont=cont)
     else:
         return template("error.tpl")
 
@@ -165,7 +170,12 @@ def pictureresults():
                 lista_imagenes.append([imagen['url_s'],imagen["url_o"]])
         for titulo in busquedaimagen["photos"]["photo"]:
             titulos_imagenes.append(titulo["title"])
-        return template("pictureresults.tpl",text=text,lista_imagenes=lista_imagenes,titulos_imagenes=titulos_imagenes)
+        cont=0
+        if request.get_cookie("access_token", secret='some-secret-key'):
+            cont=1
+        else:
+            cont=0
+        return template("pictureresults.tpl",text=text,lista_imagenes=lista_imagenes,titulos_imagenes=titulos_imagenes,cont=cont)
     else:
         return template("error.tpl")
 
@@ -194,7 +204,12 @@ def songresults():
             imagenes_canciones.append(cancion3["image"][3]["#text"])
         for cancion4 in busquedacancion["results"]["trackmatches"]["track"]:
             oyentes_canciones.append(cancion4["listeners"])
-        return template("songresults.tpl",track=track,lista_canciones=lista_canciones,titulos_canciones=titulos_canciones,imagenes_canciones=imagenes_canciones,oyentes_canciones=oyentes_canciones)
+        cont=0
+        if request.get_cookie("access_token", secret='some-secret-key'):
+            cont=1
+        else:
+            cont=0
+        return template("songresults.tpl",track=track,lista_canciones=lista_canciones,titulos_canciones=titulos_canciones,imagenes_canciones=imagenes_canciones,oyentes_canciones=oyentes_canciones,cont=cont)
     else:
         return template("error.tpl")
 
@@ -227,7 +242,12 @@ def eventresults():
             direcciones_eventos.append(direccion["venue_address"])
         for ubicacion in busquedaevento["events"]["event"]:
             ubicaciones_eventos.append(ubicacion["venue_name"])
-        return template('eventresults.tpl',lista_eventos=lista_eventos,comenzar_eventos=comenzar_eventos,direcciones_eventos=direcciones_eventos,ubicaciones_eventos=ubicaciones_eventos,ciudad=ciudad,termino=termino)
+        cont=0
+        if request.get_cookie("access_token", secret='some-secret-key'):
+            cont=1
+        else:
+            cont=0
+        return template('eventresults.tpl',lista_eventos=lista_eventos,comenzar_eventos=comenzar_eventos,direcciones_eventos=direcciones_eventos,ubicaciones_eventos=ubicaciones_eventos,ciudad=ciudad,termino=termino,cont=cont)
     else:
         return template("error.tpl")
 
@@ -256,7 +276,12 @@ def filmresults():
             fechas_peliculas.append(fecha["release_date"])
         for calificacion in busquedapelicula["results"]:
             calificaciones_peliculas.append(calificacion["vote_average"])
-        return template('filmresults.tpl',lista_peliculas=lista_peliculas,descripciones_peliculas=descripciones_peliculas,fechas_peliculas=fechas_peliculas,calificaciones_peliculas=calificaciones_peliculas,query=query)
+        cont=0
+        if request.get_cookie("access_token", secret='some-secret-key'):
+            cont=1
+        else:
+            cont=0
+        return template('filmresults.tpl',lista_peliculas=lista_peliculas,descripciones_peliculas=descripciones_peliculas,fechas_peliculas=fechas_peliculas,calificaciones_peliculas=calificaciones_peliculas,query=query,cont=cont)
     else:
         return template('error')
 
@@ -269,7 +294,7 @@ def get_verifier():
     response.set_cookie("access_token_secret", TOKENS["access_token_secret"],secret='some-secret-key')
     redirect('/')
 
-#@get('/twittear/<codigo>')
+#@get('/twittear')
 #def twittear(codigo):
 #    payload={"id":codigo,"country":"ES"}
 #    req=requests.get('https://itunes.apple.com/lookup',params=payload)
