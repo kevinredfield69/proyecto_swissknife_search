@@ -40,15 +40,6 @@ import os
 
 @route('/',method="get")
 def index():
-#    cont=0
-#    get_request_token()
-#    authorize_url = AUTHENTICATE_URL + TOKENS["request_token"]
-#    response.set_cookie("request_token", TOKENS["request_token"],secret='some-secret-key')
-#    response.set_cookie("request_token_secret", TOKENS["request_token_secret"],secret='some-secret-key')
-#    if request.get_cookie("access_token", secret='some-secret-key'):
-#        cont=1
-#    else:
-#        cont=0
     return template("index.tpl")
 
 #@route('/searchquick',method="post")
@@ -262,16 +253,15 @@ def filmresults():
 #    get_access_token(TOKENS)
 #    response.set_cookie("access_token", TOKENS["access_token"],secret='some-secret-key')
 #    response.set_cookie("access_token_secret", TOKENS["access_token_secret"],secret='some-secret-key')
-#    redirect('/')
+#    redirect('/inicio')
 
-#@get('/twitter_logout')
-#def twitter_logout():
-#  response.set_cookie("access_token", '',max_age=0)
-#  response.set_cookie("access_token_secret", '',max_age=0)
-#  redirect('/')
-
-#@get('/twittear/<valorado>')
-#def twittear(valorado):
+#@get('/twittear/<codigo>')
+#def twittear(codigo):
+#    payload={"id":codigo,"country":"ES"}
+#    req=requests.get('https://itunes.apple.com/lookup',params=payload)
+#    js=json.loads(req.text)
+#    cancion=js["results"][0]["trackName"]
+#    artista=js["results"][0]["artistName"]
 #    if request.get_cookie("access_token", secret='some-secret-key'):
 #      TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
 #      TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
@@ -284,14 +274,25 @@ def filmresults():
 #                       resource_owner_key=TOKENS["access_token"],
 #                       resource_owner_secret=TOKENS["access_token_secret"])
 #      url = 'https://api.twitter.com/1.1/statuses/update.json'
-#      status = 'Me ha gustado %s. via themediafinder.herokuapp.com'%valorado
-#      r = requests.post(url=url,data={"status":status},auth=oauth)
+#      r = requests.post(url=url,
+#                          data={"status":"Me ha gustado la cancion %s de %s desde vargaxtune.herokuapp.com"%(cancion,artista)},
+#                          auth=oauth)
+#      cont=1
+#      frase=" "
 #      if r.status_code == 200:
-#          return template('html/tuitcorrecto.tpl')
+#        frase="Tweet Enviado Correctamente"
+#        return template('html/correoenviado.tpl',frase=frase,cont=cont,codigo=codigo)
 #      else:
-#          return template('html/tuiterror.tpl')
+#        frase="Tu Tweet No fue Enviado hubo un Error Inesperado"
+#        return template('html/correoenviado.tpl',frase=frase,cont=cont,codigo=codigo)
 #    else:
-#      redirect('/')
+#      redirect('/inicio')
+
+#@get('/twitter_logout')
+#def twitter_logout():
+#  response.set_cookie("access_token", '',max_age=0)
+#  response.set_cookie("access_token_secret", '',max_age=0)
+#  redirect('/inicio')
 
 @route('/css/<filepath:path>')
 def server_static(filepath):
