@@ -36,7 +36,7 @@
 
 							% if cont == 1:
 								<h1>Conectado Con Twitter</h1>
-								<br/><br/>
+								<br/>
 								<a href="/twitter_logout"><h1>Desconectar</h1></a>
 							% else:
 								<a href="{{authorize_url}}"><h1>Conectar con Twitter</h1></a>
