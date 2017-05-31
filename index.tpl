@@ -35,7 +35,7 @@
 							<br/><br/>
 
 							% if cont == 1:
-								<h3>Conectado Con Twitter</h3>
+								<h1>Conectado Con Twitter</h1>
 								<br/><br/>
 								<a href="/twitter_logout"><h3>Desconectar</h3></a>
 							% else:
