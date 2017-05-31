@@ -40,6 +40,15 @@ import os
 
 @route('/',method="get")
 def index():
+#    cont=0
+#    get_request_token()
+#    authorize_url = AUTHENTICATE_URL + TOKENS["request_token"]
+#    response.set_cookie("request_token", TOKENS["request_token"],secret='some-secret-key')
+#    response.set_cookie("request_token_secret", TOKENS["request_token_secret"],secret='some-secret-key')
+#    if request.get_cookie("access_token", secret='some-secret-key'):
+#        cont=1
+#    else:
+#        cont=0
     return template("index.tpl")
 
 #@route('/searchquick',method="post")
