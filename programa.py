@@ -294,13 +294,8 @@ def get_verifier():
     response.set_cookie("access_token_secret", TOKENS["access_token_secret"],secret='some-secret-key')
     redirect('/')
 
-@get('/twittear')
-def twittear(codigo):
-    payload={"id":codigo,"country":"ES"}
-    req=requests.get('https://itunes.apple.com/lookup',params=payload)
-    js=json.loads(req.text)
-    cancion=js["results"][0]["trackName"]
-    artista=js["results"][0]["artistName"]
+@get('/twittear/<valorado>')
+def twittear(valorado):
     if request.get_cookie("access_token", secret='some-secret-key'):
       TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
       TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
@@ -313,17 +308,12 @@ def twittear(codigo):
                        resource_owner_key=TOKENS["access_token"],
                        resource_owner_secret=TOKENS["access_token_secret"])
       url = 'https://api.twitter.com/1.1/statuses/update.json'
-      r = requests.post(url=url,
-                          data={"status":"Me ha gustado la cancion %s de %s desde vargaxtune.herokuapp.com"%(cancion,artista)},
-                          auth=oauth)
-      cont=1
-      frase=" "
+      status = 'Me ha gustado %s. via swissknifesearch.herokuapp.com'%valorado
+      r = requests.post(url=url,data={"status":status},auth=oauth)
       if r.status_code == 200:
-        frase="Tweet Enviado Correctamente"
-        return template('html/correoenviado.tpl',frase=frase,cont=cont,codigo=codigo)
+          return template('html/tuitcorrecto.tpl')
       else:
-        frase="Tu Tweet No fue Enviado hubo un Error Inesperado"
-        return template('html/correoenviado.tpl',frase=frase,cont=cont,codigo=codigo)
+          return template('html/tuiterror.tpl')
     else:
       redirect('/')
 
