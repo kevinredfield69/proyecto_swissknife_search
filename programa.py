@@ -341,5 +341,5 @@ def server_static(filepath):
 def error404(error):
     return template("html/error.tpl")
 
-run(host='0.0.0.0', port=argv[1])
-#run(host='0.0.0.0', port=9000, debug=True)
+#run(host='0.0.0.0', port=argv[1])
+run(host='0.0.0.0', port=9000, debug=True)
