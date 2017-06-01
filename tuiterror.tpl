@@ -9,7 +9,7 @@
 					<div id="content" class="8u skel-cell-important">
 						<section>
 
-							<p><img src="/css/images/404.jpg" alt="" /></p>
+							<p><img src="/css/images/twincorrecto.png" alt="" /></p>
 
 							<br/>
 
