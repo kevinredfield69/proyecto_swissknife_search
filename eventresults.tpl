@@ -21,7 +21,7 @@
 									<p><strong>Dirección Del Evento:</strong> {{direccion}}</p>
 
 									% if cont == 1:
-										<a href="/twittear}"><h1 class="centro">Compartir en Twitter</h1></a></li>
+										<a href="/twittear"><h1 class="centro">Compartir en Twitter</h1></a></li>
 									% end
 								</ul>
 							%end 

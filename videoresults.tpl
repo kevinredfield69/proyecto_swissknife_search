@@ -21,7 +21,7 @@
 									<br/><br/>
 									<p><strong>Descripción Del Vídeo:</strong> {{descripcion}}</p>
 									% if cont == 1:
-										<a href="/twittear}"><h1 class="centro">Compartir en Twitter</h1></a></li>
+										<a href="/twittear"><h1 class="centro">Compartir en Twitter</h1></a></li>
 									% end
 								</ul>
 							%end

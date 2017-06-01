@@ -20,7 +20,7 @@
 									<br/><br/>
 									<p><strong>Oyentes:</strong> {{cancion4}} personas que lo han escuchado</p>
 									% if cont == 1:
-										<a href="/twittear}"><h1 class="centro">Compartir en Twitter</h1></a></li>
+										<a href="/twittear"><h1 class="centro">Compartir en Twitter</h1></a></li>
 									% end
 								</ul>
 							%end
