@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from bottle import route,template,run,static_file,error,request,redirect,response,get
-from requests_oauthlib import OAuth1
-from urlparse import parse_qs
+#from requests_oauthlib import OAuth1
+#from urlparse import parse_qs
 from sys import argv
 import json
 import requests
@@ -17,39 +17,41 @@ CONSUMER_SECRET = os.environ.get('consumer_secret')
 
 TOKENS = {}
 
-def get_request_token():
-    oauth = OAuth1(CONSUMER_KEY,
-                   client_secret=CONSUMER_SECRET,
-    )
-    r = requests.post(url=REQUEST_TOKEN_URL, auth=oauth)
-    credentials = parse_qs(r.content)
-    TOKENS["request_token"] = credentials.get('oauth_token')[0]
-    TOKENS["request_token_secret"] = credentials.get('oauth_token_secret')[0]
+#def get_request_token():
+#    oauth = OAuth1(CONSUMER_KEY,
+#                   client_secret=CONSUMER_SECRET,
+#    )
+#    r = requests.post(url=REQUEST_TOKEN_URL, auth=oauth)
+#    credentials = parse_qs(r.content)
+#    TOKENS["request_token"] = credentials.get('oauth_token')[0]
+#    TOKENS["request_token_secret"] = credentials.get('oauth_token_secret')[0]
 
-def get_access_token(TOKENS):
-    oauth = OAuth1(CONSUMER_KEY,
-                   client_secret=CONSUMER_SECRET,
-                   resource_owner_key=TOKENS["request_token"],
-                   resource_owner_secret=TOKENS["request_token_secret"],
-                   verifier=TOKENS["verifier"],)
-    r = requests.post(url=ACCESS_TOKEN_URL, auth=oauth)
-    credentials = parse_qs(r.content)
-    print credentials
-    TOKENS["access_token"] = credentials.get('oauth_token')[0]
-    TOKENS["access_token_secret"] = credentials.get('oauth_token_secret')[0]
+#def get_access_token(TOKENS):
+#    oauth = OAuth1(CONSUMER_KEY,
+#                   client_secret=CONSUMER_SECRET,
+#                   resource_owner_key=TOKENS["request_token"],
+#                   resource_owner_secret=TOKENS["request_token_secret"],
+#                   verifier=TOKENS["verifier"],)
+#    r = requests.post(url=ACCESS_TOKEN_URL, auth=oauth)
+#    credentials = parse_qs(r.content)
+#    print credentials
+#    TOKENS["access_token"] = credentials.get('oauth_token')[0]
+#    TOKENS["access_token_secret"] = credentials.get('oauth_token_secret')[0]
 
 @route('/',method="get")
 def index():
-    cont=0
-    get_request_token()
-    authorize_url = AUTHENTICATE_URL + TOKENS["request_token"]
-    response.set_cookie("request_token", TOKENS["request_token"],secret='some-secret-key')
-    response.set_cookie("request_token_secret", TOKENS["request_token_secret"],secret='some-secret-key')
-    if request.get_cookie("access_token", secret='some-secret-key'):
-        cont=1
-    else:
-        cont=0
-    return template("index.tpl",authorize_url=authorize_url,cont=cont)
+#    cont=0
+#    get_request_token()
+#    authorize_url = AUTHENTICATE_URL + TOKENS["request_token"]
+#    response.set_cookie("request_token", TOKENS["request_token"],secret='some-secret-key')
+#    response.set_cookie("request_token_secret", TOKENS["request_token_secret"],secret='some-secret-key')
+#    if request.get_cookie("access_token", secret='some-secret-key'):
+#        cont=1
+#    else:
+#        cont=0
+    return template("index.tpl")
+#authorize_url=authorize_url
+#cont=cont
 
 #@route('/searchquick',method="post")
 #def searchquick():
@@ -285,14 +287,14 @@ def filmresults():
     else:
         return template('error')
 
-@get('/callback')
-def get_verifier():
-    print TOKENS
-    TOKENS["verifier"] = request.query.oauth_verifier
-    get_access_token(TOKENS)
-    response.set_cookie("access_token", TOKENS["access_token"],secret='some-secret-key')
-    response.set_cookie("access_token_secret", TOKENS["access_token_secret"],secret='some-secret-key')
-    redirect('/')
+#@get('/callback')
+#def get_verifier():
+#    print TOKENS
+#    TOKENS["verifier"] = request.query.oauth_verifier
+#    get_access_token(TOKENS)
+#    response.set_cookie("access_token", TOKENS["access_token"],secret='some-secret-key')
+#    response.set_cookie("access_token_secret", TOKENS["access_token_secret"],secret='some-secret-key')
+#    redirect('/')
 
 #@get('/twittear')
 #def twittear(codigo):
@@ -327,11 +329,11 @@ def get_verifier():
 #    else:
 #      redirect('/')
 
-@get('/twitter_logout')
-def twitter_logout():
-  response.set_cookie("access_token", '',max_age=0)
-  response.set_cookie("access_token_secret", '',max_age=0)
-  redirect('/')
+#@get('/twitter_logout')
+#def twitter_logout():
+#  response.set_cookie("access_token", '',max_age=0)
+#  response.set_cookie("access_token_secret", '',max_age=0)
+#  redirect('/')
 
 @route('/css/<filepath:path>')
 def server_static(filepath):
