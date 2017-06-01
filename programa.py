@@ -8,14 +8,14 @@ import json
 import requests
 import os
 
-REQUEST_TOKEN_URL = "https://api.twitter.com/oauth/request_token"
-AUTHENTICATE_URL = "https://api.twitter.com/oauth/authenticate?oauth_token="
-ACCESS_TOKEN_URL = "https://api.twitter.com/oauth/access_token"
+#REQUEST_TOKEN_URL = "https://api.twitter.com/oauth/request_token"
+#AUTHENTICATE_URL = "https://api.twitter.com/oauth/authenticate?oauth_token="
+#ACCESS_TOKEN_URL = "https://api.twitter.com/oauth/access_token"
 
-CONSUMER_KEY = os.environ.get('consumer_key')
-CONSUMER_SECRET = os.environ.get('consumer_secret')
+#CONSUMER_KEY = os.environ.get('consumer_key')
+#CONSUMER_SECRET = os.environ.get('consumer_secret')
 
-TOKENS = {}
+#TOKENS = {}
 
 #def get_request_token():
 #    oauth = OAuth1(CONSUMER_KEY,
@@ -107,14 +107,15 @@ def gifresults():
             titulos_gifs.append(gif2["slug"])
         for gif3 in busquedagif["data"]:
             publicaciones_gifs.append(gif3["import_datetime"])
-        cont=0
-        if request.get_cookie("access_token", secret='some-secret-key'):
-            cont=1
-        else:
-            cont=0
-        return template("gifresults.tpl",q=q,lista_gifs=lista_gifs,titulos_gifs=titulos_gifs,publicaciones_gifs=publicaciones_gifs,cont=cont)
+#        cont=0
+#        if request.get_cookie("access_token", secret='some-secret-key'):
+#            cont=1
+#        else:
+#            cont=0
+        return template("gifresults.tpl",q=q,lista_gifs=lista_gifs,titulos_gifs=titulos_gifs,publicaciones_gifs=publicaciones_gifs)
     else:
         return template("error.tpl")
+#cont=cont
 
 @route('/video',method="get")
 def video():
@@ -143,14 +144,15 @@ def videoresults():
             descripciones_videos.append(video3["snippet"]["description"])
         for video4 in busquedavideo["items"]:
             canales_videos.append(video4["snippet"]["channelTitle"])
-        cont=0
-        if request.get_cookie("access_token", secret='some-secret-key'):
-            cont=1
-        else:
-            cont=0
-        return template("videoresults.tpl",q=q,lista_ids=lista_ids,titulos_videos=titulos_videos,descripciones_videos=descripciones_videos,canales_videos=canales_videos,cont=cont)
+#        cont=0
+#        if request.get_cookie("access_token", secret='some-secret-key'):
+#            cont=1
+#        else:
+#            cont=0
+        return template("videoresults.tpl",q=q,lista_ids=lista_ids,titulos_videos=titulos_videos,descripciones_videos=descripciones_videos,canales_videos=canales_videos)
     else:
         return template("error.tpl")
+#cont=cont
 
 @route('/picture',method="get")
 def picture():
@@ -172,14 +174,15 @@ def pictureresults():
                 lista_imagenes.append([imagen['url_s'],imagen["url_o"]])
         for titulo in busquedaimagen["photos"]["photo"]:
             titulos_imagenes.append(titulo["title"])
-        cont=0
-        if request.get_cookie("access_token", secret='some-secret-key'):
-            cont=1
-        else:
-            cont=0
-        return template("pictureresults.tpl",text=text,lista_imagenes=lista_imagenes,titulos_imagenes=titulos_imagenes,cont=cont)
+#        cont=0
+#        if request.get_cookie("access_token", secret='some-secret-key'):
+#            cont=1
+#        else:
+#            cont=0
+        return template("pictureresults.tpl",text=text,lista_imagenes=lista_imagenes,titulos_imagenes=titulos_imagenes)
     else:
         return template("error.tpl")
+#cont=cont
 
 @route('/song',method="get")
 def song():
@@ -206,14 +209,15 @@ def songresults():
             imagenes_canciones.append(cancion3["image"][3]["#text"])
         for cancion4 in busquedacancion["results"]["trackmatches"]["track"]:
             oyentes_canciones.append(cancion4["listeners"])
-        cont=0
-        if request.get_cookie("access_token", secret='some-secret-key'):
-            cont=1
-        else:
-            cont=0
-        return template("songresults.tpl",track=track,lista_canciones=lista_canciones,titulos_canciones=titulos_canciones,imagenes_canciones=imagenes_canciones,oyentes_canciones=oyentes_canciones,cont=cont)
+#        cont=0
+#        if request.get_cookie("access_token", secret='some-secret-key'):
+#            cont=1
+#        else:
+#            cont=0
+        return template("songresults.tpl",track=track,lista_canciones=lista_canciones,titulos_canciones=titulos_canciones,imagenes_canciones=imagenes_canciones,oyentes_canciones=oyentes_canciones)
     else:
         return template("error.tpl")
+#cont=cont
 
 @route('/event',method="get")
 def event():
@@ -244,14 +248,15 @@ def eventresults():
             direcciones_eventos.append(direccion["venue_address"])
         for ubicacion in busquedaevento["events"]["event"]:
             ubicaciones_eventos.append(ubicacion["venue_name"])
-        cont=0
-        if request.get_cookie("access_token", secret='some-secret-key'):
-            cont=1
-        else:
-            cont=0
-        return template('eventresults.tpl',lista_eventos=lista_eventos,comenzar_eventos=comenzar_eventos,direcciones_eventos=direcciones_eventos,ubicaciones_eventos=ubicaciones_eventos,ciudad=ciudad,termino=termino,cont=cont)
+#        cont=0
+#        if request.get_cookie("access_token", secret='some-secret-key'):
+#            cont=1
+#        else:
+#            cont=0
+        return template('eventresults.tpl',lista_eventos=lista_eventos,comenzar_eventos=comenzar_eventos,direcciones_eventos=direcciones_eventos,ubicaciones_eventos=ubicaciones_eventos,ciudad=ciudad,termino=termino)
     else:
         return template("error.tpl")
+#cont=cont
 
 @route('/film',method="get")
 def film():
@@ -278,14 +283,15 @@ def filmresults():
             fechas_peliculas.append(fecha["release_date"])
         for calificacion in busquedapelicula["results"]:
             calificaciones_peliculas.append(calificacion["vote_average"])
-        cont=0
-        if request.get_cookie("access_token", secret='some-secret-key'):
-            cont=1
-        else:
-            cont=0
-        return template('filmresults.tpl',lista_peliculas=lista_peliculas,descripciones_peliculas=descripciones_peliculas,fechas_peliculas=fechas_peliculas,calificaciones_peliculas=calificaciones_peliculas,query=query,cont=cont)
+#        cont=0
+#        if request.get_cookie("access_token", secret='some-secret-key'):
+#            cont=1
+#        else:
+#            cont=0
+        return template('filmresults.tpl',lista_peliculas=lista_peliculas,descripciones_peliculas=descripciones_peliculas,fechas_peliculas=fechas_peliculas,calificaciones_peliculas=calificaciones_peliculas,query=query)
     else:
         return template('error')
+#cont=cont
 
 #@get('/callback')
 #def get_verifier():
