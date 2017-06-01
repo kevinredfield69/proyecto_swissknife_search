@@ -292,10 +292,10 @@ def get_verifier():
     get_access_token(TOKENS)
     response.set_cookie("access_token", TOKENS["access_token"],secret='some-secret-key')
     response.set_cookie("access_token_secret", TOKENS["access_token_secret"],secret='some-secret-key')
-    redirect('/')
+    redirect('/twittear')
 
-@get('/twittear/<valorado>')
-def twittear(valorado):
+@get('/twittear')
+def twittear():
     if request.get_cookie("access_token", secret='some-secret-key'):
       TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
       TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
@@ -308,12 +308,12 @@ def twittear(valorado):
                        resource_owner_key=TOKENS["access_token"],
                        resource_owner_secret=TOKENS["access_token_secret"])
       url = 'https://api.twitter.com/1.1/statuses/update.json'
-      status = 'Me ha gustado %s. via swissknifesearch.herokuapp.com'%valorado
+      status = 'Me ha gustado %s. via swissknifesearch.herokuapp.com'
       r = requests.post(url=url,data={"status":status},auth=oauth)
       if r.status_code == 200:
-          return template('html/tuitcorrecto.tpl')
+          return template('tuitcorrecto.tpl')
       else:
-          return template('html/tuiterror.tpl')
+          return template('tuiterror.tpl')
     else:
       redirect('/')
 
