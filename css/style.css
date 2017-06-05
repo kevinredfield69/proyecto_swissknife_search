@@ -366,11 +366,7 @@
 	#main
 	{
 		position: relative;
-<<<<<<< HEAD
 		background: #B45F04;
-=======
-		background: #000;
->>>>>>> 1d885265e18d73b4003b81cc17134499543c7fa4
 		text-align: justify;
 		border: 15px solid silver;
 	}
