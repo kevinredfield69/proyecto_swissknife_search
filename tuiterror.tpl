@@ -11,6 +11,8 @@
 
 							<h3>Tweet No Enviado</h3>
 
+							<br/><br/>
+
 							<p><img src="/css/images/twincorrecto.png" alt="" /></p>
 
 							<br/>
