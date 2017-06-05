@@ -9,6 +9,8 @@
 					<div id="content" class="8u skel-cell-important">
 						<section>
 
+							<h3>Tweet No Enviado</h3>
+
 							<p><img src="/css/images/twincorrecto.png" alt="" /></p>
 
 							<br/>
