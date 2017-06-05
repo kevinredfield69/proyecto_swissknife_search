@@ -11,6 +11,8 @@
 							
 							<h3>Tweet Enviado Correctamente</h3>
 
+							<br/><br/>							
+
 							<p><img src="/css/images/twcorrecto.jpg" alt="" /></p>
 
 							<br/>
