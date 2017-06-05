@@ -22,18 +22,6 @@
 
 							<br/><br/>							
 
-							<form action='/searchquick' method='post'>
-							<br/>
-								<strong><label>Escribir Un Término De Búsqueda:</label></strong>
-								<input type = "text" name = 'search' required/>
-								<br/><br/>
-								<input type = "submit" value = "Buscar">
-								<input type="reset" value = "Limpiar">
-								<br/><br/>
-							</form>
-
-							<br/><br/>
-
 							% if cont == 1:
 								<h1>Conectado Con Twitter</h1>
 								<br/>
