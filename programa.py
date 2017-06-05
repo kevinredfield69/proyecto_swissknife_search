@@ -51,10 +51,6 @@ def index():
         cont=0
     return template("index.tpl",authorize_url=authorize_url,cont=cont)
 
-#@route('/searchquick',method="post")
-#def searchquick():
-#    return template("searchquick.tpl")
-
 @route('/author',method="get")
 def author():
     return template("author.tpl")
