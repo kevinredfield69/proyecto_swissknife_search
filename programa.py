@@ -301,7 +301,7 @@ def twittear():
       TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
       return template('/')
     else:
-      redirect('/twitter')
+      redirect('/')
 
 @post('/twittear')
 def tweet_submit():
