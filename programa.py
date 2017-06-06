@@ -279,7 +279,27 @@ def filmresults():
             cont=0
         return template('filmresults.tpl',lista_peliculas=lista_peliculas,descripciones_peliculas=descripciones_peliculas,fechas_peliculas=fechas_peliculas,calificaciones_peliculas=calificaciones_peliculas,query=query,cont=cont)
     else:
-        return template('error')
+        return template('error.tpl')
+
+@route('/actor',method="get")
+def actor():
+    return template("actor.tpl")
+
+@route('/actorresults',method="post")
+def actorresults():
+    query = request.forms.get('query')
+    lista_actores = []
+    keyactor = os.environ["keyactor"]
+    payload7 = {"api_key":keyactor,"query":query,"language":"es-ES"}
+    r7 = requests.get('https://api.themoviedb.org/3/search/person',params=payload7)
+    if r7.status_code == 200:
+        actores = r7.text
+        busquedaactor = json.loads(actores)
+        for actor in busquedaactor[""]:
+            lista_actores.append(actor[""])
+        return template('actorresults.tpl',lista_actores=lista_actores,query=query)
+    else:
+        return template('error.tpl')
 
 @get('/callback')
 def get_verifier():
