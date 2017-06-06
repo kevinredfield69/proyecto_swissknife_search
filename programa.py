@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from bottle import route,template,run,static_file,error,request,redirect,response,get
+from bottle import route,template,run,static_file,error,request,redirect,response,get,post
 from requests_oauthlib import OAuth1
 from urlparse import parse_qs
 from sys import argv
@@ -312,6 +312,28 @@ def twittear():
           return template('tuiterror.tpl')
     else:
       redirect('/')
+
+@post('/twittear')
+def tweet_submit():
+  texto = request.forms.get("tweet")
+  TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
+  TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
+  print CONSUMER_KEY
+  print CONSUMER_SECRET
+  print TOKENS["access_token"]
+  print TOKENS["access_token_secret"]
+  oauth = OAuth1(CONSUMER_KEY,
+                   client_secret=CONSUMER_SECRET,
+                   resource_owner_key=TOKENS["access_token"],
+                   resource_owner_secret=TOKENS["access_token_secret"])
+  url = 'https://api.twitter.com/1.1/statuses/update.json'
+  r = requests.post(url=url,
+                      data={"status":texto},
+                      auth=oauth)
+  if r.status_code == 200:
+    return "<p>Tweet properly sent</p>"
+  else:
+    return "<p>Unable to send tweet</p>"+r.content
 
 @get('/twitter_logout')
 def twitter_logout():
