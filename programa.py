@@ -320,7 +320,7 @@ def tweet_submit():
       else:
           return template('tuiterror.tpl')
     else:
-      redirect('/')
+        redirect('/')
 
 @get('/twitter_logout')
 def twitter_logout():
