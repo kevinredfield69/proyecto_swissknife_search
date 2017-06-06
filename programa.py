@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from bottle import route,template,run,static_file,error,request,redirect,response,get,post
+from bottle import route,template,run,static_file,error,request,redirect,response,get
 from requests_oauthlib import OAuth1
 from urlparse import parse_qs
 from sys import argv
@@ -293,15 +293,6 @@ def get_verifier():
 @get('/twittear')
 def twittear():
     if request.get_cookie("access_token", secret='some-secret-key'):
-        TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
-        TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
-        return template('tuitcorrecto.tpl')
-    else:
-        redirect('/twitter')
-
-@post('/twittear')
-def tweet_submit():
-    if request.get_cookie("access_token", secret='some-secret-key'):
       TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
       TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
       print CONSUMER_KEY
@@ -320,7 +311,7 @@ def tweet_submit():
       else:
           return template('tuiterror.tpl')
     else:
-        redirect('/')
+      redirect('/')
 
 @get('/twitter_logout')
 def twitter_logout():
