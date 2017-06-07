@@ -9,7 +9,7 @@
 					<div id="content" class="8u skel-cell-important">
 						<section>
 							
-							<h3>Tweet Enviado Correctamente</h3>
+							<h3>Tweet Enviado</h3>
 
 							<br/><br/>							
 
