@@ -49,6 +49,14 @@
 							<a href="film" class="image full"><img src="/css/images/beautybeast.jpg" alt="" /></a>
 					</div>
 
+					<div id="content" class="5u">
+							<br/>
+							<h4><strong>SwissKnife Actor</strong></h4>
+							<br/>
+							<a href="actor" class="image full"><img src="/css/images/chris.jpg" alt="" /></a>
+					</div>
+
+
 					<div id="content" class="5u">					
 							<p><strong><a href="/" class="button">Volver A La Página Principal</a></strong></p>
 					</div>
