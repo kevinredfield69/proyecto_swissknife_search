@@ -13,7 +13,7 @@
 
 							<br/><br/>							
 
-							<form action='/filmresults' method='post'>
+							<form action='/actorresults' method='post'>
 							<br/>
 								<strong><label>Escribir Nombre De Un Actor:</label></strong>
 								<input type = "text" name = 'query' required/>
