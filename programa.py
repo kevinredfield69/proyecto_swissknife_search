@@ -336,9 +336,9 @@ def twittear():
 
 @get('/twitter_logout')
 def twitter_logout():
-  response.set_cookie("access_token", '',max_age=0)
-  response.set_cookie("access_token_secret", '',max_age=0)
-  redirect('/')
+    response.set_cookie("access_token", '',max_age=0)
+    response.set_cookie("access_token_secret", '',max_age=0)
+    redirect('/')
 
 @route('/css/<filepath:path>')
 def server_static(filepath):
