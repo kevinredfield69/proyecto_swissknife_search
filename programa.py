@@ -298,7 +298,12 @@ def actorresults():
         busquedaactor = json.loads(actores)
         for actor in busquedaactor["results"]:
             lista_actores.append(actor["name"])
-        return template('actorresults.tpl',lista_actores=lista_actores,query=query)
+        cont=0
+        if request.get_cookie("access_token", secret='some-secret-key'):
+            cont=1
+        else:
+            cont=0
+        return template('actorresults.tpl',lista_actores=lista_actores,query=query,cont=cont)
     else:
         return template('error.tpl')
 
