@@ -291,13 +291,13 @@ def actorresults():
     lista_actores = []
     keyactor = os.environ["keyactor"]
     payload7 = {"api_key":keyactor,"query":query,"language":"es-ES"}
-    r7 = requests.get('https://api.themoviedb.org/3/search/person?',params=payload7)
+    r7 = requests.get('https://api.themoviedb.org/3/search/person',params=payload7)
     print r7.url
     if r7.status_code == 200:
         actores = r7.text
         busquedaactor = json.loads(actores)
         for actor in busquedaactor["results"]:
-            lista_actores.append(actor["name"])
+            lista_actores.append(actor["known_for"]["title"])
         return template('actorresults.tpl',lista_actores=lista_actores,query=query)
     else:
         return template('error.tpl')
