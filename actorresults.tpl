@@ -23,7 +23,7 @@
 								</ul>
 							%end
 
-							<p><strong><a href="film" class="button">Volver A SwissKnife Film</a></strong></p>
+							<p><strong><a href="actor" class="button">Volver A SwissKnife Film</a></strong></p>
 
 						</section>
 					</div>
