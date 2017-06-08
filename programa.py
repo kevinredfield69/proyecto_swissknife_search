@@ -297,9 +297,8 @@ def actorresults():
         actores = r7.text
         busquedaactor = json.loads(actores)
         for actor in busquedaactor["results"]:
-            for res in actor:
-                for res2 in res["Know_for"]:
-                    lista_actores.append(res2["original_title"])
+            for res in actor["Know_for"]:
+                lista_actores.append(res["original_title"])
         cont=0
         if request.get_cookie("access_token", secret='some-secret-key'):
             cont=1
