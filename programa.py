@@ -297,7 +297,7 @@ def actorresults():
         actores = r7.text
         busquedaactor = json.loads(actores)
         for actor in busquedaactor["results"]:
-            lista_actores.append(actor["title"])
+            lista_actores.append(actor["name"])
         return template('actorresults.tpl',lista_actores=lista_actores,query=query)
     else:
         return template('error.tpl')
