@@ -291,7 +291,7 @@ def actorresults():
     lista_actores = []
     keyactor = os.environ["keyactor"]
     payload7 = {"api_key":keyactor,"query":query,"language":"es-ES"}
-    r7 = requests.get('https://api.themoviedb.org/3/search/person',params=payload7)
+    r7 = requests.get('https://api.themoviedb.org/3/search/person?',params=payload7)
     print r7.url
     if r7.status_code == 200:
         actores = r7.text
