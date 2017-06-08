@@ -296,7 +296,7 @@ def actorresults():
     if r7.status_code == 200:
         actores = r7.text
         busquedaactor = json.loads(actores)
-        for actor in busquedaactor["results"]["known_for"]:
+        for actor in busquedaactor["results"]:
             lista_actores.append(actor["title"])
         return template('actorresults.tpl',lista_actores=lista_actores,query=query)
     else:
