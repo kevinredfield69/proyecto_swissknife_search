@@ -289,6 +289,7 @@ def actor():
 def actorresults():
     query = request.forms.get('query')
     lista_actores = []
+    actores_imagenes = []
     keyactor = os.environ["keyactor"]
     payload7 = {"api_key":keyactor,"query":query,"language":"es-ES"}
     r7 = requests.get('https://api.themoviedb.org/3/search/person',params=payload7)
@@ -299,12 +300,14 @@ def actorresults():
         for actor in busquedaactor["results"]:
             for res in actor["known_for"]:
                 lista_actores.append(res["title"])
+            for res2 in actor["known_for"]:
+                actores_imagenes.append(res2["poster_path"])
         cont=0
         if request.get_cookie("access_token", secret='some-secret-key'):
             cont=1
         else:
             cont=0
-        return template('actorresults.tpl',lista_actores=lista_actores,query=query,cont=cont)
+        return template('actorresults.tpl',lista_actores=lista_actores,query=query,actores_imagenes=actores_imagenes,cont=cont)
     else:
         return template('error.tpl')
 
