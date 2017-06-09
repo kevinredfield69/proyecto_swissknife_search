@@ -16,7 +16,7 @@
 							%for actor,descripcion,fecha,calificacion in zip(lista_actores,actores_descripciones,actores_fechas,actores_calificaciones):
 								<ul>
 									<li><p><strong>{{actor}}</strong></p></li>
-									<p><strong>Sinopsis De La Película: </strong>{{descripcion}}</p>
+									<li><p><strong>Sinopsis De La Película: </strong>{{descripcion}}</p>
 									<p><strong>Fecha De Estreno: </strong>{{fecha}}</p>
 									<p><strong>Calificación: </strong>{{calificacion}}</p></li>
 									% if cont == 1:
