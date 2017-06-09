@@ -13,10 +13,11 @@
 						<br/>
 						<hr/>
 						<br/>
-							%for actor,cartel in zip(lista_actores,actores_imagenes):
+							%for actor,cartel,descripcion in zip(lista_actores,actores_imagenes,actores_descripciones):
 								<ul>
 									<li><p><strong>{{actor}}</strong></p></li>
-									<li><img width="600" height="400" src="{{cartel}}"/></li>
+									<li><img width="600" height="400" src="{{cartel}}"/>
+									<p><strong>Sinopsis De La Película:</strong>{{descripcion}}</p></li>
 									% if cont == 1:
 										<a href="/twittear"><h1 class="centro">Compartir en Twitter</h1></a></li>
 									% end
