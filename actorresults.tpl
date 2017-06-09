@@ -16,7 +16,7 @@
 							%for actor,cartel,descripcion,fecha,calificacion in zip(lista_actores,actores_imagenes,actores_descripciones,actores_fechas,actores_calificaciones):
 								<ul>
 									<li><p><strong>{{actor}}</strong></p></li>
-									<li><img width="600" height="400" src="{{cartel[0]}}"/>
+									<li><img width="600" height="400" src="{{cartel[1]}}"/>
 									<p><strong>Sinopsis De La Película: </strong>{{descripcion}}</p>
 									<p><strong>Fecha De Estreno: </strong>{{fecha}}</p>
 									<p><strong>Calificación: </strong>{{calificacion}}</p></li>
