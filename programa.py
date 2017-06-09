@@ -304,7 +304,8 @@ def actorresults():
             for res2 in actor["known_for"]:
                 actores_imagenes.append(res2["poster_path"])
             for res3 in actor["known_for"]:
-                actores_descripciones.append(res3["genre_ids"]["overview"])
+                for res4 in res3["genre_ids"]:
+                    actores_descripciones.append(res4["overview"])
         cont=0
         if request.get_cookie("access_token", secret='some-secret-key'):
             cont=1
