@@ -289,7 +289,6 @@ def actor():
 def actorresults():
     query = request.forms.get('query')
     lista_actores = []
-    actores_imagenes = []
     actores_descripciones = []
     actores_fechas = []
     actores_calificaciones = []
@@ -304,19 +303,17 @@ def actorresults():
             for res in actor["known_for"]:
                 lista_actores.append(res["title"])
             for res2 in actor["known_for"]:
-                actores_imagenes.append(res2["poster_path"])
+                actores_descripciones.append(res2["overview"])
             for res3 in actor["known_for"]:
-                actores_descripciones.append(res3["overview"])
+                actores_fechas.append(res3["release_date"])
             for res4 in actor["known_for"]:
-                actores_fechas.append(res4["release_date"])
-            for res5 in actor["known_for"]:
-                actores_calificaciones.append(res5["vote_average"])
+                actores_calificaciones.append(res4["vote_average"])
         cont=0
         if request.get_cookie("access_token", secret='some-secret-key'):
             cont=1
         else:
             cont=0
-        return template('actorresults.tpl',lista_actores=lista_actores,query=query,actores_imagenes=actores_imagenes,actores_descripciones=actores_descripciones,actores_fechas=actores_fechas,actores_calificaciones=actores_calificaciones,cont=cont)
+        return template('actorresults.tpl',query=query,lista_actores=lista_actores,actores_descripciones=actores_descripciones,actores_fechas=actores_fechas,actores_calificaciones=actores_calificaciones,cont=cont)
     else:
         return template('error.tpl')
 
