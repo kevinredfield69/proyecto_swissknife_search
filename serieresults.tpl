@@ -13,10 +13,10 @@
 						<br/>
 						<hr/>
 						<br/>
-							%for serie,imagen in zip(lista_series,imagenes_series):
+							%for serie,voto in zip(lista_series,votos_series):
 								<ul>
 									<li><p><strong>{{serie}}</strong></p></li>
-									<li><img width="600" height="400" src="{{imagen}}"/></li>
+									<li><p><strong>Calificacion: </strong>{{voto}}</p></li>
 
 									% if cont == 1:
 										<a href="/twittear"><h1 class="centro">Compartir en Twitter</h1></a></li>
