@@ -58,9 +58,9 @@
 
 					<div id="content" class="5u">
 							<br/>
-							<h4><strong>SwissKnife Games</strong></h4>
+							<h4><strong>SwissKnife Series</strong></h4>
 							<br/>
-							<a href="game" class="image full"><img src="/css/images/steam.png" alt="" /></a>
+							<a href="serie" class="image full"><img src="/css/images/fast.jpg" alt="" /></a>
 					</div>
 
 
