@@ -295,7 +295,6 @@ def actorresults():
     keyactor = os.environ["keyactor"]
     payload7 = {"api_key":keyactor,"query":query,"language":"es-ES"}
     r7 = requests.get('https://api.themoviedb.org/3/search/person',params=payload7)
-    print r7.url
     if r7.status_code == 200:
         actores = r7.text
         busquedaactor = json.loads(actores)
@@ -316,6 +315,24 @@ def actorresults():
         return template('actorresults.tpl',query=query,lista_actores=lista_actores,actores_descripciones=actores_descripciones,actores_fechas=actores_fechas,actores_calificaciones=actores_calificaciones,cont=cont)
     else:
         return template('error.tpl')
+
+@route('/serie',method="get")
+def serie():
+    return template("serie.tpl")
+
+@route('/serieresults',method="post")
+def serieresults():
+    query = request.forms.get('query')
+    lista_series = []
+    keyserie = os.environ["keyserie"]
+    payload8 = {"api_key":keyserie,"query":query,"language":"es-ES"}
+    r8 = requests.get('https://api.themoviedb.org/3/search/tv',params=payload8)
+    if r8.status_code == 200:
+        series = r8.text
+        busquedaserie = json.loads(series)
+        for serie in busquedaserie["results"]:
+            lista_series.append(serie["original_name"])
+
 
 @get('/callback')
 def get_verifier():
