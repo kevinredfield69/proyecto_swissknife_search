@@ -346,7 +346,7 @@ def serieresults():
             cont=1
         else:
             cont=0
-        return template('serieresults.tpl',lista_series=lista_series,votos_series=votos_series,descripciones_series=descripciones_series,query=query,cont=cont)
+        return template('serieresults.tpl',lista_series=lista_series,votos_series=votos_series,descripciones_series=descripciones_series,inicios_series=inicios_series,query=query,cont=cont)
     else:
         return template('error.tpl')
 
