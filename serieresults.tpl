@@ -15,7 +15,7 @@
 						<br/>
 							%for actor in lista_actores:
 								<ul>
-									<li>{{actor}}</li>
+									<li><p><strong>{{actor}}</strong></p></li>
 
 									% if cont == 1:
 										<a href="/twittear"><h1 class="centro">Compartir en Twitter</h1></a></li>
