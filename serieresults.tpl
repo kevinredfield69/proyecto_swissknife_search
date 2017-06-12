@@ -13,8 +13,10 @@
 						<br/>
 						<hr/>
 						<br/>
-							%for 
+							%for actor in lista_actores:
 								<ul>
+									<li>{{actor}}</li>
+
 									% if cont == 1:
 										<a href="/twittear"><h1 class="centro">Compartir en Twitter</h1></a></li>
 									% end
@@ -22,7 +24,7 @@
 								</ul>
 							%end
 
-							<p><strong><a href="actor" class="button">Volver A SwissKnife Actor</a></strong></p>
+							<p><strong><a href="serie" class="button">Volver A SwissKnife Serie</a></strong></p>
 
 						</section>
 					</div>

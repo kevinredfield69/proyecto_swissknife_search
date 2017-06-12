@@ -332,7 +332,14 @@ def serieresults():
         busquedaserie = json.loads(series)
         for serie in busquedaserie["results"]:
             lista_series.append(serie["original_name"])
-
+        cont=0
+        if request.get_cookie("access_token", secret='some-secret-key'):
+            cont=1
+        else:
+            cont=0
+        return template('serieresults.tpl',lista_series=lista_series,query=query,cont=cont)
+    else:
+        return template('error.tpl')
 
 @get('/callback')
 def get_verifier():
