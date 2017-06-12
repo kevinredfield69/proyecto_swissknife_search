@@ -1,4 +1,4 @@
-%include('header.tpl',title='Resultados Actores')
+%include('header.tpl',title='Resultados Series')
 
 <!-- Main -->
 		<div id="main">
