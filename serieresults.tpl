@@ -13,7 +13,7 @@
 						<br/>
 						<hr/>
 						<br/>
-							%for actor in lista_actores:
+							%for actor in lista_series:
 								<ul>
 									<li><p><strong>{{actor}}</strong></p></li>
 
