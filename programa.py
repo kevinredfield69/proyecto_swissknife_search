@@ -334,7 +334,7 @@ def serieresults():
         for serie in busquedaserie["results"]:
             lista_series.append(serie["original_name"])
         for serie2 in busquedaserie["results"]:
-            votos_series.append(serie2["poster_path"])
+            votos_series.append(serie2["vote_average"])
         cont=0
         if request.get_cookie("access_token", secret='some-secret-key'):
             cont=1
