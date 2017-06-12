@@ -326,6 +326,7 @@ def serieresults():
     lista_series = []
     votos_series = []
     descripciones_series = []
+    inicios_series = []
     keyserie = os.environ["keyserie"]
     payload8 = {"api_key":keyserie,"query":query,"language":"es-ES"}
     r8 = requests.get('https://api.themoviedb.org/3/search/tv',params=payload8)
@@ -338,6 +339,8 @@ def serieresults():
             votos_series.append(serie2["vote_average"])
         for serie3 in busquedaserie["results"]:
             descripciones_series.append(serie3["overview"])
+        for serie4 in busquedaserie["results"]:
+            inicios_series.append(serie4["first_air_date"])
         cont=0
         if request.get_cookie("access_token", secret='some-secret-key'):
             cont=1
