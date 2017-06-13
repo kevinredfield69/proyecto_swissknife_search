@@ -169,20 +169,21 @@
 					</div>
 					
 					<!-- Sidebar -->
-						<div id="sidebar" class="4u">
+
+					<div id="sidebar" class="4u">
 						<section>
 							<ul>
 
 								<li>
 									<p><strong>¿Que Es SwissKnife (Search)?</strong></p>
 									<br/>
-									<p class="text">SwissKnife (Search) es una Aplicación Web, donde podemos realizar diferentes búsquedas de información, que podemos encontrar día a día en Internet. Para éste caso, se realizarán busquedas de Imágenes, Canciones, Vídeos, Gifs, Eventos y Películas.</p>
+									<p class="text">SwissKnife (Search) es una Aplicación Web, donde podemos realizar diferentes búsquedas de información, que podemos encontrar día a día en Internet. Para éste caso, se realizarán busquedas de Imágenes, Canciones, Vídeos, Gifs, Eventos, Películas, Actores y Series de TV.</p>
 								</li>
 
 								<li>
                                     					<p><strong>¿Que Funciones Realiza SwissKnife (Search)?</strong></p>
 									<br/>	
-									<p class="text">Realizar criterios de búsqueda, sobre una imagen que queremos encontrar, una cacnción que queremos buscar, un vídeo que queremos ver, un gif que queremos encontrar, un evento que queremos encontrar y películas que queremos buscar, en tiempo real, y de forma rápida.</p>
+									<p class="text">Realizar criterios de búsqueda, sobre una imagen que queremos encontrar, una cacnción que queremos buscar, un vídeo que queremos ver, un gif que queremos encontrar, un evento que queremos encontrar, películas que queremos buscar, actores que queremos ver las películas que ha hecho y series de TV a buscar, en tiempo real, y de forma rápida.</p>
 								</li>
 
 								<li>
@@ -198,6 +199,5 @@
 				</div>
 			</div>
 		</div>
-
 
 %include('footer.tpl')

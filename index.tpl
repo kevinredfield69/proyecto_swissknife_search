@@ -14,9 +14,9 @@
 							<br/><br/>
 							<p><img src="/css/images/SK1.jpg" alt="" /></p>
 							<br/>
-							<p><strong>SwissKnife (Search)</strong> es una Aplicación Web, que actúa como un <strong>"Buscador de Internet"</strong>, donde su función principal, es realizar <strong>Búsquedas de Información,</strong> que hacen referencias a Imágenes, Vídeos, Canciones y Gifs existentes en <strong>Internet,</strong> pero de una forma más <strong>Rápida.</strong></p>
+							<p><strong>SwissKnife (Search)</strong> es una Aplicación Web, que actúa como un <strong>"Buscador de Internet"</strong>, donde su función principal, es realizar <strong>Búsquedas de Información,</strong> que hacen referencias a Imágenes, Vídeos, Canciones, Gifs, Eventos, Películas, Actores y Series de TV existentes en <strong>Internet,</strong> pero de una forma más <strong>Rápida.</strong></p>
 
-                            <p>El proyecto, está pensado a utilizar varias <strong>API's Web de Buscadores Web,</strong> con la funcionalidad principal de poder realizar <strong>"Diferentes acciones",</strong> donde su resultado, se mostrará en la Aplicación Web<strong>SwissKnife (Search).</strong> Algunos ejemplos podría ser: Buscar Gifs <strong>"Más virales"</strong> en Internet por el momento, Buscar un vídeo que contenga <strong>"Subtítulos",</strong> Buscar canciones mediante un <strong>"Artista o Disco"</strong> determinado y Buscar imágenes con un <strong>"Tamaño determinado".</strong></p>
+                            <p>El proyecto, está pensado a utilizar varias <strong>API's Web de Buscadores Web,</strong> con la funcionalidad principal de poder realizar <strong>"Diferentes acciones",</strong> donde su resultado, se mostrará en la Aplicación Web<strong>SwissKnife (Search).
 
                             <p>El proyecto de <strong>SwissKnife (Search),</strong> se ha realizado, con el fin de poder <strong>Facilitar la búsqueda</strong> de contenido por <strong>Internet,</strong> accediendo de una forma <strong>Rápida,</strong> a través de una Aplicación Web, que se encarga de mostrarte <strong>"Varios resultados"</strong> al instante, sobre un <strong>"Criterio de búsqueda"</strong> a realizar, para poder encontrarlo <strong>"En tiempo real.</strong></p>
 
@@ -42,13 +42,13 @@
 								<li>
 									<p><strong>¿Que Es SwissKnife (Search)?</strong></p>
 									<br/>
-									<p class="text">SwissKnife (Search) es una Aplicación Web, donde podemos realizar diferentes búsquedas de información, que podemos encontrar día a día en Internet. Para éste caso, se realizarán busquedas de Imágenes, Canciones, Vídeos, Gifs, Eventos y Películas.</p>
+									<p class="text">SwissKnife (Search) es una Aplicación Web, donde podemos realizar diferentes búsquedas de información, que podemos encontrar día a día en Internet. Para éste caso, se realizarán busquedas de Imágenes, Canciones, Vídeos, Gifs, Eventos, Películas, Actores y Series de TV.</p>
 								</li>
 
 								<li>
                                     					<p><strong>¿Que Funciones Realiza SwissKnife (Search)?</strong></p>
 									<br/>	
-									<p class="text">Realizar criterios de búsqueda, sobre una imagen que queremos encontrar, una cacnción que queremos buscar, un vídeo que queremos ver, un gif que queremos encontrar, un evento que queremos encontrar y películas que queremos buscar, en tiempo real, y de forma rápida.</p>
+									<p class="text">Realizar criterios de búsqueda, sobre una imagen que queremos encontrar, una cacnción que queremos buscar, un vídeo que queremos ver, un gif que queremos encontrar, un evento que queremos encontrar, películas que queremos buscar, actores que queremos ver las películas que ha hecho y series de TV a buscar, en tiempo real, y de forma rápida.</p>
 								</li>
 
 								<li>
