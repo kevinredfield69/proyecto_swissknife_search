@@ -325,7 +325,7 @@ def serieresults():
     query = request.forms.get('query')
     lista_series = []
     votos_series = []
-    descripciones_series = []
+    popularidades_series = []
     inicios_series = []
     keyserie = os.environ["keyserie"]
     payload8 = {"api_key":keyserie,"query":query,"language":"es-ES"}
@@ -338,7 +338,7 @@ def serieresults():
         for serie2 in busquedaserie["results"]:
             votos_series.append(serie2["vote_average"])
         for serie3 in busquedaserie["results"]:
-            descripciones_series.append(serie3["overview"])
+            popularidades_series.append(serie3["poularity"])
         for serie4 in busquedaserie["results"]:
             inicios_series.append(serie4["first_air_date"])
         cont=0
@@ -346,7 +346,7 @@ def serieresults():
             cont=1
         else:
             cont=0
-        return template('serieresults.tpl',lista_series=lista_series,votos_series=votos_series,descripciones_series=descripciones_series,inicios_series=inicios_series,query=query,cont=cont)
+        return template('serieresults.tpl',lista_series=lista_series,votos_series=votos_series,popularidades_series=popularidades_series,inicios_series=inicios_series,query=query,cont=cont)
     else:
         return template('error.tpl')
 

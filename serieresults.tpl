@@ -13,11 +13,11 @@
 						<br/>
 						<hr/>
 						<br/>
-							%for serie,voto,descripcion,inicio in zip(lista_series,votos_series,descripciones_series,inicios_series):
+							%for serie,voto,popularidad,inicio in zip(lista_series,votos_series,popularidades_series,inicios_series):
 								<ul>
 									<li><p><strong>{{serie}}</strong></p></li>
-									<li><p><strong>Sinopsis De La Serie: </strong>{{descripcion}}</p>
-									<p><strong>Fecha De Inicio De Serie: </strong>{{inicio}}</p>
+									<li><p><strong>Fecha De Inicio De Serie: </strong>{{inicio}}</p>
+									<p><strong>Popularidad De La Serie: </strong>{{popularidad}}</p>
 									<p><strong>Calificacion: </strong>{{voto}}</p></li>
 
 									% if cont == 1:
