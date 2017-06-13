@@ -16,10 +16,10 @@
 							%for gif,gif2 in zip(lista_gifs,titulos_gifs):
 								<ul>
 									<li><h2><strong>{{gif2}}</strong></h2></li>
-            								<li><img width="600" height="400" src="{{gif}}"/>
+            								<li><img width="600" height="400" src="{{gif}}"/></li>
 
 									% if cont == 1:
-										<a href="/twittear"><h1 class="centro">Compartir en Twitter</h1></a></li>
+										<li><a href="/twittear"><h1 class="centro">Compartir en Twitter</h1></a></li>
 									% end
 								</ul>
 							%end

@@ -18,9 +18,9 @@
 									<li><p><strong>{{pelicula}}</strong></p></li>
 									<li><p><strong>Sinopsis De La Película:</strong> {{descripcion}}</p>
 									<p><strong>Fecha De Estreno:</strong> {{fecha}}</p>
-									<p><strong>Calificación De La Película:</strong> {{calificacion}}</p>
+									<p><strong>Calificación De La Película:</strong> {{calificacion}}</p></li>
 									% if cont == 1:
-										<a href="/twittear"><h1 class="centro">Compartir en Twitter</h1></a></li>
+										<li><a href="/twittear"><h1 class="centro">Compartir en Twitter</h1></a></li>
 									% end
             								
 								</ul>

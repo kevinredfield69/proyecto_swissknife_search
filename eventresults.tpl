@@ -18,10 +18,10 @@
             								<li><p><strong>{{evento}}</strong></p></li>
 									<li><p><strong>Hora De Comienzo Del Evento:</strong> {{inicio_evento}}</p>
 									<p><strong>Ubicación Del Evento:</strong> {{ubicacion}}</p>
-									<p><strong>Dirección Del Evento:</strong> {{direccion}}</p>
+									<p><strong>Dirección Del Evento:</strong> {{direccion}}</p></li>
 
 									% if cont == 1:
-										<a href="/twittear"><h1 class="centro">Compartir en Twitter</h1></a></li>
+										<li><a href="/twittear"><h1 class="centro">Compartir en Twitter</h1></a></li>
 									% end
 								</ul>
 							%end 
