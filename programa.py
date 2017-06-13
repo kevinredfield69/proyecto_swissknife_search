@@ -338,7 +338,7 @@ def serieresults():
         for serie2 in busquedaserie["results"]:
             votos_series.append(serie2["vote_average"])
         for serie3 in busquedaserie["results"]:
-            popularidades_series.append(serie3["poularity"])
+            popularidades_series.append(serie3["popularity"])
         for serie4 in busquedaserie["results"]:
             inicios_series.append(serie4["first_air_date"])
         cont=0
