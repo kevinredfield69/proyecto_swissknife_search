@@ -343,7 +343,7 @@ def serieresults():
         for serie4 in busquedaserie["results"]:
             inicios_series.append(serie4["first_air_date"])
         for serie5 in busquedaserie["results"]:
-            origenes_series.append(serie5["origin_country"])
+            origenes_series.append(serie5["origin_country"][1])
         cont=0
         if request.get_cookie("access_token", secret='some-secret-key'):
             cont=1
