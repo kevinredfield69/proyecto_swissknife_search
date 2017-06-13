@@ -18,7 +18,7 @@
 
                             <p>El proyecto, está pensado a utilizar varias <strong>API's Web de Buscadores Web,</strong> con la funcionalidad principal de poder realizar <strong>"Diferentes acciones",</strong> donde su resultado, se mostrará en la Aplicación Web<strong>SwissKnife (Search).</strong>
 
-                            <p>El proyecto de <strong>SwissKnife (Search),</strong> se ha realizado, con el fin de poder <strong>Facilitar la búsqueda</strong> de contenido por <strong>Internet,</strong> accediendo de una forma <strong>Rápida,</strong> a través de una Aplicación Web, que se encarga de mostrarte <strong>"Varios resultados"</strong> al instante, sobre un <strong>"Criterio de búsqueda"</strong> a realizar, para poder encontrarlo <strong>"En tiempo real.</strong></p>
+                            <p>El proyecto de <strong>SwissKnife (Search),</strong> se ha realizado, con el fin de poder <strong>Facilitar la búsqueda</strong> de contenido por <strong>Internet,</strong> accediendo de una forma <strong>Rápida,</strong> a través de una Aplicación Web, que se encarga de mostrarte <strong>"Varios resultados"</strong> al instante, sobre un <strong>"Criterio de búsqueda"</strong> a realizar, para poder encontrarlo <strong>"En tiempo real".</strong></p>
 
 							<br/>							
 
