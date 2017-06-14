@@ -350,6 +350,26 @@ def serieresults():
     else:
         return template('error.tpl')
 
+#@route('/cartelera',method="get")
+#def cartelera():
+#    lista_estrenos = []
+#    keycartelera = os.environ["keycartelera"]
+#    payload9={"api_key":keycartelera,"language":"es-ES","region":"ES"}
+#    r9 = requests.get("https://api.themoviedb.org/3/movie/now_playing",params=payload9)
+#    if r9.status_code == 200:
+#        estrenos = r9.text
+#        busquedaestreno = json.loads(estrenos)
+#        for estreno in busquedaestreno[""]:
+#            lista_estrenos.append(estreno[""])
+#        cont=0
+#        if request.get_cookie("access_token", secret='some-secret-key'):
+#            cont=1
+#        else:
+#            cont=0
+#        return template("cartelera.tpl",lista_estrenos=lista_estrenos,cont=cont)
+#    else:
+#        return template('error.tpl')
+
 @get('/callback')
 def get_verifier():
     print TOKENS
