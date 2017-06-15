@@ -101,12 +101,7 @@ def gifresults():
             titulos_gifs.append(gif2["slug"])
         for gif3 in busquedagif["data"]:
             publicaciones_gifs.append(gif3["import_datetime"])
-        cont=0
-        if request.get_cookie("access_token", secret='some-secret-key'):
-            cont=1
-        else:
-            cont=0
-        return template("gifresults.tpl",q=q,lista_gifs=lista_gifs,titulos_gifs=titulos_gifs,publicaciones_gifs=publicaciones_gifs,cont=cont)
+        return template("gifresults.tpl",q=q,lista_gifs=lista_gifs,titulos_gifs=titulos_gifs,publicaciones_gifs=publicaciones_gifs)
     else:
         return template("error.tpl")
 
