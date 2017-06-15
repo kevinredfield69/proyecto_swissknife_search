@@ -22,7 +22,7 @@
 										<li><a href="/twittear"><h1 class="centro">Compartir en Twitter</h1></a></li>
 									% end
 
-									<li><a href="https://twitter.com/share?url=google.com&text=Me gusta el gif {{gi2}} de Swissknife Search>Tweet</a></li>
+									<li><a href="https://twitter.com/share?url=google.com&text=Me gusta el gif {{gif2}} de Swissknife Search>Tweet</a></li>
 								</ul>
 							%end
 
