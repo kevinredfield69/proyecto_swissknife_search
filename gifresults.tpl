@@ -22,8 +22,8 @@
 										<li><a href="/twittear"><h1 class="centro">Compartir en Twitter</h1></a></li>
 									% end
 
-									<a href="https://twitter.com/share?url=google.com&text=Me gusta el gif {{gif2}} de Swissknife Search>Tweet</a>
 								</ul>
+							<a href="https://twitter.com/share?url=google.com&text=Me gusta el gif {{gif2}} de Swissknife Search>Tweet</a>
 							%end
 
 							<p><strong><a href="gif" class="button">Volver A SwissKnife GIF</a></strong></p>
