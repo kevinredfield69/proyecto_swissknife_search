@@ -14,6 +14,7 @@
 						<hr/>
 						<br/>
 							%for gif,gif2 in zip(lista_gifs,titulos_gifs):
+									<a href="https://twitter.com/share?url=google.com&text=Me gusta el gif {{gif2}} de Swissknife Search>Tweet</a>
 								<ul>
 									<li><h2><strong>{{gif2}}</strong></h2></li>
             								<li><img width="600" height="400" src="{{gif}}"/></li>
@@ -23,7 +24,6 @@
 									% end
 
 								</ul>
-							<a href="https://twitter.com/share?url=google.com&text=Me gusta el gif {{gif2}} de Swissknife Search>Tweet</a>
 							%end
 
 							<p><strong><a href="gif" class="button">Volver A SwissKnife GIF</a></strong></p>
