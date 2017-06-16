@@ -16,9 +16,6 @@
 								<ul>
 									<li><h2><strong>{{titulo}}</strong></h2></li>
             								<li><img width="600" height="400" src="{{imagen[0]}}"/></li>
-									% if cont == 1:
-										<li><a href="/twittear"><h1 class="centro">Compartir en Twitter</h1></a></li>
-									% end
 								</ul>
 							%end
 

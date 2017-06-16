@@ -18,9 +18,6 @@
 									<li><p><strong>Nombre Del Canal:</strong> {{canal}}</p>
             								<iframe width="600" height="400" src="https://www.youtube.com/embed/{{id}}" frameborder="0" allowfullscreen></iframe>
 									<p><strong>Descripción Del Vídeo:</strong> {{descripcion}}</p></li>
-									% if cont == 1:
-										<li><a href="/twittear"><h1 class="centro">Compartir en Twitter</h1></a></li>
-									% end
 								</ul>
 							%end
 

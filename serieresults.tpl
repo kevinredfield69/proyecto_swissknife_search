@@ -19,10 +19,6 @@
 									<li><p><strong>Fecha De Inicio De Serie: </strong>{{inicio}}</p>
 									<p><strong>Popularidad De La Serie: </strong>{{popularidad}}</p>
 									<p><strong>Calificacion: </strong>{{voto}}</p></li>
-
-									% if cont == 1:
-										<li><a href="/twittear"><h1 class="centro">Compartir en Twitter</h1></a></li>
-									% end
             								
 								</ul>
 							%end

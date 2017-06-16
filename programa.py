@@ -1,55 +1,14 @@
 # -*- coding: utf-8 -*-
 
-from bottle import route,template,run,static_file,error,request,redirect,response,get
-from requests_oauthlib import OAuth1
-from urlparse import parse_qs
+from bottle import route,template,run,static_file,error,request
 from sys import argv
 import json
 import requests
 import os
 
-REQUEST_TOKEN_URL = "https://api.twitter.com/oauth/request_token"
-AUTHENTICATE_URL = "https://api.twitter.com/oauth/authenticate?oauth_token="
-ACCESS_TOKEN_URL = "https://api.twitter.com/oauth/access_token"
-
-CONSUMER_KEY = os.environ.get('consumer_key')
-CONSUMER_SECRET = os.environ.get('consumer_secret')
-
-TOKENS = {}
-
-def get_request_token():
-    oauth = OAuth1(CONSUMER_KEY,
-                   client_secret=CONSUMER_SECRET,
-    )
-    r = requests.post(url=REQUEST_TOKEN_URL, auth=oauth)
-    credentials = parse_qs(r.content)
-    TOKENS["request_token"] = credentials.get('oauth_token')[0]
-    TOKENS["request_token_secret"] = credentials.get('oauth_token_secret')[0]
-
-def get_access_token(TOKENS):
-    oauth = OAuth1(CONSUMER_KEY,
-                   client_secret=CONSUMER_SECRET,
-                   resource_owner_key=TOKENS["request_token"],
-                   resource_owner_secret=TOKENS["request_token_secret"],
-                   verifier=TOKENS["verifier"],)
-    r = requests.post(url=ACCESS_TOKEN_URL, auth=oauth)
-    credentials = parse_qs(r.content)
-    print credentials
-    TOKENS["access_token"] = credentials.get('oauth_token')[0]
-    TOKENS["access_token_secret"] = credentials.get('oauth_token_secret')[0]
-
 @route('/',method="get")
 def index():
-    cont=0
-    get_request_token()
-    authorize_url = AUTHENTICATE_URL + TOKENS["request_token"]
-    response.set_cookie("request_token", TOKENS["request_token"],secret='some-secret-key')
-    response.set_cookie("request_token_secret", TOKENS["request_token_secret"],secret='some-secret-key')
-    if request.get_cookie("access_token", secret='some-secret-key'):
-        cont=1
-    else:
-        cont=0
-    return template("index.tpl",authorize_url=authorize_url,cont=cont)
+    return template("index.tpl")
 
 @route('/author',method="get")
 def author():
@@ -132,12 +91,7 @@ def videoresults():
             descripciones_videos.append(video3["snippet"]["description"])
         for video4 in busquedavideo["items"]:
             canales_videos.append(video4["snippet"]["channelTitle"])
-        cont=0
-        if request.get_cookie("access_token", secret='some-secret-key'):
-            cont=1
-        else:
-            cont=0
-        return template("videoresults.tpl",q=q,lista_ids=lista_ids,titulos_videos=titulos_videos,descripciones_videos=descripciones_videos,canales_videos=canales_videos,cont=cont)
+        return template("videoresults.tpl",q=q,lista_ids=lista_ids,titulos_videos=titulos_videos,descripciones_videos=descripciones_videos,canales_videos=canales_videos)
     else:
         return template("error.tpl")
 
@@ -161,12 +115,7 @@ def pictureresults():
                 lista_imagenes.append([imagen['url_s'],imagen["url_o"]])
         for titulo in busquedaimagen["photos"]["photo"]:
             titulos_imagenes.append(titulo["title"])
-        cont=0
-        if request.get_cookie("access_token", secret='some-secret-key'):
-            cont=1
-        else:
-            cont=0
-        return template("pictureresults.tpl",text=text,lista_imagenes=lista_imagenes,titulos_imagenes=titulos_imagenes,cont=cont)
+        return template("pictureresults.tpl",text=text,lista_imagenes=lista_imagenes,titulos_imagenes=titulos_imagenes)
     else:
         return template("error.tpl")
 
@@ -195,12 +144,7 @@ def songresults():
             imagenes_canciones.append(cancion3["image"][3]["#text"])
         for cancion4 in busquedacancion["results"]["trackmatches"]["track"]:
             oyentes_canciones.append(cancion4["listeners"])
-        cont=0
-        if request.get_cookie("access_token", secret='some-secret-key'):
-            cont=1
-        else:
-            cont=0
-        return template("songresults.tpl",track=track,lista_canciones=lista_canciones,titulos_canciones=titulos_canciones,imagenes_canciones=imagenes_canciones,oyentes_canciones=oyentes_canciones,cont=cont)
+        return template("songresults.tpl",track=track,lista_canciones=lista_canciones,titulos_canciones=titulos_canciones,imagenes_canciones=imagenes_canciones,oyentes_canciones=oyentes_canciones)
     else:
         return template("error.tpl")
 
@@ -233,12 +177,7 @@ def eventresults():
             direcciones_eventos.append(direccion["venue_address"])
         for ubicacion in busquedaevento["events"]["event"]:
             ubicaciones_eventos.append(ubicacion["venue_name"])
-        cont=0
-        if request.get_cookie("access_token", secret='some-secret-key'):
-            cont=1
-        else:
-            cont=0
-        return template('eventresults.tpl',lista_eventos=lista_eventos,comenzar_eventos=comenzar_eventos,direcciones_eventos=direcciones_eventos,ubicaciones_eventos=ubicaciones_eventos,ciudad=ciudad,termino=termino,cont=cont)
+        return template('eventresults.tpl',lista_eventos=lista_eventos,comenzar_eventos=comenzar_eventos,direcciones_eventos=direcciones_eventos,ubicaciones_eventos=ubicaciones_eventos,ciudad=ciudad,termino=termino)
     else:
         return template("error.tpl")
 
@@ -267,12 +206,7 @@ def filmresults():
             fechas_peliculas.append(fecha["release_date"])
         for calificacion in busquedapelicula["results"]:
             calificaciones_peliculas.append(calificacion["vote_average"])
-        cont=0
-        if request.get_cookie("access_token", secret='some-secret-key'):
-            cont=1
-        else:
-            cont=0
-        return template('filmresults.tpl',lista_peliculas=lista_peliculas,descripciones_peliculas=descripciones_peliculas,fechas_peliculas=fechas_peliculas,calificaciones_peliculas=calificaciones_peliculas,query=query,cont=cont)
+        return template('filmresults.tpl',lista_peliculas=lista_peliculas,descripciones_peliculas=descripciones_peliculas,fechas_peliculas=fechas_peliculas,calificaciones_peliculas=calificaciones_peliculas,query=query)
     else:
         return template('error.tpl')
 
@@ -302,12 +236,7 @@ def actorresults():
                 actores_fechas.append(res3["release_date"])
             for res4 in actor["known_for"]:
                 actores_calificaciones.append(res4["vote_average"])
-        cont=0
-        if request.get_cookie("access_token", secret='some-secret-key'):
-            cont=1
-        else:
-            cont=0
-        return template('actorresults.tpl',query=query,lista_actores=lista_actores,actores_descripciones=actores_descripciones,actores_fechas=actores_fechas,actores_calificaciones=actores_calificaciones,cont=cont)
+        return template('actorresults.tpl',query=query,lista_actores=lista_actores,actores_descripciones=actores_descripciones,actores_fechas=actores_fechas,actores_calificaciones=actores_calificaciones)
     else:
         return template('error.tpl')
 
@@ -336,12 +265,7 @@ def serieresults():
             popularidades_series.append(serie3["popularity"])
         for serie4 in busquedaserie["results"]:
             inicios_series.append(serie4["first_air_date"])
-        cont=0
-        if request.get_cookie("access_token", secret='some-secret-key'):
-            cont=1
-        else:
-            cont=0
-        return template('serieresults.tpl',lista_series=lista_series,votos_series=votos_series,popularidades_series=popularidades_series,inicios_series=inicios_series,query=query,cont=cont)
+        return template('serieresults.tpl',lista_series=lista_series,votos_series=votos_series,popularidades_series=popularidades_series,inicios_series=inicios_series,query=query)
     else:
         return template('error.tpl')
 
@@ -364,44 +288,6 @@ def serieresults():
 #        return template("cartelera.tpl",lista_estrenos=lista_estrenos,cont=cont)
 #    else:
 #        return template('error.tpl')
-
-@get('/callback')
-def get_verifier():
-    print TOKENS
-    TOKENS["verifier"] = request.query.oauth_verifier
-    get_access_token(TOKENS)
-    response.set_cookie("access_token", TOKENS["access_token"],secret='some-secret-key')
-    response.set_cookie("access_token_secret", TOKENS["access_token_secret"],secret='some-secret-key')
-    redirect('/')
-
-@get('/twittear')
-def twittear():
-    if request.get_cookie("access_token", secret='some-secret-key'):
-      TOKENS["access_token"]=request.get_cookie("access_token", secret='some-secret-key')
-      TOKENS["access_token_secret"]=request.get_cookie("access_token_secret", secret='some-secret-key')
-      print CONSUMER_KEY
-      print CONSUMER_SECRET
-      print TOKENS["access_token"]
-      print TOKENS["access_token_secret"]
-      oauth = OAuth1(CONSUMER_KEY,
-                       client_secret=CONSUMER_SECRET,
-                       resource_owner_key=TOKENS["access_token"],
-                       resource_owner_secret=TOKENS["access_token_secret"])
-      url = 'https://api.twitter.com/1.1/statuses/update.json'
-      status = 'Me ha gustado %s. via swissknifesearch.herokuapp.com'
-      r = requests.post(url=url,data={"status":status},auth=oauth)
-      if r.status_code == 200:
-          return template('tuitcorrecto.tpl')
-      else:
-          return template('tuiterror.tpl')
-    else:
-      redirect('/')
-
-@get('/twitter_logout')
-def twitter_logout():
-    response.set_cookie("access_token", '',max_age=0)
-    response.set_cookie("access_token_secret", '',max_age=0)
-    redirect('/')
 
 @route('/css/<filepath:path>')
 def server_static(filepath):
