@@ -17,6 +17,7 @@
 								<ul>
 									<li><h2><strong>{{cancion}} - </strong>{{cancion2}}</h2></li>
 									<li><img width="600" height="400" src="{{cancion3}}"/>
+									<br/>
 									<p><strong>Oyentes:</strong> {{cancion4}} personas que lo han escuchado</p></li>
 								</ul>
 							%end
