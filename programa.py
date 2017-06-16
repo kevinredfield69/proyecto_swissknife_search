@@ -53,6 +53,7 @@ def gifresults():
     r = requests.get('http://api.giphy.com/v1/gifs/search?',params=payload)
     gifs = r.text
     busquedagif = json.loads(gifs)
+    print r.url
     if r.status_code == 200:
         for gif in busquedagif["data"]:
             lista_gifs.append(gif["images"]["fixed_height"]["url"])
