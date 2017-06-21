@@ -19,6 +19,7 @@
 									<li><img width="600" height="400" src="{{cancion3}}"/>
 									<br/>
 									<p><strong>Oyentes:</strong> {{cancion4}} personas que lo han escuchado</p></li>
+									<li><h2><strong><a href="https://twitter.com/share?url=google.com&text=Me gusta la canción / artista / album {{cancion}} - {{cancion2}} de SwissKnife Song">Twittear</a></strong></h2></li>
 								</ul>
 							%end
 
