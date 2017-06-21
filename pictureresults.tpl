@@ -14,8 +14,9 @@
 						<br/>
 							%for titulo,imagen in zip(titulos_imagenes,lista_imagenes):
 								<ul>
-									<li><h2><strong>{{titulo}}</strong></h2></li>
+									<li><h1><strong>{{titulo}}</strong></h1></li>
             								<li><img width="600" height="400" src="{{imagen[0]}}"/></li>
+									<li><h2><strong><a href="https://twitter.com/share?url=google.com&text=Me gusta la imagen {{imagen[0]}} de SwissKnife Picture">Twittear</a></strong></h2></li>
 								</ul>
 							%end
 

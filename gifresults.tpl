@@ -18,7 +18,7 @@
 								<ul>
 									<li><h1><strong>{{gif2}}</strong></h1></li>
             								<li><img width="600" height="400" src="{{gif}}"/></li>
-									<li><p><strong><a href="https://twitter.com/share?url=google.com&text=Me gusta el gif https://media2.giphy.com/media/{{gif2}}/giphy.gif de SwissKnife GIF">Twittear</a></strong></p></li>
+									<li><h2><strong><a href="https://twitter.com/share?url=google.com&text=Me gusta el gif https://media2.giphy.com/media/{{gif2}}/giphy.gif de SwissKnife GIF">Twittear</a></strong></h2></li>
 								</ul>
 							%end
 

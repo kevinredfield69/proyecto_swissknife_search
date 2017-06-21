@@ -19,7 +19,7 @@
 									<li><p><strong>Fecha De Inicio De Serie: </strong>{{inicio}}</p>
 									<p><strong>Popularidad De La Serie: </strong>{{popularidad}}</p>
 									<p><strong>Calificacion: </strong>{{voto}}</p></li>
-									<li><p><strong><a href="https://twitter.com/share?url=google.com&text=Me gusta la serie {{serie}} de SwissKnife Serie">Twittear</a></strong></p></li>            								
+									<li><h2><strong><a href="https://twitter.com/share?url=google.com&text=Me gusta la serie {{serie}} de SwissKnife Serie">Twittear</a></strong></h2></li>            								
 								</ul>
 							%end
 
