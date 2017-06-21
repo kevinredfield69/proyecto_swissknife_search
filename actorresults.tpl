@@ -19,6 +19,7 @@
 									<li><p><strong>Sinopsis De La Película: </strong>{{descripcion}}</p>
 									<p><strong>Fecha De Estreno: </strong>{{fecha}}</p>
 									<p><strong>Calificación: </strong>{{calificacion}}</p></li>
+									<li><h1><a href="https://twitter.com/share?url=google.com&text=Me gusta la película {{actor}} del actor {{query}} de SwissKnife Actor">Twittear</a></h1></li>
             								
 								</ul>
 							%end
