@@ -15,7 +15,7 @@
 						<br/>
 							%for pelicula,descripcion,fecha,calificacion in zip(lista_peliculas,descripciones_peliculas,fechas_peliculas,calificaciones_peliculas):
 								<ul>
-									<li><p><strong>{{pelicula}}</strong></p></li>
+									<li><h1><strong>{{pelicula}}</strong></h1></li>
 									<li><p><strong>Sinopsis De La Película:</strong> {{descripcion}}</p>
 									<p><strong>Fecha De Estreno:</strong> {{fecha}}</p>
 									<p><strong>Calificación De La Película:</strong> {{calificacion}}</p></li>

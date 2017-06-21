@@ -15,7 +15,7 @@
 						<br/>
 							%for serie,voto,popularidad,inicio in zip(lista_series,votos_series,popularidades_series,inicios_series):
 								<ul>
-									<li><p><strong>{{serie}}</strong></p></li>
+									<li><h1><strong>{{serie}}</strong></h1></li>
 									<li><p><strong>Fecha De Inicio De Serie: </strong>{{inicio}}</p>
 									<p><strong>Popularidad De La Serie: </strong>{{popularidad}}</p>
 									<p><strong>Calificacion: </strong>{{voto}}</p></li>

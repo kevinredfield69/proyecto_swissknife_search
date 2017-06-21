@@ -16,7 +16,7 @@
 							%for gif,gif2 in zip(lista_gifs,titulos_gifs):
 									
 								<ul>
-									<li><h2><strong>{{gif2}}</strong></h2></li>
+									<li><h1><strong>{{gif2}}</strong></h1></li>
             								<li><img width="600" height="400" src="{{gif}}"/></li>
 									<li><p><strong><a href="https://twitter.com/share?url=google.com&text=Me gusta el gif https://media2.giphy.com/media/{{gif2}}/giphy.gif de SwissKnife GIF">Twittear</a></strong></p></li>
 								</ul>
