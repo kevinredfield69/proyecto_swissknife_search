@@ -15,10 +15,11 @@
 						<br/>
 							% for evento,inicio_evento,direccion,ubicacion in zip(lista_eventos,comenzar_eventos,direcciones_eventos,ubicaciones_eventos):
 								<ul>
-            								<li><p><strong>{{evento}}</strong></p></li>
+            								<li><h1><strong>{{evento}}</strong></h1></li>
 									<li><p><strong>Hora De Comienzo Del Evento:</strong> {{inicio_evento}}</p>
 									<p><strong>Ubicación Del Evento:</strong> {{ubicacion}}</p>
 									<p><strong>Dirección Del Evento:</strong> {{direccion}}</p></li>
+									<li><h2><strong><a href="https://twitter.com/share?url=google.com&text=Voy a asistir al evento {{evento}} a las {{inicio_evento}} en {{ubicacion}}">Twittear</a></strong></h2></li>
 
 								</ul>
 							%end 
