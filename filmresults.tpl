@@ -19,7 +19,7 @@
 									<li><p><strong>Sinopsis De La Película:</strong> {{descripcion}}</p>
 									<p><strong>Fecha De Estreno:</strong> {{fecha}}</p>
 									<p><strong>Calificación De La Película:</strong> {{calificacion}}</p></li>
-									<li><h1><a href="https://twitter.com/share?url=google.com&text=Me gusta la película {{pelicula}} de SwissKnife Film">Twittear</a></h1></li>
+									<li><p><strong><a href="https://twitter.com/share?url=google.com&text=Me gusta la película {{pelicula}} de SwissKnife Film">Twittear</a></strong></p></li>
             								
 								</ul>
 							%end
